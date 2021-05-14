@@ -159,6 +159,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Renderers\" />
+    <BundleResource Include="Resources\briefcase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\man.png" />
   </ItemGroup>
 </Project>

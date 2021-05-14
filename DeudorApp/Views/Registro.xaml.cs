@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DeudorApp.Models;
+using DeudorApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -7,11 +9,14 @@ namespace DeudorApp.Views
 {
     public partial class Registro : ContentPage
     {
-        public Registro()
+        int TipoDeCuenta;
+        SM sM = new SM();
+        public Registro(int TipoCuenta)
         {
             InitializeComponent();
             Title = "Crear cuenta";
-            
+            TipoDeCuenta = TipoCuenta;
+
 
             var clickTos = new TapGestureRecognizer();
             clickTos.Tapped += async (s, e) =>
@@ -31,7 +36,14 @@ namespace DeudorApp.Views
                 {
                     try
                     {
-                        //await enviarUsuario();
+
+                        Perfil p = new Perfil();
+                        p.Nombre = nombre.Text;
+                        p.Apellidos = apellidos.Text;
+                        p.Correo = mail.Text;
+                        p.Clave = pass1.Text;
+
+                        await sM.RegistrarUsuario(p);
                     }
                     catch (Exception ex)
                     {

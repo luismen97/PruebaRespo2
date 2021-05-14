@@ -55,7 +55,7 @@ namespace DeudorApp.Views
             var clickCrear = new TapGestureRecognizer();
             clickCrear.Tapped += (s, e) =>
             {
-                Navigation.PushAsync(new Registro());
+                Navigation.PushAsync(new CuentaRegistro());
             };
             btnCrear.GestureRecognizers.Add(clickCrear);
 

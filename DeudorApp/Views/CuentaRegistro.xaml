@@ -11,6 +11,54 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="100*"/>
             </Grid.RowDefinitions>
+            <Image Grid.Row="0" Grid.Column="0" Source="bgregistro.png" Aspect="AspectFill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+            <ScrollView>
+                
+                <StackLayout Padding="20,12" Spacing="0">
+                    <StackLayout HeightRequest="8"/>
+                    <Frame BackgroundColor="#ffffff" CornerRadius="5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="man.png" WidthRequest="70" Grid.Row="0"/>
+                            <Label Text="Registrate como persona" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" Grid.Row="1"/>
+                            <Label Text="Buscate y Aclara" FontAttributes="None" FontSize="Medium" HorizontalTextAlignment="Center" Grid.Row="2"/>
+                            <Label Text="Si eres una persona física podrás solicitar aclaraciones, buscar y más, crea tu cuenta ahora mismo gratis para empezar a buscar y aclarar" FontSize="Body" HorizontalTextAlignment="Center" Grid.Row="3"/>
+                            <Button x:Name="btnFisica" Clicked="btnFisica_Clicked" Text="Crear Cuenta" Grid.Row="4" CornerRadius="6" TextColor="#ffffff" BackgroundColor="#d82425"/>
+                        </Grid>
+                    </Frame>
+                    <StackLayout HeightRequest="12"/>
+                    <Frame BackgroundColor="#ffffff" Margin="0" CornerRadius="5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="briefcase.png" WidthRequest="70" Grid.Row="0"/>
+                            <Label Text="Registrate como acreedor" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" Grid.Row="1"/>
+                            <Label Text="Busca, Aclara, Registra y Boletina" FontAttributes="None" FontSize="Medium" HorizontalTextAlignment="Center" Grid.Row="2"/>
+                            <Label Text="Si eres distribuidor(a), Prestamista, Lider de cajas de Ahorro, Microfinanciera, etc. Crea tu cuenta gratis ahora mismo para empezar a ralizar tus funciones necesarias." FontSize="Body" HorizontalTextAlignment="Center" Grid.Row="3"/>
+                            <Button x:Name="btnAcreedor" Clicked="btnAcreedor_Clicked" Text="Crear Cuenta" Grid.Row="4" CornerRadius="6" TextColor="#ffffff" BackgroundColor="#d82425"/>
+                        </Grid>
+                        
+                    </Frame>
+                </StackLayout>
+                
+            </ScrollView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

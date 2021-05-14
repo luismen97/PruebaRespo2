@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:DeudorApp.Renderers"
+             x:Class="DeudorApp.Views.Aclaraciones">
+   <NavigationPage.TitleView>
+        
+        <Grid  HorizontalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+            
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="53*"/>
+                <ColumnDefinition Width="30*"/>
+                
+            </Grid.ColumnDefinitions>
+            
+            
+
+            <Image x:Name="logo" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="logo.png"  HeightRequest="45" />
+            <RelativeLayout x:Name="Nada" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">                                
+            </RelativeLayout>
+            
+        </Grid>    
+        
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+         <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+            <controls:HybridWebView
+                x:Name="webViewElement"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeudorApp.Views.Cuenta"
+             BackgroundColor="#f1f1f1">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <ScrollView HorizontalOptions="FillAndExpand">
+            
+                <StackLayout Padding="0,40,0,40" Spacing="0">
+                    
+                    <!-- BLOQUE 1 -->
+                    <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" />
+                    <!-- perfil -->
+                    <StackLayout x:Name="btnPerfil" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="#0054F5" VerticalOptions="Start">
+                            
+                                <Image Source="perfil.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Perfil" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="right.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                        
+                    </StackLayout>
+                    
+                    <!-- Aclarar -->
+                    <StackLayout x:Name="btnAclarar" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="#9b59b6" VerticalOptions="Start">
+                            
+                                <Image Source="verificacion.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Aclaraciones" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="right.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                        
+                    </StackLayout>
+                    
+                    <!-- Registrar -->
+                    <StackLayout x:Name="btnRegistarCliente" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0" Margin="0,40,0,0">
+                        
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="-10,-10,-10,5" />
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="#2ecc71" VerticalOptions="Start">
+                            
+                                <Image Source="agregarcliente.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Registrar Clientes" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="right.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                        
+                    </StackLayout>
+                    
+                    <!-- Reportar -->
+                    <StackLayout x:Name="btnReportar" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,10">
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="#FD0000" VerticalOptions="Start">
+                            
+                                <Image Source="boletinar.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Reportar" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="right.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        
+                    </StackLayout>
+                    
+                    <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" />
+                    <!-- FIN BLOQUE 2 -->
+                    
+                    <!-- BLOQUE 4 -->
+                    <!-- contactanos -->
+                    <StackLayout x:Name="btnContactar" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0" Margin="0,40,0,0">
+                        
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="-10,-10,-10,5" />
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="#D19D00" VerticalOptions="Start">
+                            
+                                <Image Source="contacto.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Contáctanos" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="right.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                        
+                    </StackLayout>
+
+                    <!-- Preguntas frecuentes -->
+                    <StackLayout x:Name="btnAyuda" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0" >
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="#545454" VerticalOptions="Start">
+                            
+                                <Image Source="pregunta.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Preguntas Frecuentes" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="right.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                        
+                    </StackLayout>
+                    
+                    <!-- Terminos -->
+                    <StackLayout x:Name="btnTerminos" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0" >
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="#0054F5" VerticalOptions="Start">
+                            
+                                <Image Source="seguro.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Términos y condiciones" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="right.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                        
+                    </StackLayout>
+                    
+                    <!-- politica -->
+                    <!--
+                    <StackLayout x:Name="btnPolitica" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+                                                
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="White" VerticalOptions="Start">
+                            
+                                <Image Source="politica.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Política de privacidad" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="right.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                                                
+                    </StackLayout>
+                    -->
+                    <!-- Cerrar Sesion -->
+                    <StackLayout x:Name="btnSalir" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0" Margin="0,40,0,0">
+                        
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="-10,-10,-10,5" />
+                        
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                            
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="DarkRed" VerticalOptions="Start">
+                            
+                                <Image Source="cerrar.png" HeightRequest="20"/>
+                                
+                            </Frame>
+                            
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+                                    
+                                    <Label Text="Cerrar Sesión" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+                                
+                                    <Image Source="right.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+                                
+                                </StackLayout>
+                                                                
+                            </StackLayout>
+                            
+                        </StackLayout>
+                        
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+                        
+                    </StackLayout>
+
+                    <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" />
+                    <!-- FIN BLOQUE 4 -->
+                    
+                </StackLayout>
+                
+            </ScrollView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

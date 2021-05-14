@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DeudorApp.Renderers;assembly=DeudorApp"
+             x:Class="DeudorApp.Views.Registro">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100*" />
+            </Grid.RowDefinitions>
+            
+            <Image Grid.Row="0" Grid.Column="0" Source="bgregistro.png" Aspect="AspectFill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+            <ScrollView>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10" Spacing="5">
+            
+                    <Label Text="Llena estos datos para crear tu cuenta" TextColor="WhiteSmoke" FontSize="20" FontAttributes="Bold" Margin="0,20,0,20" />
+                
+                    <StackLayout x:Name="contNombre">
+                        <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" CornerRadius="5" Margin="3,3,3,3" > 
+                            <local:Entry_R x:Name="nombre" Placeholder="Nombre(s)" PlaceholderColor="#666" HeightRequest="50" Text="" HorizontalOptions="FillAndExpand" TextColor="#333" FontSize="15" BackgroundColor="White" Opacity=".7" />
+                        </Frame>
+                    </StackLayout>
+                    
+                    <StackLayout x:Name="contApellidos">
+                        <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" CornerRadius="5" Margin="3,3,3,3" > 
+                            <local:Entry_R x:Name="apellidos" Placeholder="Apellidos" PlaceholderColor="#666" HeightRequest="50" Text="" HorizontalOptions="FillAndExpand" TextColor="#333" FontSize="15" BackgroundColor="White" Opacity=".7" />
+                        </Frame>                        
+                    </StackLayout>
+                    
+                    <StackLayout x:Name="contCorreo">
+                        <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" CornerRadius="5" Margin="3,3,3,3" > 
+                            <local:Entry_R x:Name="mail" Placeholder="Correo electrónico" PlaceholderColor="#666" HeightRequest="50" Text="" HorizontalOptions="FillAndExpand" TextColor="#333" FontSize="15" Keyboard="Email" BackgroundColor="White" Opacity=".7" />
+                        </Frame>                                                
+                    </StackLayout>
+                    <!--
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10" Orientation="Horizontal"> 
+                        <Label Text="Teléfono" TextColor="#666" FontSize="15" VerticalOptions="CenterAndExpand" />
+                        <Label Text="+52" TextColor="#666" FontSize="13" VerticalOptions="CenterAndExpand" /> 
+                        <Image Source="mex.png" HeightRequest="20" VerticalOptions="CenterAndExpand" />
+                        <local:Entry_R x:Name="telefono" Keyboard="Numeric" MaxLength="10" HorizontalTextAlignment="End" TextColor="Black" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="35" />    
+                    </StackLayout>
+                    -->
+                    <StackLayout x:Name="contClave">
+                        <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" CornerRadius="5" Margin="3,3,3,3" > 
+                           <local:Entry_R x:Name="pass1" Placeholder="Contraseña" PlaceholderColor="#666" HeightRequest="50" Text="" HorizontalOptions="FillAndExpand" TextColor="#333" FontSize="15" IsPassword="true" Keyboard="Text" BackgroundColor="White" Opacity=".7"/>
+                        </Frame>                                                                        
+                    </StackLayout>
+                    
+                    <StackLayout x:Name="contClave2">
+                        <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" CornerRadius="5" Margin="3,3,3,3" > 
+                            <local:Entry_R x:Name="pass2" Placeholder="Repetir contraseña" PlaceholderColor="#666" HeightRequest="50" Text="" HorizontalOptions="FillAndExpand" TextColor="#333" FontSize="15" IsPassword="true" Keyboard="Text" BackgroundColor="White" Opacity=".7" />
+                        </Frame>                                                                        
+                        
+                    </StackLayout>
+                    <!--
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10" Orientation="Horizontal">                            
+                        <Label Text="Aceptas Publicidad" TextColor="#666" FontSize="15" VerticalOptions="CenterAndExpand" />                            
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Switch x:Name="Publicidad" IsToggled="true" OnColor="#eb068c" ThumbColor="WhiteSmoke" />
+                        </StackLayout>                          
+                    </StackLayout>
+                    -->
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="10">
+                    
+                        <Label Text="Acepto los terminos y condiciones y aviso de privacidad" TextColor="WhiteSmoke" FontSize="13" VerticalOptions="CenterAndExpand" />
+                    
+                        <Switch x:Name="switchT" VerticalOptions="CenterAndExpand"/>
+                    
+                    </StackLayout>
+                
+                    <Label Margin="10" x:Name="tos" Text="Leer más sobre los términos y condiciones" TextColor="WhiteSmoke" FontSize="12" />                    
+
+                    <StackLayout x:Name="btnRegistrarse" HorizontalOptions="FillAndExpand" Padding="20,30,20,20">
+                        <Frame Padding="0" VerticalOptions="CenterAndExpand" BorderColor="#d82425" BackgroundColor="#d82425" HasShadow="false" CornerRadius="5" HeightRequest="40" WidthRequest="150">
+                            <Label Text="Registrarse" TextColor="WhiteSmoke" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
+                        </Frame>                                    
+                    </StackLayout>
+
+                    <Label Margin="10" x:Name="RegresaLogin" Text="¿Ya tienes una cuenta? Inicia sesión aquí" TextColor="WhiteSmoke" FontSize="12" />
+
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

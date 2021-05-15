@@ -13,6 +13,7 @@ namespace DeudorApp.Models
         public string CelID { get; set; }
         public string Cuenta { get; set; }
         public string Encontrado { get; set; }
+        public string TipoCuenta { get; set; }
         
     }
 }

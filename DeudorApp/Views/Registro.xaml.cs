@@ -36,14 +36,38 @@ namespace DeudorApp.Views
                 {
                     try
                     {
+                        Device.BeginInvokeOnMainThread(() =>
+                        {
+                            loader.IsVisible = true;
+                            datos.IsVisible = false;
+                        });
 
                         Perfil p = new Perfil();
                         p.Nombre = nombre.Text;
                         p.Apellidos = apellidos.Text;
                         p.Correo = mail.Text;
                         p.Clave = pass1.Text;
+                        p.TipoCuenta = TipoDeCuenta.ToString();
 
-                        await sM.RegistrarUsuario(p);
+                        string resp = await sM.RegistrarUsuario(p);
+                        
+                        Device.BeginInvokeOnMainThread(() =>
+                        {
+                            loader.IsVisible = false;
+                            datos.IsVisible = true;
+                        });
+
+                        if (resp != "Bienvenid@")
+                        {
+                            await DisplayAlert("Error", resp, "OK");
+                        }
+                        else
+                        {
+                            await DisplayAlert("", resp, "OK");
+                            await sM.iniciarSesion(p.Correo,p.Clave);
+                        }
+
+                        
                     }
                     catch (Exception ex)
                     {

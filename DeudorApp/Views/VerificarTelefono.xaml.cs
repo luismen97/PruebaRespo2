@@ -84,13 +84,11 @@ namespace DeudorApp.Views
                                     Application.Current.Properties["NIT"] = numero.Text;
                                     App.Current.Properties["Encontrado"] = "Verificado";
                                     await Application.Current.SavePropertiesAsync();
-                                    Application.Current.MainPage = new NavigationPage(new Inicio())
+                                    Application.Current.MainPage = new NavigationPage(new MainPage())
                                     {
                                         BarBackgroundColor = App.bgColor,
                                         BarTextColor = App.textColor
                                     };
-                                    
-
                                 }
                             });
                         }
@@ -149,8 +147,9 @@ namespace DeudorApp.Views
             try
             {
                 var client = new HttpClient();
-                StringContent str = new StringContent("op=InsertMovilCliente&Numero=" + numero.Text + "&IDCliente=" + Application.Current.Properties["IdCliente"], Encoding.UTF8, "application/x-www-form-urlencoded");
+                StringContent str = new StringContent("op=InsertMovilCliente&Numero=" + numero.Text + "&IDCliente=" + Application.Current.Properties["IdCuenta"].ToString() , Encoding.UTF8, "application/x-www-form-urlencoded");
                 await client.PostAsync(Constantes.url + "Usuario/App.php", str);
+
 
             }
             catch (Exception ex)

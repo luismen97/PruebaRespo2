@@ -63,8 +63,8 @@
                 </StackLayout>
 
                 <StackLayout x:Name="btnLogin" HorizontalOptions="FillAndExpand" Padding="20,30,20,20">
-                                    
-                    <Label Text="Regresar al iniciar sesión" TextColor="#1ca28a" FontSize="18" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+
+                    <Label Text="Regresar al iniciar sesión" TextColor="#d82425" FontSize="18" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
                                     
                 </StackLayout>
             </StackLayout>

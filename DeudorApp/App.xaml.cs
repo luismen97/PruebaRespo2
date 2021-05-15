@@ -13,9 +13,31 @@ namespace DeudorApp
         {
             InitializeComponent();
 
+            if (Application.Current.Properties.ContainsKey("Encontrado"))
+            {
+                if (Current.Properties["Encontrado"].ToString() != "vacio")
+                {
+                    MainPage = Iniciar();
+
+                }
+                else
+                {
+
+                    Application.Current.MainPage = new NavigationPage(new VerificarTelefono())
+                    {
+                        BarBackgroundColor = App.bgColor,
+                        BarTextColor = App.textColor
+                    };
+                }
+            }
+            else
+            {
+                MainPage = Iniciar();
+            }
+            
             //DependencyService.Register<MockDataStore>();
             //MainPage = new NavigationPage(new MainPage());
-            MainPage = Iniciar();
+            
         }
 
         protected override void OnStart()

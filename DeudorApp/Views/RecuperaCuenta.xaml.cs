@@ -43,9 +43,30 @@ namespace DeudorApp.Views
                         JArray obj = JArray.Parse(resp);
                         string cadena = obj[0]["Correo"].ToString();
                         string cadenaNueva = "";
+                        string marca = "";
                         for (int i = 0; i < cadena.Length; i++)
                         {
-                            cadenaNueva += cadena[i];
+                            
+                            if (i < 4)
+                            {
+                                cadenaNueva += cadena[i];
+                            }
+                            else
+                            {
+                                if (cadena[i].ToString() == "@")
+                                {
+                                    marca = "1";
+                                }
+
+                                if (marca == "1")
+                                {
+                                    cadenaNueva += cadena[i];
+                                }
+                                else
+                                {
+                                    cadenaNueva += "*";
+                                }
+                            }   
                         }
                         txtCorreo.Text = cadenaNueva;
                         contExito.IsVisible = true;

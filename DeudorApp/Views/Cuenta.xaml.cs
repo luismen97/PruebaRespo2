@@ -71,9 +71,7 @@ namespace DeudorApp.Views
 
                 if (Application.Current.Properties.ContainsKey("IdCuenta") && Application.Current.Properties.ContainsKey("sesion"))
                 {
-                        btnIniciarSesion.IsVisible = true;
                         await Navigation.PushAsync(new DatosPerfil());
-
                 }
                 else
                 {

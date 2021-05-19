@@ -43,21 +43,21 @@
                     <StackLayout x:Name="contExito" IsVisible="false" Padding="20,30">
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="70"/>
-                                <RowDefinition Height="70"/>
-                                <RowDefinition Height="70*"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="100*"/>
                             </Grid.ColumnDefinitions>
                             <StackLayout Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                                <Label Text="¡Se ha recuperado tu cuenta!" TextColor="#067718" FontSize="20" VerticalTextAlignment="Center"/>
+                                <Label Text="¡Se ha recuperado tu cuenta!" TextColor="#067718" FontSize="20" HorizontalTextAlignment="Center"/>
                             </StackLayout>
                             <StackLayout Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                                <Label Text="Enviamos un correo al siguiente contacto" TextColor="#686868" FontSize="16" VerticalTextAlignment="Center"/>
+                                <Label Text="Enviamos un correo al siguiente contacto" TextColor="#686868" FontSize="16" HorizontalTextAlignment="Center"/>
                             </StackLayout>
                             <StackLayout Grid.Row="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                                <Label x:Name="txtCorreo" Text ="" TextColor="#000000" FontSize="16"/>
+                                <Label x:Name="txtCorreo" Text ="" TextColor="#000000" FontSize="16" HorizontalTextAlignment="Center"/>
                             </StackLayout>
                         </Grid>
                     </StackLayout>

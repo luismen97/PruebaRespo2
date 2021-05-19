@@ -72,12 +72,12 @@
                                     
                             </StackLayout>
                             <!-- olvidar cuenta -->
-                            <StackLayout x:Name="btnRecupera" HorizontalOptions="FillAndExpand" Padding="10,0,10,0">
+                            <StackLayout  HorizontalOptions="FillAndExpand" Padding="10,0,10,0">
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                                    
                                         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal">
-                                        
-                                            <Label Text="¿Olvidaste tu contraseña?" FontSize="14" TextColor="WhiteSmoke" VerticalOptions="CenterAndExpand" />
+
+                                        <Label x:Name="btnRecupera" Text="¿Olvidaste tu contraseña?" TextDecorations="Underline" FontSize="14" TextColor="WhiteSmoke" VerticalOptions="CenterAndExpand" />
                                 
                                         </StackLayout>
                                     

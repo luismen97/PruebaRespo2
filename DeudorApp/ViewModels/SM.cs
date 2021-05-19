@@ -102,7 +102,7 @@ namespace DeudorApp.ViewModels
 
         public async Task<string> verificarUsuario(string fbid)
         {
-            string respuesta = "nada";
+            var respuesta = "nada";
             try
             {
 
@@ -124,6 +124,35 @@ namespace DeudorApp.ViewModels
             catch (Exception ex) { await Application.Current.MainPage.DisplayAlert("Error", ex.ToString(), "Ok"); }
 
             return respuesta;
+        }
+
+        public async Task<string> RecuperaContra(string TextRecupera)
+        {
+            string resp = "nada";
+            try
+            {
+                
+                var client = new HttpClient();
+                StringContent str = new StringContent("op=RecuperaCuenta&TextID="+TextRecupera, Encoding.UTF8,"application/x-www-form-urlencoded");
+                var consulta = await client.PostAsync(Constantes.url+"Usuario/App.php",str);
+                var json = consulta.Content.ReadAsStringAsync().Result.Trim();
+                
+
+
+                if (json == "")
+                {
+                    resp = "nada";
+                }
+                else
+                {
+                    resp = json;
+                }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", ex.ToString(), "Ok");
+            }
+            return resp;
         }
 
         public class Datos

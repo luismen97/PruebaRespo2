@@ -62,7 +62,7 @@ namespace DeudorApp.Views
             var clickRecuperar = new TapGestureRecognizer();
             clickRecuperar.Tapped += (s, e) =>
             {
-                //Navigation.PushAsync(new RecuperarCuenta());
+                Navigation.PushAsync(new RecuperaCuenta());
             };
             btnRecupera.GestureRecognizers.Add(clickRecuperar);
         }

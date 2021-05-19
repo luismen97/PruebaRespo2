@@ -12,6 +12,62 @@
                     
                     <!-- BLOQUE 1 -->
                     <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" />
+                    <!-- iniciar sesion-->
+                    <StackLayout x:Name="btnIniciarSesion" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0" IsVisible="false">
+
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="#0054F5" VerticalOptions="Start">
+
+                                <Image Source="perfil.png" HeightRequest="20"/>
+
+                            </Frame>
+
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+
+                                    <Label Text="Iniciar Sesión" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+
+                                    <Image Source="right.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+
+                                </StackLayout>
+
+                            </StackLayout>
+
+                        </StackLayout>
+
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+
+                    </StackLayout>
+                    <!-- Registrarse -->
+                    <StackLayout x:Name="btnRegistrarse" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0" IsVisible="false">
+
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="#007542" VerticalOptions="Start">
+
+                                <Image Source="verificacion.png" HeightRequest="20"/>
+
+                            </Frame>
+
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+
+                                    <Label Text="Regístrate" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+
+                                    <Image Source="right.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+
+                                </StackLayout>
+
+                            </StackLayout>
+
+                        </StackLayout>
+
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+
+                    </StackLayout>
                     <!-- perfil -->
                     <StackLayout x:Name="btnPerfil" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
                         

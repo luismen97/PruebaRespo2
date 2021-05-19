@@ -27,34 +27,57 @@ namespace DeudorApp.Views
             });
 
             ToolbarItems.Add(close);
-            
+
+            //codigo para abrir ventana de incio de sesion
+
+            if (Application.Current.Properties.ContainsKey("IdCuenta") && Application.Current.Properties.ContainsKey("sesion"))
+            {
+     
+                btnIniciarSesion.IsVisible = false;
+                btnRegistrarse.IsVisible = false;
+            }
+            else
+            {
+                btnPerfil.IsVisible = false;
+                btnAclarar.IsVisible = false;
+                btnRegistarCliente.IsVisible = false;
+                btnReportar.IsVisible = false;
+                btnSalir.IsVisible = false;
+                btnIniciarSesion.IsVisible = true;
+                btnRegistrarse.IsVisible = true;
+            }
+
+            var clickSesion = new TapGestureRecognizer();
+            clickSesion.Tapped += async (s, e) =>
+            {
+
+                await Navigation.PushAsync(new Login());
+
+            };
+            btnIniciarSesion.GestureRecognizers.Add(clickSesion);
+            //codigo para abrir registrar
+            var clickRegistro = new TapGestureRecognizer();
+            clickRegistro.Tapped += async (s, e) =>
+            {
+
+                await Navigation.PushAsync(new CuentaRegistro());
+
+            };
+            btnRegistrarse.GestureRecognizers.Add(clickRegistro);
+
             var clickPerfil = new TapGestureRecognizer();
             clickPerfil.Tapped += async (s, e) =>
             {
 
                 if (Application.Current.Properties.ContainsKey("IdCuenta") && Application.Current.Properties.ContainsKey("sesion"))
                 {
-                    if (Application.Current.Properties["sesion"].Equals("activa"))
-                    {
-
+                        btnIniciarSesion.IsVisible = true;
                         await Navigation.PushAsync(new DatosPerfil());
-                    }
-                    else
-                    {
-                        bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
-                        if (ac)
-                        {
-                            await Navigation.PushAsync(new Login());
-                        }
-                    }
+
                 }
                 else
                 {
-                    bool ac = await DisplayAlert("No te encuentras registrado.", "¿Deseas registrarte?", "Sí", "No");
-                    if (ac)
-                    {
-                        await Navigation.PushAsync(new Login());
-                    }
+                    btnPerfil.IsVisible = false;
                 }
                 
             };
@@ -90,6 +113,7 @@ namespace DeudorApp.Views
                 }
                 
             };
+            
             btnAclarar.GestureRecognizers.Add(clickAclarar);
 
             var clickRegistrarCliente = new TapGestureRecognizer();
@@ -121,6 +145,18 @@ namespace DeudorApp.Views
                 }
                 
             };
+            if (Application.Current.Properties.ContainsKey("TipoCuenta"))
+            {
+                if (Application.Current.Properties["TipoCuenta"].ToString() == "1")
+                {
+                    btnRegistarCliente.IsVisible = false;
+
+                }
+            }
+            else
+            {
+                btnRegistarCliente.IsVisible = false;
+            }
             btnRegistarCliente.GestureRecognizers.Add(clickRegistrarCliente);
 
             var clickReportar = new TapGestureRecognizer();
@@ -152,6 +188,18 @@ namespace DeudorApp.Views
                 }
                 
             };
+            if (Application.Current.Properties.ContainsKey("TipoCuenta"))
+            {
+                if (Application.Current.Properties["TipoCuenta"].ToString() == "1")
+                {
+                    btnReportar.IsVisible = false;
+
+                }
+            }
+            else
+            {
+                btnReportar.IsVisible = false;
+            }
             btnReportar.GestureRecognizers.Add(clickReportar);
 
             var clickContactar = new TapGestureRecognizer();

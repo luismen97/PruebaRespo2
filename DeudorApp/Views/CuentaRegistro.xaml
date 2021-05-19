@@ -29,9 +29,9 @@
                                 <ColumnDefinition Width="100*" />
                             </Grid.ColumnDefinitions>
                             <Image Source="man.png" WidthRequest="70" Grid.Row="0"/>
-                            <Label Text="Registrate como persona" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" Grid.Row="1"/>
-                            <Label Text="Buscate y Aclara" FontAttributes="None" FontSize="Medium" HorizontalTextAlignment="Center" Grid.Row="2"/>
-                            <Label Text="Si eres una persona física podrás solicitar aclaraciones, buscar y más, crea tu cuenta ahora mismo gratis para empezar a buscar y aclarar" FontSize="Body" HorizontalTextAlignment="Center" Grid.Row="3"/>
+                            <Label TextColor="#000000" Text="Registrate como persona" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" Grid.Row="1"/>
+                            <Label TextColor="#000000" Text="Buscate y Aclara" FontAttributes="None" FontSize="Medium" HorizontalTextAlignment="Center" Grid.Row="2"/>
+                            <Label TextColor="#000000" Text="Si eres una persona física podrás solicitar aclaraciones, buscar y más, crea tu cuenta ahora mismo gratis para empezar a buscar y aclarar" FontSize="Body" HorizontalTextAlignment="Center" Grid.Row="3"/>
                             <Button x:Name="btnFisica" Clicked="btnFisica_Clicked" Text="Crear Cuenta" Grid.Row="4" CornerRadius="6" TextColor="#ffffff" BackgroundColor="#d82425"/>
                         </Grid>
                     </Frame>
@@ -49,10 +49,10 @@
                                 <ColumnDefinition Width="100*" />
                             </Grid.ColumnDefinitions>
                             <Image Source="briefcase.png" WidthRequest="70" Grid.Row="0"/>
-                            <Label Text="Registrate como acreedor" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" Grid.Row="1"/>
-                            <Label Text="Busca, Aclara, Registra y Boletina" FontAttributes="None" FontSize="Medium" HorizontalTextAlignment="Center" Grid.Row="2"/>
-                            <Label Text="Si eres distribuidor(a), Prestamista, Lider de cajas de Ahorro, Microfinanciera, etc. Crea tu cuenta gratis ahora mismo para empezar a ralizar tus funciones necesarias." FontSize="Body" HorizontalTextAlignment="Center" Grid.Row="3"/>
-                            <Button x:Name="btnAcreedor" Clicked="btnAcreedor_Clicked" Text="Crear Cuenta" Grid.Row="4" CornerRadius="6" TextColor="#ffffff" BackgroundColor="#d82425"/>
+                            <Label TextColor="#000000" Text="Registrate como acreedor" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" Grid.Row="1"/>
+                            <Label TextColor="#000000" Text="Busca, Aclara, Registra y Boletina" FontAttributes="None" FontSize="Medium" HorizontalTextAlignment="Center" Grid.Row="2"/>
+                            <Label TextColor="#000000" Text="Si eres distribuidor(a), Prestamista, Lider de cajas de Ahorro, Microfinanciera, etc. Crea tu cuenta gratis ahora mismo para empezar a ralizar tus funciones necesarias." FontSize="Body" HorizontalTextAlignment="Center" Grid.Row="3"/>
+                            <Button  x:Name="btnAcreedor" Clicked="btnAcreedor_Clicked" Text="Crear Cuenta" Grid.Row="4" CornerRadius="6" TextColor="#ffffff" BackgroundColor="#d82425"/>
                         </Grid>
                         
                     </Frame>

@@ -4,7 +4,8 @@
             xmlns:views="clr-namespace:DeudorApp.Views"
             x:Class="DeudorApp.Views.MainPage" NavigationPage.HasNavigationBar="True" 
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
-            android:TabbedPage.ToolbarPlacement="Bottom">
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            SelectedTabColor="#D72525">
     <NavigationPage.TitleView>
         
         <Grid  HorizontalOptions="FillAndExpand">

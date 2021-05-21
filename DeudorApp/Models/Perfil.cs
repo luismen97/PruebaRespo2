@@ -14,6 +14,7 @@ namespace DeudorApp.Models
         public string Cuenta { get; set; }
         public string Encontrado { get; set; }
         public string TipoCuenta { get; set; }
+        public string CURP { get; set; }
         
     }
 }

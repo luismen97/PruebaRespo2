@@ -36,6 +36,7 @@ namespace DeudorApp.ViewModels
                 perfil.Cuenta = obj[0]["Correo"].ToString();
                 perfil.Encontrado = obj[0]["Encontrado"].ToString();
                 perfil.TipoCuenta = obj[0]["TipoCuenta"].ToString();
+                perfil.CURP = obj[0]["CURP"].ToString();
                 await guardarDatos(perfil);
             }
             catch (Exception ex)
@@ -50,6 +51,10 @@ namespace DeudorApp.ViewModels
             Application.Current.Properties["sesion"] = "activa";
             Application.Current.Properties["IdCuenta"] = perfil.IdCuenta == null ? "" : perfil.IdCuenta;
             Application.Current.Properties["Nombre"] = perfil.Nombre == null ? "" : perfil.Nombre;
+            Application.Current.Properties["Apellidos"] = perfil.Apellidos == null ? "" : perfil.Apellidos;
+            Application.Current.Properties["Correo"] = perfil.Cuenta == null ? "" : perfil.Cuenta;
+            Application.Current.Properties["Clave"] = perfil.Clave == null ? "" : perfil.Clave;
+            Application.Current.Properties["CURP"] = perfil.CURP == null ? "" : perfil.CURP;
             Application.Current.Properties["NIT"] = perfil.NIT == null ? "" : perfil.NIT;
             Application.Current.Properties["Encontrado"] = perfil.Encontrado == null ? "" : perfil.Encontrado;
             Application.Current.Properties["TipoCuenta"] = perfil.TipoCuenta == null ? "" : perfil.TipoCuenta;

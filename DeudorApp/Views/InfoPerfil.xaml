@@ -24,7 +24,7 @@
                             <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
 
                                 <Label Text="Correo" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand"  />
-                                <local:Entry_R x:Name="correo" Text="lusim.310@gmail.com"  Keyboard="Text" PlaceholderColor="#ccc" TextColor="#929292" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" IsReadOnly="true"/>
+                                <local:Entry_R x:Name="txtCorreo" Text=""  Keyboard="Text" PlaceholderColor="#ccc" TextColor="#929292" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" IsReadOnly="true"/>
                             </StackLayout>
 
                         </StackLayout>
@@ -46,7 +46,7 @@
                             <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
 
                                 <Label Text="CURP" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand"  />
-                                <local:Entry_R x:Name="curp" Text="MEPL971003HDGNRS02"  Keyboard="Text" PlaceholderColor="#333" TextColor="#929292" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" IsReadOnly="True"/>
+                                <local:Entry_R x:Name="txtCurp" Placeholder="" Text="NO ASIGNADO"  Keyboard="Text" PlaceholderColor="#333" TextColor="#929292" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" IsReadOnly="True"/>
                             </StackLayout>
 
                         </StackLayout>
@@ -74,7 +74,7 @@
                             <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
 
                                 <Label Text="Nombre" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand"  />
-                                <local:Entry_R x:Name="Nombre" Text="Luis Armando"  Keyboard="Text" PlaceholderColor="#ccc" TextColor="#333" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
+                                <local:Entry_R x:Name="txtNombre" Text=""  Keyboard="Text" PlaceholderColor="#ccc" TextColor="#333" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
                             </StackLayout>
 
                         </StackLayout>
@@ -96,7 +96,7 @@
                             <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
 
                                 <Label Text="Apellidos" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand"  />
-                                <local:Entry_R x:Name="Apellidos" Text="Mendoza Pérez"  Keyboard="Text" PlaceholderColor="#ccc" TextColor="#333" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
+                                <local:Entry_R x:Name="txtApellidos" Text=""  Keyboard="Text" PlaceholderColor="#ccc" TextColor="#333" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
                             </StackLayout>
 
                         </StackLayout>
@@ -118,7 +118,7 @@
                             <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
 
                                 <Label Text="Contraseña" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand"  />
-                                <local:Entry_R x:Name="Contra" Text="password"  Keyboard="Text" IsPassword="true" PlaceholderColor="#ccc" TextColor="#333" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
+                                <local:Entry_R x:Name="txtContra" Text=""  Keyboard="Text" IsPassword="true" PlaceholderColor="#ccc" TextColor="#333" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
                             </StackLayout>
 
                         </StackLayout>
@@ -130,28 +130,30 @@
                 </StackLayout>
                 <!--Telefono-->
                 <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
-
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
-
-
-
                         <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
-
                             <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
-
                                 <Label Text="Teléfono" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand"  />
-                                <local:Entry_R x:Name="Telefono" Text="8713512449"  Keyboard="Telephone" PlaceholderColor="#ccc" TextColor="#333" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
+                                <local:Entry_R x:Name="txtTelefono" Text=""  Keyboard="Telephone" PlaceholderColor="#ccc" TextColor="#333" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
                             </StackLayout>
-
                         </StackLayout>
-
                     </StackLayout>
-
                     <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand"/>
-
                 </StackLayout>
 
-
+                <StackLayout Padding="10,0,20,10" HorizontalOptions="FillAndExpand">
+                    <Label Text="" TextColor="#000000" FontSize="18"/>
+                </StackLayout>
+                <StackLayout x:Name="btnActualizar" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,10">
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                        <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal" VerticalOptions="Center">
+                                <Label Text="Actualizar Perfil" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+                                <Image Source="right.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
             </StackLayout>
 
         </ScrollView>

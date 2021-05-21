@@ -68,6 +68,8 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderers\Entry_Pago_R.cs" />
+    <Compile Include="Renderers\Entry_Renderer.cs" />
     <Compile Include="Renderers\HybridWebViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>

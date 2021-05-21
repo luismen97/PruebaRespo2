@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.808.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeudorApp.Android", "DeudorApp.Android\DeudorApp.Android.csproj", "{EBDAEEB6-EDF7-4388-B7C8-388D8B4D978A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D5F77107-85F4-4C70-93CE-B7C04ECE49B8} = {D5F77107-85F4-4C70-93CE-B7C04ECE49B8}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeudorApp.iOS", "DeudorApp.iOS\DeudorApp.iOS.csproj", "{D5F77107-85F4-4C70-93CE-B7C04ECE49B8}"
 EndProject

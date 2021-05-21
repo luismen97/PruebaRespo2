@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:DeudorApp.Renderers"
+             x:Class="DeudorApp.Views.InfoPerfil"
+             BackgroundColor="#f1f1f1f1">
+    <ContentPage.Content>
+        <ScrollView HorizontalOptions="FillAndExpand">
+
+            <StackLayout Padding="0,40,0,40" Spacing="0">
+                <StackLayout Padding="10,0,20,10" HorizontalOptions="FillAndExpand">
+                    <Label Text="CUENTA" TextColor="#000000" FontSize="18"/>
+                </StackLayout>
+                <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" />
+
+                <!-- nombre -->
+                <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+
+
+
+                        <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+
+                                <Label Text="Correo" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand"  />
+                                <local:Entry_R x:Name="correo" Text="lusim.310@gmail.com"  Keyboard="Text" PlaceholderColor="#ccc" TextColor="#929292" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" IsReadOnly="true"/>
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+                <!--CURP-->
+                <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+
+
+
+                        <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+
+                                <Label Text="CURP" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand"  />
+                                <local:Entry_R x:Name="curp" Text="MEPL971003HDGNRS02"  Keyboard="Text" PlaceholderColor="#333" TextColor="#929292" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" IsReadOnly="True"/>
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+                <!-- BLOQUE 1 -->
+                <StackLayout Padding="10,30,20,10" HorizontalOptions="FillAndExpand">
+                    <Label Text="INFORMACIÓN DE USUARIO" TextColor="#000000" FontSize="18"/>
+                </StackLayout>
+                <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" />
+
+                <!-- nombre -->
+                <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+
+                        
+
+                        <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+
+                                <Label Text="Nombre" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand"  />
+                                <local:Entry_R x:Name="Nombre" Text="Luis Armando"  Keyboard="Text" PlaceholderColor="#ccc" TextColor="#333" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+                <!--apellidos-->
+                <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+
+
+
+                        <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+
+                                <Label Text="Apellidos" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand"  />
+                                <local:Entry_R x:Name="Apellidos" Text="Mendoza Pérez"  Keyboard="Text" PlaceholderColor="#ccc" TextColor="#333" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+                <!--contraseña-->
+                <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+
+
+
+                        <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+
+                                <Label Text="Contraseña" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand"  />
+                                <local:Entry_R x:Name="Contra" Text="password"  Keyboard="Text" IsPassword="true" PlaceholderColor="#ccc" TextColor="#333" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+                <!--Telefono-->
+                <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+
+
+
+                        <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+
+                                <Label Text="Teléfono" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand"  />
+                                <local:Entry_R x:Name="Telefono" Text="8713512449"  Keyboard="Telephone" PlaceholderColor="#ccc" TextColor="#333" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

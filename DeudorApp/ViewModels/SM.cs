@@ -188,6 +188,24 @@ namespace DeudorApp.ViewModels
             }
             return resp;
         }
+        
+        public async Task<string> TraerCreditos()
+        {
+            var respuesta = "";
+            try
+            {
+                var cliente = new HttpClient();
+                StringContent str = new StringContent("op=TraerCreditos&IdCliente=" + Application.Current.Properties["IdCuenta"].ToString(), Encoding.UTF8, "application/x-www-form-urlencoded");
+                var envia = cliente.PostAsync(new Uri(Constantes.url+"Usuario/App.php"), str);
+                respuesta = await envia.Result.Content.ReadAsStringAsync();
+                
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", ex.ToString(), "Ok");
+            }
+            return respuesta;
+        }
 
         public class Datos
         {

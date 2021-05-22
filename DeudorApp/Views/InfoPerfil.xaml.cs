@@ -20,12 +20,21 @@ namespace DeudorApp.Views
         {
             InitializeComponent();
             Title = "Mi Perfil";
-            txtCorreo.Text = Application.Current.Properties["Correo"].ToString();
-            txtCurp.Text = Application.Current.Properties["CURP"].ToString();
-            txtNombre.Text = Application.Current.Properties["Nombre"].ToString();
-            txtApellidos.Text = Application.Current.Properties["Apellidos"].ToString();
-            txtContra.Text = Application.Current.Properties["Clave"].ToString();
-            txtTelefono.Text = Application.Current.Properties["NIT"].ToString();
+            Refresh();
+            TraerCreditos();
+
+
+            ICommand refreshCommand = new Command(() =>
+            {
+                scrollV.IsEnabled = false;
+                Refresh();
+                TraerCreditos();
+
+                refreshV.IsRefreshing = false;
+            });
+            refreshV.Command = refreshCommand;
+            scrollV.IsEnabled = true;
+            //refreshV.Content = scrollV;
 
             var clickActualiza = new TapGestureRecognizer();
             clickActualiza.Tapped += async (e, s) =>
@@ -37,7 +46,8 @@ namespace DeudorApp.Views
                     {
                         loader.IsVisible = true;
                         Contenido.IsVisible = false;
-                        
+                        NavigationPage.SetHasBackButton(this, false);
+
                         Perfil p = new Perfil();
                         p.IdCuenta = Application.Current.Properties["IdCuenta"].ToString();
                         p.Nombre = txtNombre.Text;
@@ -61,9 +71,10 @@ namespace DeudorApp.Views
                             Application.Current.Properties["Clave"] = p.Clave;
                             Application.Current.Properties["NIT"] = p.NIT;
                             await Application.Current.SavePropertiesAsync();
-                            await Task.Delay(3000);
+                            await Task.Delay(2000);
                             loader.IsVisible = false;
                             Contenido.IsVisible = true;
+                            NavigationPage.SetHasBackButton(this, true);
                         }
 
                     }
@@ -72,8 +83,49 @@ namespace DeudorApp.Views
                         await DisplayAlert("ERROR", ex.ToString(), "OK");
                     }
                 }
+                else
+                {
+                    txtNombre.Text = Application.Current.Properties["Nombre"].ToString();
+                    txtApellidos.Text = Application.Current.Properties["Apellidos"].ToString();
+                    txtContra.Text = Application.Current.Properties["Clave"].ToString();
+                    txtTelefono.Text = Application.Current.Properties["NIT"].ToString();
+                }
             };
             btnActualizar.GestureRecognizers.Add(clickActualiza);
+        }
+        public async Task TraerCreditos()
+        {
+            try
+            {
+                var resp = await sM.TraerCreditos();
+                if (resp == "")
+                {
+                    Totales.Text = "0";
+                    Usados.Text = "0";
+                    Restantes.Text = "0";
+                }
+                else
+                {
+                    JArray obj = JArray.Parse(resp);
+                    Totales.Text = obj[0]["Totales"].ToString();
+                    Usados.Text = obj[0]["Usados"].ToString();
+                    Restantes.Text = obj[0]["Restantes"].ToString();
+                }   
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error",ex.ToString(),"Ok");
+            }
+        }
+
+        public void Refresh()
+        {
+            txtCorreo.Text = Application.Current.Properties["Correo"].ToString();
+            txtCurp.Text = Application.Current.Properties["CURP"].ToString();
+            txtNombre.Text = Application.Current.Properties["Nombre"].ToString();
+            txtApellidos.Text = Application.Current.Properties["Apellidos"].ToString();
+            txtContra.Text = Application.Current.Properties["Clave"].ToString();
+            txtTelefono.Text = Application.Current.Properties["NIT"].ToString();
         }
     }
 }

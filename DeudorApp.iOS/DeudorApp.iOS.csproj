@@ -121,22 +121,25 @@
     <BundleResource Include="Resources\tab_feed.png" />
     <BundleResource Include="Resources\tab_feed%402x.png" />
     <BundleResource Include="Resources\tab_feed%403x.png" />
-    <BundleResource Include="Resources\xamarin_logo.png" />
+    <AndroidResource Include="Resources\xamarin_logo.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <BundleResource Include="Resources\xamarin_logo%402x.png" />
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
-    <BundleResource Include="Resources\pago.png" />
-    <BundleResource Include="Resources\inicio.png" />
-    <BundleResource Include="Resources\busqueda.png" />
-    <BundleResource Include="Resources\usuario.png" />
-    <BundleResource Include="Resources\bgInicio.png" />
-    <BundleResource Include="Resources\cuenta.png" />
-    <BundleResource Include="Resources\logo.png" />
-    <BundleResource Include="Resources\reportar.png" />
-    <BundleResource Include="Resources\bglogin.png" />
-    <BundleResource Include="Resources\deudorLogo.png" />
-    <BundleResource Include="Resources\mail.png" />
-    <BundleResource Include="Resources\bgregistro.png" />
+    <AndroidResource Include="Resources\pago.png" />
+    <AndroidResource Include="Resources\inicio.png" />
+    <AndroidResource Include="Resources\busqueda.png" />
+    <AndroidResource Include="Resources\usuario.png" />
+    <AndroidResource Include="Resources\bgInicio.png" />
+    <AndroidResource Include="Resources\cuenta.png" />
+    <AndroidResource Include="Resources\logo.png" />
+    <AndroidResource Include="Resources\reportar.png" />
+    <AndroidResource Include="Resources\bglogin.png" />
+    <AndroidResource Include="Resources\deudorLogo.png" />
+    <AndroidResource Include="Resources\mail.png" />
+    <AndroidResource Include="Resources\bgregistro.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -161,12 +164,45 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\briefcase.png" />
+    <AndroidResource Include="Resources\briefcase.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\man.png" />
+    <AndroidResource Include="Resources\man.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\right.png" />
+    <AndroidResource Include="Resources\right.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\agregarcliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\boletinar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\contacto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\perfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\pregunta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\seguro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\verificacion.png" />
   </ItemGroup>
 </Project>

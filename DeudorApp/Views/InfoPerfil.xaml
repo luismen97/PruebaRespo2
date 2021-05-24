@@ -141,7 +141,7 @@
                                 <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
                                     <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
                                         <Label Text="Teléfono" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand"  />
-                                        <local:Entry_R x:Name="txtTelefono" Text=""  Keyboard="Telephone" PlaceholderColor="#ccc" TextColor="#333" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
+                                        <local:Entry_R x:Name="txtTelefono" Text=""  Keyboard="Telephone" PlaceholderColor="#ccc" TextColor="#929292" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" IsReadOnly="True"/>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>

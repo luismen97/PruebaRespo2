@@ -20,14 +20,12 @@ namespace DeudorApp.Views
         {
             InitializeComponent();
             Title = "Mi Perfil";
-            Refresh();
             TraerCreditos();
 
 
             ICommand refreshCommand = new Command(() =>
             {
                 scrollV.IsEnabled = false;
-                Refresh();
                 TraerCreditos();
 
                 refreshV.IsRefreshing = false;
@@ -110,6 +108,21 @@ namespace DeudorApp.Views
                     Totales.Text = obj[0]["Totales"].ToString();
                     Usados.Text = obj[0]["Usados"].ToString();
                     Restantes.Text = obj[0]["Restantes"].ToString();
+                   
+                    txtCurp.Text = obj[0]["CURP"].ToString();
+                    txtNombre.Text = obj[0]["Nombre"].ToString();
+                    txtApellidos.Text = obj[0]["Apellidos"].ToString();
+                    txtContra.Text = obj[0]["Clave"].ToString();
+                    txtTelefono.Text = obj[0]["telefono"].ToString();
+                    txtCorreo.Text = obj[0]["Correo"].ToString();
+
+                    Application.Current.Properties["Nombre"] = obj[0]["Nombre"].ToString();
+                    Application.Current.Properties["Apellidos"] = obj[0]["Apellidos"].ToString();
+                    Application.Current.Properties["Clave"] = obj[0]["Clave"].ToString();
+                    Application.Current.Properties["NIT"] = obj[0]["telefono"].ToString();
+                    Application.Current.Properties["Correo"] = obj[0]["Correo"].ToString();
+                    await Application.Current.SavePropertiesAsync();
+
                 }   
             }
             catch (Exception ex)

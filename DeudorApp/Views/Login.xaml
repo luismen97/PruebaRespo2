@@ -43,7 +43,7 @@
                         <StackLayout Grid.Row="1" VerticalOptions="CenterAndExpand" Spacing="5" Padding="10,0,10,0" Margin="0,10,0,0"> 
                             <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" CornerRadius="7" Margin="3,3,3,3" >
                             
-                            <local:Entry_R x:Name="usuario" HeightRequest="45" Opacity=".7" Placeholder="Usuario" Keyboard="Chat" TextColor="#fff" PlaceholderColor="#fff" BackgroundColor="#eb068c" HorizontalOptions="FillAndExpand" FontSize="15">
+                            <local:Entry_R x:Name="usuario" HeightRequest="45" Opacity=".7" Placeholder="Usuario" Keyboard="Chat" TextColor="#000000" PlaceholderColor="#525252" BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" FontSize="15">
                             
                                 <Entry.Keyboard>
                                     
@@ -62,7 +62,7 @@
                             </local:Entry_R>
                             </Frame>
                             <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" CornerRadius="7" Margin="3,3,3,3" >                            
-                                <local:Entry_R x:Name="clave" HeightRequest="45" Opacity=".7" Placeholder="Contraseña" IsPassword="true" TextColor="#fff" PlaceholderColor="#fff" BackgroundColor="#eb068c" HorizontalOptions="FillAndExpand" FontSize="15" />
+                                <local:Entry_R x:Name="clave" HeightRequest="45" Opacity=".7" Placeholder="Contraseña" IsPassword="true" TextColor="#000000" PlaceholderColor="#525252" BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" FontSize="15" />
                             </Frame>
 
                             <StackLayout x:Name="btnLogin" HorizontalOptions="FillAndExpand" Padding="20,30,20,20">

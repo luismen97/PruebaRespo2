@@ -20,7 +20,7 @@ namespace DeudorApp.Views
         {
             InitializeComponent();
             Title = "Mi Perfil";
-            TraerCreditos();
+            
 
 
             ICommand refreshCommand = new Command(() =>
@@ -33,6 +33,7 @@ namespace DeudorApp.Views
             refreshV.Command = refreshCommand;
             scrollV.IsEnabled = true;
             //refreshV.Content = scrollV;
+            TraerCreditos();
 
             var clickActualiza = new TapGestureRecognizer();
             clickActualiza.Tapped += async (e, s) =>

@@ -266,4 +266,7 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </BundleResource>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cancel.png" />
+  </ItemGroup>
 </Project>

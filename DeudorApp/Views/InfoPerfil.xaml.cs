@@ -26,14 +26,16 @@ namespace DeudorApp.Views
             ICommand refreshCommand = new Command(() =>
             {
                 scrollV.IsEnabled = false;
-                TraerCreditos();
+                _ = TraerCreditos();
+                _ = TraerDatosPerfil();
 
                 refreshV.IsRefreshing = false;
             });
             refreshV.Command = refreshCommand;
             scrollV.IsEnabled = true;
             //refreshV.Content = scrollV;
-            TraerCreditos();
+            _ = TraerCreditos();
+            _ = TraerDatosPerfil();
 
             var clickActualiza = new TapGestureRecognizer();
             clickActualiza.Tapped += async (e, s) =>
@@ -109,7 +111,27 @@ namespace DeudorApp.Views
                     Totales.Text = obj[0]["Totales"].ToString();
                     Usados.Text = obj[0]["Usados"].ToString();
                     Restantes.Text = obj[0]["Restantes"].ToString();
-                   
+                }   
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error",ex.ToString(),"Ok");
+            }
+        }
+
+        public async Task TraerDatosPerfil()
+        {
+            try
+            {
+                var resp = await sM.TraerDatosPerfil();
+                if (resp == "")
+                {
+                    
+                }
+                else
+                {
+                    JArray obj = JArray.Parse(resp);
+                  
                     txtCurp.Text = obj[0]["CURP"].ToString();
                     txtNombre.Text = obj[0]["Nombre"].ToString();
                     txtApellidos.Text = obj[0]["Apellidos"].ToString();
@@ -124,11 +146,11 @@ namespace DeudorApp.Views
                     Application.Current.Properties["Correo"] = obj[0]["Correo"].ToString();
                     await Application.Current.SavePropertiesAsync();
 
-                }   
+                }
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error",ex.ToString(),"Ok");
+                await DisplayAlert("Error", ex.ToString(), "Ok");
             }
         }
 

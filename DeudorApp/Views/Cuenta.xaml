@@ -181,9 +181,63 @@
                             </StackLayout>
                             
                         </StackLayout>
-                        
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" Margin="60,0,-10,0"/>
+
+                    </StackLayout>
+                    <!--Acabar registro-->
+                    <StackLayout x:Name="btnAcabar" IsVisible="false" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,10">
+
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="#FD0000" VerticalOptions="Start">
+
+                                <Image Source="perfil.png" HeightRequest="20"/>
+
+                            </Frame>
+
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+
+                                    <Label Text="Acabar Registro" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+
+                                    <Image Source="right.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+
+                                </StackLayout>
+
+                            </StackLayout>
+
+                        </StackLayout>
+
                     </StackLayout>
                     
+                    <!--Deudor App Plus-->
+                    <StackLayout x:Name="btnPlus"  HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,10">
+
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+
+                            <Frame HasShadow="false" Padding="5" CornerRadius="10" WidthRequest="30" HeightRequest="30" BackgroundColor="Transparent" VerticalOptions="Start">
+
+                                <Image Source="logo.png" HeightRequest="40"/>
+
+                            </Frame>
+
+                            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
+
+                                    <Label Text="DeudorApp Plus +" FontSize="18" TextColor="#000" VerticalOptions="EndAndExpand"  />
+
+                                    <Image Source="right.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand" />
+
+                                </StackLayout>
+
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
                     <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand" />
                     <!-- FIN BLOQUE 2 -->
                     

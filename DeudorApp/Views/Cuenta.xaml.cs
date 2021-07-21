@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using DeudorApp.ViewModels;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -8,11 +9,12 @@ namespace DeudorApp.Views
 {
     public partial class Cuenta : ContentPage
     {
+        SM sM = new SM();
         public static Color bgColor = Color.FromHex("#f7f7f7");
         public static Color textColor = Color.FromHex("#545454");
         public Cuenta()
         {
-            SM sM = new SM();
+            
             InitializeComponent();
 
             Title = "Cuenta";
@@ -20,7 +22,9 @@ namespace DeudorApp.Views
             var close = new ToolbarItem();
             close.Text = "Cerrar";
             close.IconImageSource = "cancel.png";
-            
+            _ = Vistas();
+
+
             close.Command = new Command(o =>
             {
                 Navigation.PopModalAsync();
@@ -30,22 +34,7 @@ namespace DeudorApp.Views
 
             //codigo para abrir ventana de incio de sesion
 
-            if (Application.Current.Properties.ContainsKey("IdCuenta") && Application.Current.Properties.ContainsKey("sesion"))
-            {
-     
-                btnIniciarSesion.IsVisible = false;
-                btnRegistrarse.IsVisible = false;
-            }
-            else
-            {
-                btnPerfil.IsVisible = false;
-                btnAclarar.IsVisible = false;
-                btnRegistarCliente.IsVisible = false;
-                btnReportar.IsVisible = false;
-                btnSalir.IsVisible = false;
-                btnIniciarSesion.IsVisible = true;
-                btnRegistrarse.IsVisible = true;
-            }
+           
 
             var clickSesion = new TapGestureRecognizer();
             clickSesion.Tapped += async (s, e) =>
@@ -208,6 +197,16 @@ namespace DeudorApp.Views
             };
             btnContactar.GestureRecognizers.Add(clickContactar);
 
+            var clickAcabar = new TapGestureRecognizer();
+            clickAcabar.Tapped += async (s, e) =>
+            {
+                await Launcher.OpenAsync("https://deudorapp.com/registrar_acreedor.php");
+
+            };
+            btnAcabar.GestureRecognizers.Add(clickAcabar);
+
+            
+
             var clickAyuda = new TapGestureRecognizer();
             clickAyuda.Tapped += async (s, e) =>
             {
@@ -244,5 +243,36 @@ namespace DeudorApp.Views
             };
             btnSalir.GestureRecognizers.Add(clickLogout);
         }
+        public async Task Vistas()
+        {
+
+            if (Application.Current.Properties.ContainsKey("IdCuenta") && Application.Current.Properties.ContainsKey("sesion"))
+            {
+                btnIniciarSesion.IsVisible = false;
+                btnRegistrarse.IsVisible = false;
+
+                string aut = await sM.GetAutorizado();
+                if (aut != "1")
+                {
+                    btnAcabar.IsVisible = true;
+                    btnRegistarCliente.IsVisible = false;
+                    btnReportar.IsVisible = false;
+                    btnPlus.IsVisible = false;
+                }
+
+
+            }
+            else
+            {
+                btnPerfil.IsVisible = false;
+                btnAclarar.IsVisible = false;
+                btnRegistarCliente.IsVisible = false;
+                btnReportar.IsVisible = false;
+                btnSalir.IsVisible = false;
+                btnIniciarSesion.IsVisible = true;
+                btnRegistrarse.IsVisible = true;
+            }
+        }
+
     }
 }

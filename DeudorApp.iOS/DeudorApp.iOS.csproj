@@ -269,4 +269,28 @@
   <ItemGroup>
     <BundleResource Include="Resources\cancel.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pluspersonal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pluslibreta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pluscreditos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\menos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\calcu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ingresos.png" />
+  </ItemGroup>
 </Project>

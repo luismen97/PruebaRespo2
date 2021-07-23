@@ -205,7 +205,12 @@ namespace DeudorApp.Views
             };
             btnAcabar.GestureRecognizers.Add(clickAcabar);
 
-            
+            var clickPlus = new TapGestureRecognizer();
+            clickPlus.Tapped += async (s, e) =>
+            {
+                await Navigation.PushAsync(new DeudorPlus());
+            };
+            btnPlus.GestureRecognizers.Add(clickPlus);
 
             var clickAyuda = new TapGestureRecognizer();
             clickAyuda.Tapped += async (s, e) =>

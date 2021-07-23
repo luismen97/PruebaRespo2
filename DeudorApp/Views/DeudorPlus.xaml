@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:views="clr-namespace:DeudorApp.Views"
+             x:Class="DeudorApp.Views.DeudorPlus" NavigationPage.HasNavigationBar="true"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            SelectedTabColor="#D72525">
+    <TabbedPage.Children>
+        <NavigationPage Title="Mi Libreta" Icon="pluslibreta.png">
+            <x:Arguments>
+                <views:PlusLibreta/>
+            </x:Arguments>
+        </NavigationPage>
+        
+        <!--<NavigationPage Title="Créditos" Icon="pluscreditos.png">
+            <x:Arguments>
+                <views:PlusCreditos />
+            </x:Arguments>
+        </NavigationPage>-->
+        <NavigationPage Title="Ingresos" Icon="ingresos.png">
+            <x:Arguments>
+                <views:PlusIngresos />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Gastos" Icon="minus.png">
+            <x:Arguments>
+                <views:PlusGastos />
+            </x:Arguments>
+        </NavigationPage>
+        
+        <NavigationPage Title="Calculadora" Icon="calcu.png">
+            <x:Arguments>
+                <views:PlusPersonal />
+            </x:Arguments>
+        </NavigationPage>
+        
+    </TabbedPage.Children>
+</TabbedPage>

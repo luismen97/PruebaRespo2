@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeudorApp.Views.PlusCreditos"  NavigationPage.HasNavigationBar="False" BackgroundColor="#FCFCFC">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0">
+                <StackLayout IsVisible="true" BackgroundColor="Transparent" Padding="10,10" HeightRequest="100">
+                    <ListView x:Name="listCreditos" BackgroundColor="Transparent" SeparatorVisibility="None" ItemSelected="listCreditos_ItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell Tapped="ViewCell_Tapped">
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="80*"/>
+                                                    <ColumnDefinition Width="50"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Grid.Column="0" Text="{Binding NombreCliente}" TextColor="#000000" FontSize="18" HorizontalTextAlignment="Start"/>
+                                            </Grid>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+            <Frame Grid.Row="0" HasShadow="True" BackgroundColor="#545454" CornerRadius="30" HorizontalOptions="End" Margin="5,5,20,20" VerticalOptions="End">
+                <Image Source="agregarcliente.png" HeightRequest="20"/>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

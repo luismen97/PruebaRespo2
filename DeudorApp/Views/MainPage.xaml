@@ -26,7 +26,7 @@
         </Grid>    
         
     </NavigationPage.TitleView>
-    <TabbedPage.Children>
+    <TabbedPage.Children x:Uid="taby">
         <NavigationPage Title="Inicio" Icon="inicio.png">
             <x:Arguments>
                 <views:Inicio />
@@ -37,7 +37,7 @@
                 <views:Planes />
             </x:Arguments>
         </NavigationPage>
-         <NavigationPage Title="Busqueda" Icon="busqueda.png">
+        <NavigationPage Title="Busqueda" Icon="busqueda.png">
             <x:Arguments>
                 <views:Busqueda />
             </x:Arguments>

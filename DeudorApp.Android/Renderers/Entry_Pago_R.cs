@@ -22,6 +22,7 @@ namespace DeudorApp.Droid.Renderers
             {
                 Control.SetBackgroundColor(global::Android.Graphics.Color.ParseColor("#ffffff"));
                 Control.SetPadding(0, 0, 0, 0);
+                
                 //Control.SetHeight(150);
             }
         }

@@ -15,6 +15,8 @@ namespace DeudorApp.Views
         {
             InitializeComponent();
             Title = "DeudorApp Plus +";
+            
+
         }
     }
 }

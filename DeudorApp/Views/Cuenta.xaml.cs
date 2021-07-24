@@ -208,7 +208,7 @@ namespace DeudorApp.Views
             var clickPlus = new TapGestureRecognizer();
             clickPlus.Tapped += async (s, e) =>
             {
-                await Navigation.PushAsync(new DeudorPlus());
+                await Navigation.PushAsync(new DeudorPlusTabs());
             };
             btnPlus.GestureRecognizers.Add(clickPlus);
 

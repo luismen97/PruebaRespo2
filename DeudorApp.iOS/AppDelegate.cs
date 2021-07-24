@@ -23,6 +23,7 @@ namespace DeudorApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            Sharpnado.Tabs.iOS.Preserver.Preserve();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

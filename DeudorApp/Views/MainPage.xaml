@@ -42,6 +42,11 @@
                 <views:Busqueda />
             </x:Arguments>
         </NavigationPage>
+        <NavigationPage Title="Plus" Icon="perfil.png">
+            <x:Arguments>
+                <views:DeudorPlusTabs />
+            </x:Arguments>
+        </NavigationPage>
         <!--<NavigationPage Title="Reportar" Icon="reportar.png">
             <x:Arguments>
                 <views:AboutPage />

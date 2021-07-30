@@ -18,7 +18,7 @@ namespace DeudorApp.Views
             InitializeComponent();
 
             Title = "Cuenta";
-
+            
             var close = new ToolbarItem();
             close.Text = "Cerrar";
             close.IconImageSource = "cancel.png";

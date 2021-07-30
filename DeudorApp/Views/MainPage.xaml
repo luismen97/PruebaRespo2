@@ -20,8 +20,7 @@
             <Image x:Name="cuenta" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Source="cuenta.png"  HeightRequest="30" />
 
             <Image x:Name="logo" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="logo.png"  HeightRequest="45" />
-            <RelativeLayout x:Name="Nada" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">                                
-            </RelativeLayout>
+            <Image x:Name="calcu" Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="calcu.png"  HeightRequest="30" />
             
         </Grid>    
         
@@ -42,7 +41,7 @@
                 <views:Busqueda />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Plus" Icon="perfil.png">
+        <NavigationPage Title="DeudorPlusTabs" Icon="perfil.png">
             <x:Arguments>
                 <views:DeudorPlusTabs />
             </x:Arguments>

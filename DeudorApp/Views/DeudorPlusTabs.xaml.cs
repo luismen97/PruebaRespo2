@@ -1,9 +1,10 @@
-﻿using System;
+﻿using DeudorApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,8 +14,9 @@ namespace DeudorApp.Views
     {
         public DeudorPlusTabs()
         {
-            
+
             InitializeComponent();
+            BindingContext = new PlusViewModel();
             int cerrado = 1;
             var clickOpciones = new TapGestureRecognizer();
             clickOpciones.Tapped += async (s, e) =>
@@ -24,7 +26,7 @@ namespace DeudorApp.Views
                 {
                     cerrado = 0;
                     await btnOpciones.ScaleTo(0.8, length: 50, Easing.Linear);
-                    await Task.Delay(50);
+                    await Task.Delay(10);
                     await btnOpciones.ScaleTo(1, length: 50, Easing.Linear);
                     await btnOpciones.RelRotateTo(45, 150);
 
@@ -48,7 +50,7 @@ namespace DeudorApp.Views
                 {
                     cerrado = 1;
                     await btnOpciones.ScaleTo(0.8, length: 50, Easing.Linear);
-                    await Task.Delay(50);
+                    await Task.Delay(10);
                     await btnOpciones.ScaleTo(1, length: 50, Easing.Linear);
                     
 
@@ -79,7 +81,7 @@ namespace DeudorApp.Views
             clickGasto.Tapped += async (s, e) =>
             {
                 await btnGastos.ScaleTo(0.8, length: 50, Easing.Linear);
-                await Task.Delay(50);
+                await Task.Delay(10);
                 await btnGastos.ScaleTo(1, length: 50, Easing.Linear);
                 await Navigation.PushModalAsync(new ViewMovimiento(1));
             };
@@ -89,18 +91,20 @@ namespace DeudorApp.Views
             clickIng.Tapped += async (s, e) =>
             {
                 await btnIngresos.ScaleTo(0.8, length: 50, Easing.Linear);
-                await Task.Delay(50);
+                await Task.Delay(10);
                 await btnIngresos.ScaleTo(1, length: 50, Easing.Linear);
                 await Navigation.PushModalAsync(new ViewMovimiento(2));
             };
             btnIngresos.GestureRecognizers.Add(clickIng);
 
-            /*var clickCalc = new TapGestureRecognizer();
-            clickCalc.Tapped += async (s, e) =>
-            {
-                await Navigation.PushModalAsync(new PlusPersonal());
-            };*/
-            
+
+
         }
+
+        public async Task Tap_tAsync()
+        {
+            await Navigation.PushModalAsync(new PlusPersonal());
+        }
+       
     }
 }

@@ -12,8 +12,7 @@ namespace DeudorApp
         public App()
         {
             InitializeComponent();
-            Sharpnado.Tabs.Initializer.Initialize(false, false);
-            Sharpnado.Shades.Initializer.Initialize(loggerEnable: false);
+           
 
             if (Application.Current.Properties.ContainsKey("Encontrado"))
             {

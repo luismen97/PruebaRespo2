@@ -12,11 +12,12 @@ namespace DeudorApp.Views
 {
     public partial class DeudorPlusTabs : ContentPage
     {
+        LibretaViewModel Libreta;
         public DeudorPlusTabs()
         {
-
+            
             InitializeComponent();
-            BindingContext = new PlusViewModel();
+            this.BindingContext = Libreta = new LibretaViewModel(Navigation);
             int cerrado = 1;
             var clickOpciones = new TapGestureRecognizer();
             clickOpciones.Tapped += async (s, e) =>
@@ -105,6 +106,14 @@ namespace DeudorApp.Views
         {
             await Navigation.PushModalAsync(new PlusPersonal());
         }
-       
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            
+                Libreta.LoadMovimientoCommand.Execute(null);
+            
+
+        }
+
     }
 }

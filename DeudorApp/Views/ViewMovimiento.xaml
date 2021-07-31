@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:DeudorApp.Renderers" 
-             xmlns:localdos="clr-namespace:DeudorApp.ViewModels"
-             x:DataType="localdos:TipoViewModel"
-             xmlns:ldos="clr-namespace:DeudorApp.Models"
               
              x:Class="DeudorApp.Views.ViewMovimiento" NavigationPage.HasNavigationBar="False" BackgroundColor="#ffff">
     <ContentPage.Content>
@@ -29,19 +26,7 @@
                         <Label Grid.Column="0" Text="Tipo:" TextColor="#000" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="End"/>
                         <Picker Grid.Column="1" x:Name="picker" BackgroundColor="Transparent"
                         Title="Select a monkey"
-                        TitleColor="#000" TextColor="#000" VerticalTextAlignment="End">
-                            <Picker.ItemsSource>
-                                <x:Array Type="{x:Type x:String}">
-                                    <x:String>Baboon</x:String>
-                                    <x:String>Capuchin Monkey</x:String>
-                                    <x:String>Blue Monkey</x:String>
-                                    <x:String>Squirrel Monkey</x:String>
-                                    <x:String>Golden Lion Tamarin</x:String>
-                                    <x:String>Howler Monkey</x:String>
-                                    <x:String>Japanese Macaque</x:String>
-                                </x:Array>
-                            </Picker.ItemsSource>
-                        </Picker>
+                        TitleColor="#000" TextColor="#000" VerticalTextAlignment="End" ItemsSource="{Binding TiposMovimiento}" ItemDisplayBinding="{Binding Tipo}"/>
                     </Grid>
                     
                     <BoxView HeightRequest="1" BackgroundColor="#E7E7E7" HorizontalOptions="FillAndExpand"/>
@@ -58,7 +43,7 @@
                         <Frame  Padding="10"
                             BorderColor="#D72525"
                             HasShadow="False">
-                            <Editor Keyboard="Plain" TextColor="#000" Placeholder="Agrega una nota" PlaceholderColor="#545454" AutoSize="TextChanges" MaxLength="180" />
+                            <Editor x:Name="NotaGasto" Keyboard="Plain" TextColor="#000" Placeholder="Agrega una nota" PlaceholderColor="#545454" AutoSize="TextChanges" MaxLength="180" />
                         </Frame>
                         <Label  Text=" Notas "
                             FontSize="20"
@@ -69,9 +54,7 @@
                             Margin="20,-10,0,0"/>               
                     </Grid>
                     <StackLayout>
-                        <Frame x:Name="btnRegistr" BackgroundColor="#D72525"  CornerRadius="6" HasShadow="true" Margin="10"  Focused="Frame_Focused">
-                            <Label Text="Registrar Gasto" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="#fff"/>
-                        </Frame>
+                        <Button x:Name="btnRegistroGasto" BackgroundColor="#D72525"  CornerRadius="6"  Margin="10" Text="Registrar Gasto" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="#fff" Clicked="btnRegistroGasto_Clicked"/>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout x:Name="VistaIngreso" IsVisible="false" Padding="10,10">
@@ -120,9 +103,8 @@
                             Margin="20,-10,0,0"/>
                     </Grid>
                     <StackLayout>
-                        <Frame x:Name="btnRegistrIng" BackgroundColor="#64B467"  CornerRadius="6" HasShadow="true" Margin="10"  Focused="Frame_Focused">
-                            <Label Text="Registrar Ingreso" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="#fff"/>
-                        </Frame>
+                        <Button Clicked="btnRegistrIng_Clicked" x:Name="btnRegistrIng" BackgroundColor="#64B467"  CornerRadius="6"  Margin="10" Text="Registrar Ingreso" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="#fff" />
+                        
                     </StackLayout>
                 </StackLayout>
             </StackLayout>

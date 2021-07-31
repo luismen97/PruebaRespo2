@@ -1,4 +1,5 @@
-﻿using DeudorApp.ViewModels;
+﻿using DeudorApp.Models;
+using DeudorApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +14,13 @@ namespace DeudorApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ViewMovimiento : ContentPage
     {
+        SM sM = new SM();
         TipoViewModel TipoViewM = new TipoViewModel();
         public ViewMovimiento(int TipoMovimiento)
         {
             InitializeComponent();
 
-            BindingContext = TipoViewM = new TipoViewModel();
+            this.BindingContext = TipoViewM = new TipoViewModel();
 
             if (TipoMovimiento != 1)
             {
@@ -40,25 +42,7 @@ namespace DeudorApp.Views
             };
             btnCerrar.GestureRecognizers.Add(clickClose);
 
-            var clickRegistroIngreso = new TapGestureRecognizer();
-            clickRegistroIngreso.Tapped += async(s, e) =>
-            {
-                await btnRegistrIng.ScaleTo(0.8, length: 50, Easing.Linear);
-                await Task.Delay(10);
-                await btnRegistrIng.ScaleTo(1, length: 50, Easing.Linear);
-
-                string Codigo = txtCodigo.Text;
-                decimal Monto = Convert.ToDecimal(txtMontoIng.Text);
-                
-
-            };
-            btnRegistrIng.GestureRecognizers.Add(clickRegistroIngreso);
-        }
-
-        private void Frame_Focused(object sender, FocusEventArgs e)
-        {
             
-            this.BackgroundColor = Color.FromHex("000");
         }
 
         protected override void OnAppearing()
@@ -68,6 +52,110 @@ namespace DeudorApp.Views
             {
                 TipoViewM.LoadTipoCommand.Execute(null);
             }
+
+        }
+
+        private async void btnRegistrIng_Clicked(object sender, EventArgs e)
+        {
+            await btnRegistrIng.ScaleTo(0.8, length: 50, Easing.Linear);
+            await Task.Delay(10);
+            await btnRegistrIng.ScaleTo(1, length: 50, Easing.Linear);
+
+            if (pickerIngreso.SelectedIndex >= 0)
+            {
+                try
+                {
+                    TipoMovimiento selectitem = (TipoMovimiento)pickerIngreso.SelectedItem;
+                    string idtipo = Convert.ToString(selectitem.idTipoMovimiento);
+                   
+                    string codigo = txtCodigo.Text;
+                    decimal cantidad = Convert.ToDecimal(txtMontoIng.Text);
+                    string Nota = NotaIng.Text;
+
+                    var resp = await sM.GuardarIngreso(idtipo, codigo, cantidad, Nota);
+                    if (resp == "1")
+                    {
+                        await DisplayAlert("Información!",
+                    "Insertado",
+                    "OK");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error!",
+                    "No insertado",
+                    "OK");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                    await DisplayAlert("Error ex!",
+                  "No insertado",
+                  "OK");
+                }
+
+            }
+            else
+            {
+                await DisplayAlert("Información!",
+                "Debe seleccionar un defecto",
+                "OK");
+            }
+        }
+
+        private async void btnRegistroGasto_Clicked(object sender, EventArgs e)
+        {
+
+            await btnRegistroGasto.ScaleTo(0.8, length: 50, Easing.Linear);
+            await Task.Delay(10);
+            await btnRegistroGasto.ScaleTo(1, length: 50, Easing.Linear);
+
+            if (picker.SelectedIndex >= 0)
+            {
+                try
+                {
+                    TipoMovimiento selectitem = (TipoMovimiento)picker.SelectedItem;
+                    string idtipo = Convert.ToString(selectitem.idTipoMovimiento);
+
+                   
+                    decimal cantidad = Convert.ToDecimal(txtMonto.Text);
+                    string Nota = NotaGasto.Text;
+
+                    var resp = await sM.GuardarGasto(idtipo, cantidad, Nota);
+                    if (resp == "1")
+                    {
+                        await DisplayAlert("Información!",
+                    "Insertado",
+                    "OK");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error!",
+                    "No insertado",
+                    "OK");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                    await DisplayAlert("Error ex!",
+                  "No insertado",
+                  "OK");
+                }
+
+            }
+            else
+            {
+                await DisplayAlert("Información!",
+                "Debe seleccionar un defecto",
+                "OK");
+            }
+
+           
+            await this.Navigation.PopModalAsync();
+
 
         }
     }

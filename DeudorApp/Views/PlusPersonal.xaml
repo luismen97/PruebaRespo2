@@ -27,7 +27,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Frame BackgroundColor="#545454" Grid.ColumnSpan="4" CornerRadius="15" Margin="5">
+        <Frame BackgroundColor="#545454" Grid.ColumnSpan="4" CornerRadius="0" Margin="0">
             <Label x:Name="resultText" FontSize="48" FontAttributes="Bold" BackgroundColor="Transparent" Text="0"
               TextColor="#fff" HorizontalTextAlignment="End" VerticalTextAlignment="Center"
               LineBreakMode="NoWrap"  />
@@ -35,53 +35,53 @@
 
         <Button Margin="2"  Text="7" Grid.Row="1" Grid.Column="0"
                BackgroundColor="White" TextColor="Black"
-               FontSize="36" BorderRadius="15" Clicked="OnSelectNumber" />
-        <Button Margin="2"  CornerRadius="30" Text="8" Grid.Row="1" Grid.Column="1"
+               FontSize="36" BorderRadius="50" Clicked="OnSelectNumber" />
+        <Button Margin="2"  CornerRadius="50" Text="8" Grid.Row="1" Grid.Column="1"
                BackgroundColor="White" TextColor="Black"
-               FontSize="36" BorderRadius="15" Clicked="OnSelectNumber" />
+               FontSize="36" BorderRadius="50" Clicked="OnSelectNumber" />
         <Button Margin="2"  Text="9" Grid.Row="1" Grid.Column="2"
                BackgroundColor="White" TextColor="Black"
-               FontSize="36" BorderRadius="15" Clicked="OnSelectNumber" />
+               FontSize="36" BorderRadius="50" Clicked="OnSelectNumber" />
 
         <Button Margin="2"  Text="4" Grid.Row="2" Grid.Column="0"
                BackgroundColor="White" TextColor="Black"
-               FontSize="36" BorderRadius="15" Clicked="OnSelectNumber" />
+               FontSize="36" BorderRadius="50" Clicked="OnSelectNumber" />
         <Button Margin="2"  Text="5" Grid.Row="2" Grid.Column="1"
                BackgroundColor="White" TextColor="Black"
-               FontSize="36" BorderRadius="15" Clicked="OnSelectNumber" />
+               FontSize="36" BorderRadius="50" Clicked="OnSelectNumber" />
         <Button Margin="2"  Text="6" Grid.Row="2" Grid.Column="2"
                BackgroundColor="White" TextColor="Black"
-               FontSize="36" BorderRadius="15" Clicked="OnSelectNumber" />
+               FontSize="36" BorderRadius="50" Clicked="OnSelectNumber" />
 
         <Button Margin="2"  Text="1" Grid.Row="3" Grid.Column="0"
                BackgroundColor="White" TextColor="Black"
-               FontSize="36" BorderRadius="15" Clicked="OnSelectNumber" />
+               FontSize="36" BorderRadius="50" Clicked="OnSelectNumber" />
         <Button Margin="2"  Text="2" Grid.Row="3" Grid.Column="1"
                BackgroundColor="White" TextColor="Black"
-               FontSize="36" BorderRadius="15" Clicked="OnSelectNumber" />
+               FontSize="36" BorderRadius="50" Clicked="OnSelectNumber" />
         <Button Margin="2"  Text="3" Grid.Row="3" Grid.Column="2"
                BackgroundColor="White" TextColor="Black"
-               FontSize="36" BorderRadius="15" Clicked="OnSelectNumber" />
+               FontSize="36" BorderRadius="50" Clicked="OnSelectNumber" />
         <Button Text="0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
                BackgroundColor="White" TextColor="Black"
                FontSize="36" BorderRadius="15" Clicked="OnSelectNumber" />
 
         <Button Margin="2"  Text="÷" Grid.Row="1" Grid.Column="3"
                 BackgroundColor="#F9564C" TextColor="White"
-                FontSize="36" BorderRadius="7" Clicked="OnSelectOperator" />
+                FontSize="36" BorderRadius="50" Clicked="OnSelectOperator" />
         <Button Margin="2"  Text="×" Grid.Row="2" Grid.Column="3"
                 BackgroundColor="#F9564C" TextColor="White"
-                FontSize="36" BorderRadius="7" Clicked="OnSelectOperator" />
+                FontSize="36" BorderRadius="50" Clicked="OnSelectOperator" />
         <Button Margin="2"  Text="-" Grid.Row="3" Grid.Column="3"
                 BackgroundColor="#F9564C" TextColor="White"
-                FontSize="36" BorderRadius="7" Clicked="OnSelectOperator" />
+                FontSize="36" BorderRadius="50" Clicked="OnSelectOperator" />
         <Button Margin="2"  Text="+" Grid.Row="4" Grid.Column="3"
                 BackgroundColor="#F9564C" TextColor="White"
-                FontSize="36" BorderRadius="7" Clicked="OnSelectOperator" />
+                FontSize="36" BorderRadius="50" Clicked="OnSelectOperator" />
 
         <Button Margin="2"  Text="C" Grid.Row="5" Grid.Column="0"
                 BackgroundColor="#808080" TextColor="White"
-                FontSize="36" BorderRadius="7" Clicked="OnClear" />
+                FontSize="36" BorderRadius="50" Clicked="OnClear" />
 
         <Button Margin="2"  Text="=" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"
                 BackgroundColor="#F9564C" TextColor="White"

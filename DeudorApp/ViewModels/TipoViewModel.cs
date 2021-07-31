@@ -1,4 +1,5 @@
 ﻿
+using DeudorApp.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,17 +15,14 @@ namespace DeudorApp.ViewModels
     
     public class TipoViewModel
     {
-       public ObservableCollection<TipoViewModel> TiposMovimiento { get; set; }
+       public ObservableCollection<TipoMovimiento> TiposMovimiento { get; set; }
         public Command LoadTipoCommand { get; set; }
         json_object json_ob = new json_object();
-    
-        public string IdTipoMovimiento { get; set; }
-        public string Tipo { get; set; }
 
 
         public TipoViewModel()
         {
-            TiposMovimiento = new ObservableCollection<TipoViewModel>();
+            TiposMovimiento = new ObservableCollection<TipoMovimiento>();
             LoadTipoCommand = new Command(async () =>
             {
                 await ExecuteLoadTipoCommand();
@@ -34,7 +32,7 @@ namespace DeudorApp.ViewModels
         public class json_object
         {
             [JsonProperty("EntidadTipo")]
-            public TipoViewModel[] tipo { get; set; }
+            public TipoMovimiento[] tipo { get; set; }
 
         }
 
@@ -43,8 +41,8 @@ namespace DeudorApp.ViewModels
             try
             {
                 TiposMovimiento.Clear();
-                IEnumerable<TipoViewModel> tipos = null;
-                List<TipoViewModel> lista = new List<TipoViewModel>();
+                IEnumerable<TipoMovimiento> tipos = null;
+                List<TipoMovimiento> lista = new List<TipoMovimiento>();
 
                 await GetTipoMovimientos().ContinueWith(t =>
                 {
@@ -71,7 +69,7 @@ namespace DeudorApp.ViewModels
             }
         }
 
-        public async Task<TipoViewModel[]> GetTipoMovimientos()
+        public async Task<TipoMovimiento[]> GetTipoMovimientos()
         {
             try
             {

@@ -41,7 +41,7 @@
                 <views:Busqueda />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="DeudorPlusTabs" Icon="perfil.png">
+        <NavigationPage Title="Plus" Icon="deudorLogo.png">
             <x:Arguments>
                 <views:DeudorPlusTabs />
             </x:Arguments>

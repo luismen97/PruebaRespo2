@@ -31,7 +31,7 @@ namespace DeudorApp.ViewModels
                         page.BarBackgroundColor = App.bgColor;
                         page.BarTextColor = App.textColor;
                         page.Title = "Mi Calculadora";
-                        Navigation.PushAsync(page);
+                        Navigation.PushModalAsync(page);
 
                     }
                     catch (Exception ex)
@@ -43,6 +43,8 @@ namespace DeudorApp.ViewModels
             }
         }
 
+        public bool IsBusy { get; set; }
+
         public LibretaViewModel(INavigation navigation)
         {
             this.Navigation = navigation;
@@ -53,8 +55,13 @@ namespace DeudorApp.ViewModels
             }); 
         }
        
-        private async Task ExecuteLoadmovimientosCommand()
+        async Task ExecuteLoadmovimientosCommand()
         {
+
+            if (IsBusy)
+                return;
+
+            IsBusy = true;
             try
             {
                 Movimientos.Clear();
@@ -83,6 +90,10 @@ namespace DeudorApp.ViewModels
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+            finally
+            {
+                IsBusy = false;
             }
         }
         

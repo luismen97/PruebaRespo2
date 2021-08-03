@@ -109,10 +109,7 @@ namespace DeudorApp.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            
-                Libreta.LoadMovimientoCommand.Execute(null);
-            
-
+            Libreta.LoadMovimientoCommand.Execute(null);
         }
 
     }

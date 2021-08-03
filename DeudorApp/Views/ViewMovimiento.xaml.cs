@@ -102,6 +102,7 @@ namespace DeudorApp.Views
                 "Debe seleccionar un defecto",
                 "OK");
             }
+            await this.Navigation.PopModalAsync();
         }
 
         private async void btnRegistroGasto_Clicked(object sender, EventArgs e)

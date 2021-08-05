@@ -305,4 +305,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\filtrar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\deudorLogo%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\deudorLogo%402x.png" />
+  </ItemGroup>
 </Project>

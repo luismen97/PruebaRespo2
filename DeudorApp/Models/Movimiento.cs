@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace DeudorApp.Models
@@ -19,6 +20,12 @@ namespace DeudorApp.Models
         public string TotalViejo { get; set; }
         public string TotalNuevo { get; set; }
         public string Referencia { get; set; }
+        public DateTime FechaFormC {
+            get
+            {
+                return DateTime.ParseExact(Fecha, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+            }
+         }
 
         public string colorNuevo {
             get {

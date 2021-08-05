@@ -153,8 +153,8 @@ x:Class="DeudorApp.Views.DeudorPlusTabs" BackgroundColor="#000" NavigationPage.H
                                     <yummy:PancakeView.Shadow>
                                         <yummy:DropShadow Color="#000000" Offset="10,10" BlurRadius="15" />
                                     </yummy:PancakeView.Shadow>
-                                    <StackLayout>
-                                        <Label Grid.Column="0" Text="Saldo:" TextColor="#545454" FontAttributes="Bold" FontSize="18" Margin="20,10,10,10"/>
+                                    <StackLayout VerticalOptions="Center" Margin="7,0,0,0">
+                                        <Label Text="{Binding SaldoFinal,StringFormat='Saldo: ${0:F2}'}" TextColor="#545454" FontAttributes="Bold" FontSize="16" VerticalTextAlignment="Center" />
                                     </StackLayout>
                                 </yummy:PancakeView>
                             </Grid>

@@ -1,6 +1,7 @@
 ﻿using DeudorApp.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,17 @@ namespace DeudorApp.Views
             InitializeComponent();
             lbv = LibretaViewModel;
             plus = deudorPlusTabs;
+
+            var clickClose = new TapGestureRecognizer();
+            clickClose.Tapped += async (s, e) =>
+            {
+                await btnCerrar.ScaleTo(0.8, length: 50, Easing.Linear);
+                await Task.Delay(10);
+                await btnCerrar.ScaleTo(1, length: 50, Easing.Linear);
+
+                await Navigation.PopModalAsync();
+            };
+            btnCerrar.GestureRecognizers.Add(clickClose);
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -32,32 +44,62 @@ namespace DeudorApp.Views
             string Dfin = "";
             string Tipo = "";
             string CF = "";
+            if (chI == false && chG == false && ChF == false)
+            {
 
-            if (ChF)
+                Application.Current.MainPage.DisplayAlert("Info","Debes seleccionar algun filtro para poder aplicar","OK");
+            }
+            else
             {
-                CF = "1";
-                Dincio = FIni.Date.ToString();
-                Dfin = FFin.Date.ToString();
+                if (ChF)
+                {
+                    CF = "1";
+                    Dincio = FIni.Date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+                    Dfin = FFin.Date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
 
+                }
+                if (chI == true && chG == true)
+                {
+                    /* 1 GASTOS E INGRESOS*/
+                    Tipo = "1";
+                }
+                else if (chI == false && chG == true)
+                {
+                    /* 2 GASTOS */
+                    Tipo = "2";
+                }
+                else if (chI == true && chG == false)
+                {
+                    /* 3 INGRESOS*/
+                    Tipo = "3";
+                }
+                lbv.Filtrar(Tipo, Dincio, Dfin, CF);
+                plus.isrefresh = false;
+
+                Navigation.PopModalAsync();
             }
-            if (chI == true && chG == true)
+
+           
+        }
+
+        private void CheckFechas_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (CheckFechas.IsChecked)
             {
-                /* 1 GASTOS E INGRESOS*/
-                Tipo = "1";
+                FIni.IsEnabled = true;
+                FFin.IsEnabled = true;
             }
-            else if (chI == false && chG == true)
+            else
             {
-                /* 2 GASTOS */
-                Tipo = "2";
+                FIni.IsEnabled = false;
+                FFin.IsEnabled = false;
             }
-            else if (chI == true && chG == false)
-            {
-                /* 3 INGRESOS*/
-                Tipo = "3";
-            }
-            lbv.Filtrar(Tipo, Dincio, Dfin,CF);
-            plus.isrefresh = false;
-            
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            plus.isrefresh = true;
+
             Navigation.PopModalAsync();
         }
     }

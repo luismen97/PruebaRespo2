@@ -4,8 +4,11 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -13,9 +16,33 @@ using Xamarin.Forms;
 
 namespace DeudorApp.ViewModels
 {
-    public class LibretaViewModel
+    public class LibretaViewModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string name = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
         public INavigation Navigation { get; set; }
+
+        /*public string SaldoFinal { get; set; }*/
+        private string _SaldoFinal;
+        public string SaldoFinal
+        {
+            get
+            {
+                return _SaldoFinal;
+            }
+            set
+            {
+                if (_SaldoFinal != value)
+                {
+                    _SaldoFinal = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
         public ObservableCollection<Movimiento> Movimientos { get; set; }
         public ObservableCollection<Movimiento> MovimientosRef { get; set; }
         public Command LoadMovimientoCommand { get; set; }
@@ -63,6 +90,7 @@ namespace DeudorApp.ViewModels
             try
             {
                 Movimientos.Clear();
+                MovimientosRef.Clear();
                 IEnumerable<Movimiento> movimiento = null;
                 List<Movimiento> lista = new List<Movimiento>();
 
@@ -84,6 +112,7 @@ namespace DeudorApp.ViewModels
                     Movimientos.Add(item);
                     MovimientosRef.Add(item);
                 }
+                SaldoFinal = Movimientos.Last().TotalNuevo;
 
             }
             catch (Exception ex)
@@ -128,6 +157,14 @@ namespace DeudorApp.ViewModels
         {
             try
             {
+                DateTime di = DateTime.Today;
+                DateTime df = DateTime.Today;
+                if (cF != "")
+                {
+                   di = DateTime.ParseExact(Fini, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                   df = DateTime.ParseExact(FFin, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                }
+                
                 IEnumerable<Movimiento> match;
                 List<Movimiento> lista = new List<Movimiento>();
                 //MovimientosRef.Clear();
@@ -135,6 +172,7 @@ namespace DeudorApp.ViewModels
                 {
                     lista.Add(MovimientosRef[i]);
                 }
+                
                 match = lista;
                 if (TipoM == "1")
                 {
@@ -144,10 +182,11 @@ namespace DeudorApp.ViewModels
                     if (cF != "")
                     {
                         
-                        match = lista.Where(x => x.Tipo2.ToLower().Replace('á', 'a').Replace('é', 'e').Replace('í', 'i').Replace('ó', 'o').Replace('ú', 'u') == filtro.ToLower() || x.Tipo2.ToLower().Replace('á', 'a').Replace('é', 'e').Replace('í', 'i').Replace('ó', 'o').Replace('ú', 'u') == filtro2.ToLower()
-                         && Convert.ToDateTime(x.Fecha).Date >= Convert.ToDateTime(Fini).Date
-                         && Convert.ToDateTime(x.Fecha).Date <= Convert.ToDateTime(FFin).Date);
-
+                        match = lista.Where(x => 
+                        (x.Tipo2.ToLower().Replace('á', 'a').Replace('é', 'e').Replace('í', 'i').Replace('ó', 'o').Replace('ú', 'u') == filtro.ToLower()
+                        || x.Tipo2.ToLower().Replace('á', 'a').Replace('é', 'e').Replace('í', 'i').Replace('ó', 'o').Replace('ú', 'u') == filtro2.ToLower())
+                        && x.FechaFormC.Date >= di.Date
+                        && x.FechaFormC.Date <= df.Date);
                     }
                     else
                     {
@@ -161,12 +200,12 @@ namespace DeudorApp.ViewModels
                     string filtro = "GASTO";
                     if (cF != "")
                     {
-                        DateTime di = DateTime.ParseExact("08-04-2021 12:00:00", "yyyy-MM-dd", null);
-                        DateTime df = DateTime.ParseExact("08-04-2021 12:00:00", "yyyy-MM-dd", null);
-                        
+
+                       
+
                         match = lista.Where(x => x.Tipo2.ToLower().Replace('á', 'a').Replace('é', 'e').Replace('í', 'i').Replace('ó', 'o').Replace('ú', 'u').Contains(filtro.ToLower())
-                         && Convert.ToDateTime(x.Fecha).Date >= di
-                         && Convert.ToDateTime(x.Fecha).Date <= df );
+                         && x.FechaFormC.Date >= di.Date
+                         && x.FechaFormC.Date <= df.Date);
 
                     }
                     else
@@ -182,10 +221,9 @@ namespace DeudorApp.ViewModels
                     string filtro = "INGRESO";
                     if (cF != "")
                     {
-                        match = lista.Where(x => x.Tipo2.ToLower().Replace('á', 'a').Replace('é', 'e').Replace('í', 'i').Replace('ó', 'o').Replace('ú', 'u').Contains(filtro.ToLower()) 
-                                            && Convert.ToDateTime(x.Fecha).Date >= Convert.ToDateTime(Fini).Date
-                                            && Convert.ToDateTime(x.Fecha).Date <= Convert.ToDateTime(FFin).Date);
-
+                        match = lista.Where(x => x.Tipo2.ToLower().Replace('á', 'a').Replace('é', 'e').Replace('í', 'i').Replace('ó', 'o').Replace('ú', 'u').Contains(filtro.ToLower())
+                        && x.FechaFormC.Date >= di.Date
+                        && x.FechaFormC.Date <= df.Date);
                     }
                     else
                     {
@@ -201,6 +239,8 @@ namespace DeudorApp.ViewModels
                 {
                     Movimientos.Add(match.ElementAt(i));
                 }
+                SaldoFinal = Movimientos.Last().TotalNuevo;
+
 
             }
             catch (Exception ex)

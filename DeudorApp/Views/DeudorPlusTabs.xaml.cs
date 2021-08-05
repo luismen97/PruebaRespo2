@@ -13,6 +13,7 @@ namespace DeudorApp.Views
     public partial class DeudorPlusTabs : ContentPage
     {
         LibretaViewModel Libreta;
+        public bool isrefresh = true;
         public DeudorPlusTabs()
         {
             
@@ -84,7 +85,7 @@ namespace DeudorApp.Views
                 await btnGastos.ScaleTo(0.8, length: 50, Easing.Linear);
                 await Task.Delay(10);
                 await btnGastos.ScaleTo(1, length: 50, Easing.Linear);
-                await Navigation.PushModalAsync(new ViewMovimiento(1));
+                await Navigation.PushModalAsync(new ViewMovimiento(1, this));
             };
             btnGastos.GestureRecognizers.Add(clickGasto);
 
@@ -94,11 +95,20 @@ namespace DeudorApp.Views
                 await btnIngresos.ScaleTo(0.8, length: 50, Easing.Linear);
                 await Task.Delay(10);
                 await btnIngresos.ScaleTo(1, length: 50, Easing.Linear);
-                await Navigation.PushModalAsync(new ViewMovimiento(2));
+                await Navigation.PushModalAsync(new ViewMovimiento(2, this));
             };
             btnIngresos.GestureRecognizers.Add(clickIng);
 
-
+            var clickFiltros = new TapGestureRecognizer();
+            clickFiltros.Tapped += async (s, e) =>
+            {
+                await btnFiltro.ScaleTo(0.8, length: 50, Easing.Linear);
+                await Task.Delay(10);
+                await btnFiltro.ScaleTo(1, length: 50, Easing.Linear);
+                await Navigation.PushModalAsync(new Filtros(Libreta,this));
+            };
+            btnFiltro.GestureRecognizers.Add(clickFiltros);
+           
 
         }
 
@@ -108,8 +118,12 @@ namespace DeudorApp.Views
         }
         protected override void OnAppearing()
         {
-            base.OnAppearing();
-            Libreta.LoadMovimientoCommand.Execute(null);
+            if (isrefresh)
+            {
+                base.OnAppearing();
+                Libreta.LoadMovimientoCommand.Execute(null);
+            }
+           
         }
 
     }

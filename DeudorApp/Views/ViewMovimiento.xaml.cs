@@ -15,12 +15,13 @@ namespace DeudorApp.Views
     public partial class ViewMovimiento : ContentPage
     {
         SM sM = new SM();
-        TipoViewModel TipoViewM = new TipoViewModel();
-        public ViewMovimiento(int TipoMovimiento)
+        TipoViewModel TipoViewM;
+        DeudorPlusTabs dpt;
+        public ViewMovimiento(int TipoMovimiento, DeudorPlusTabs deudorPlusTabs)
         {
             InitializeComponent();
-
-            this.BindingContext = TipoViewM = new TipoViewModel();
+            dpt = deudorPlusTabs;
+            this.BindingContext = TipoViewM = new TipoViewModel(TipoMovimiento);
 
             if (TipoMovimiento != 1)
             {
@@ -102,6 +103,7 @@ namespace DeudorApp.Views
                 "Debe seleccionar un defecto",
                 "OK");
             }
+            dpt.isrefresh = true;
             await this.Navigation.PopModalAsync();
         }
 
@@ -154,7 +156,7 @@ namespace DeudorApp.Views
                 "OK");
             }
 
-           
+            dpt.isrefresh = true;
             await this.Navigation.PopModalAsync();
 
 

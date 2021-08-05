@@ -15,7 +15,7 @@ namespace DeudorApp.Views
         {
             InitializeComponent();
 
-            var clickGasto = new TapGestureRecognizer();
+            /*var clickGasto = new TapGestureRecognizer();
             clickGasto.Tapped += async (s, e) =>
             {
                 await Navigation.PushModalAsync(new ViewMovimiento(1));
@@ -27,7 +27,7 @@ namespace DeudorApp.Views
             {
                 await Navigation.PushModalAsync(new ViewMovimiento(2));
             };
-            btnIngreso.GestureRecognizers.Add(clickIng);
+            btnIngreso.GestureRecognizers.Add(clickIng);*/
         }
     }
 }

@@ -20,12 +20,12 @@ namespace DeudorApp.ViewModels
         json_object json_ob = new json_object();
 
 
-        public TipoViewModel()
+        public TipoViewModel(int TipoMov)
         {
             TiposMovimiento = new ObservableCollection<TipoMovimiento>();
             LoadTipoCommand = new Command(async () =>
             {
-                await ExecuteLoadTipoCommand();
+                await ExecuteLoadTipoCommand(TipoMov);
             });
 
         }
@@ -36,7 +36,7 @@ namespace DeudorApp.ViewModels
 
         }
 
-        private async Task ExecuteLoadTipoCommand()
+        private async Task ExecuteLoadTipoCommand(int tipoM)
         {
             try
             {
@@ -44,7 +44,7 @@ namespace DeudorApp.ViewModels
                 IEnumerable<TipoMovimiento> tipos = null;
                 List<TipoMovimiento> lista = new List<TipoMovimiento>();
 
-                await GetTipoMovimientos().ContinueWith(t =>
+                await GetTipoMovimientos(tipoM).ContinueWith(t =>
                 {
                     if (t.Status == TaskStatus.RanToCompletion)
                     {
@@ -69,12 +69,12 @@ namespace DeudorApp.ViewModels
             }
         }
 
-        public async Task<TipoMovimiento[]> GetTipoMovimientos()
+        public async Task<TipoMovimiento[]> GetTipoMovimientos(int TipoM)
         {
             try
             {
                 var client = new HttpClient();
-                StringContent str = new StringContent("op=getTiposMov", Encoding.UTF8, "application/x-www-form-urlencoded");
+                StringContent str = new StringContent("op=getTiposMov&Tipo="+ TipoM.ToString(), Encoding.UTF8, "application/x-www-form-urlencoded");
                 var respuesta = await client.PostAsync(new Uri(Constantes.url + "Usuario/App.php"), str);
                 var json = respuesta.Content.ReadAsStringAsync().Result.Trim();
                 System.Diagnostics.Debug.WriteLine("Tipos: " + json);

@@ -5,26 +5,33 @@
             x:Class="DeudorApp.Views.MainPage" NavigationPage.HasNavigationBar="True" 
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
-            SelectedTabColor="#D72525">
-    <NavigationPage.TitleView>
-        
-        <Grid  HorizontalOptions="FillAndExpand">
-            <Grid.ColumnDefinitions>
-            
-                <ColumnDefinition Width="25*"/>
-                <ColumnDefinition Width="53*"/>
-                <ColumnDefinition Width="30*"/>
-                
-            </Grid.ColumnDefinitions>
-            
-            <Image x:Name="cuenta" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Source="cuenta.png"  HeightRequest="30" />
+            SelectedTabColor="#BF2323" BarBackgroundColor="#292929" UnselectedTabColor="#ccc" Shell.NavBarHasShadow="True">
+    <NavigationPage.TitleView Shell.NavBarHasShadow="True">
 
-            <Image x:Name="logo" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="logo.png"  HeightRequest="45" />
-            <Image x:Name="calcu" Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="calcu.png"  HeightRequest="30" />
-            
-        </Grid>    
+        <StackLayout>
+            <StackLayout>
+                <Grid  HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="53*"/>
+                        <ColumnDefinition Width="30*"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Image x:Name="cuenta" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Source="cuenta.png"  HeightRequest="30" />
+
+                    <Image x:Name="logo" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="logo.png"  HeightRequest="45" />
+                    <Image x:Name="calcu" Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="calcu.png"  HeightRequest="30" />
+
+                </Grid>
+
+            </StackLayout>
+           
+        </StackLayout>
         
     </NavigationPage.TitleView>
+    
     <TabbedPage.Children x:Uid="taby">
         <NavigationPage Title="Inicio" Icon="inicio.png">
             <x:Arguments>
@@ -33,7 +40,7 @@
         </NavigationPage>
         <NavigationPage Title="Planes" Icon="pago.png">
             <x:Arguments>
-                <views:Planes />
+                <views:Planes/>
             </x:Arguments>
         </NavigationPage>
         <NavigationPage Title="Busqueda" Icon="busqueda.png">

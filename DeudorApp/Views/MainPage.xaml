@@ -5,8 +5,8 @@
             x:Class="DeudorApp.Views.MainPage" NavigationPage.HasNavigationBar="True" 
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
-            SelectedTabColor="#BF2323" BarBackgroundColor="#292929" UnselectedTabColor="#ccc" Shell.NavBarHasShadow="True">
-    <NavigationPage.TitleView Shell.NavBarHasShadow="True">
+            SelectedTabColor="#BF2323" BarBackgroundColor="#292929" UnselectedTabColor="#ccc">
+    <NavigationPage.TitleView>
 
         <StackLayout>
             <StackLayout>
@@ -53,12 +53,6 @@
                 <views:DeudorPlusTabs />
             </x:Arguments>
         </NavigationPage>
-        <!--<NavigationPage Title="Reportar" Icon="reportar.png">
-            <x:Arguments>
-                <views:AboutPage />
-            </x:Arguments>
-        </NavigationPage>
-        -->
     </TabbedPage.Children>
     
 </TabbedPage>

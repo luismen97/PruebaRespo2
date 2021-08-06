@@ -32,7 +32,7 @@
         
     </NavigationPage.TitleView>
     
-    <TabbedPage.Children x:Uid="taby">
+    <TabbedPage.Children>
         <NavigationPage Title="Inicio" Icon="inicio.png">
             <x:Arguments>
                 <views:Inicio />

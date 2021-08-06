@@ -311,4 +311,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\deudorLogo%402x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Dlogo.png" />
+  </ItemGroup>
 </Project>

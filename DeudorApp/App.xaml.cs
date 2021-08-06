@@ -12,28 +12,35 @@ namespace DeudorApp
         public App()
         {
             InitializeComponent();
-           
 
-            if (Application.Current.Properties.ContainsKey("Encontrado"))
+
+            if (Application.Current.Properties.ContainsKey("IdCuenta") && Application.Current.Properties.ContainsKey("sesion"))
             {
-                if (Current.Properties["Encontrado"].ToString() != "vacio")
+                if (Application.Current.Properties.ContainsKey("Encontrado"))
                 {
-                    MainPage = Iniciar();
+                    if (Current.Properties["Encontrado"].ToString() != "vacio")
+                    {
+                        MainPage = Iniciar();
 
+                    }
+                    else
+                    {
+
+                        Application.Current.MainPage = new NavigationPage(new VerificarTelefono())
+                        {
+                            BarBackgroundColor = App.bgColor,
+                            BarTextColor = App.textColor
+                        };
+                    }
                 }
                 else
                 {
-
-                    Application.Current.MainPage = new NavigationPage(new VerificarTelefono())
-                    {
-                        BarBackgroundColor = App.bgColor,
-                        BarTextColor = App.textColor
-                    };
+                    MainPage = Iniciar();
                 }
             }
             else
             {
-                MainPage = Iniciar();
+                MainPage = LoginView();
             }
             
             //DependencyService.Register<MockDataStore>();
@@ -61,6 +68,14 @@ namespace DeudorApp
                 BarTextColor = textColor
             };
 
+        }
+        public NavigationPage LoginView()
+        {
+            return new NavigationPage(new Login())
+            {
+                BarBackgroundColor = bgColor,
+                BarTextColor = textColor
+            };
         }
     }
 }

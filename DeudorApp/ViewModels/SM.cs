@@ -144,7 +144,7 @@ namespace DeudorApp.ViewModels
                 
 
 
-                if (json == "")
+                if (json == "[]")
                 {
                     resp = "nada";
                 }

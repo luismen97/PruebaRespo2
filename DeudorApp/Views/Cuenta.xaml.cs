@@ -17,24 +17,25 @@ namespace DeudorApp.Views
             
             InitializeComponent();
 
-            Title = "Cuenta";
             
-            var close = new ToolbarItem();
-            close.Text = "Cerrar";
-            close.IconImageSource = "cancel.png";
             _ = Vistas();
 
 
-            close.Command = new Command(o =>
-            {
-                Navigation.PopModalAsync();
-            });
-
-            ToolbarItems.Add(close);
+            
 
             //codigo para abrir ventana de incio de sesion
 
-           
+
+            var clickClose = new TapGestureRecognizer();
+            clickClose.Tapped += async (s, e) =>
+            {
+                await btnCerrar.ScaleTo(0.8, length: 50, Easing.Linear);
+                await Task.Delay(10);
+                await btnCerrar.ScaleTo(1, length: 50, Easing.Linear);
+
+                await Navigation.PopModalAsync();
+            };
+            btnCerrar.GestureRecognizers.Add(clickClose);
 
             var clickSesion = new TapGestureRecognizer();
             clickSesion.Tapped += async (s, e) =>
@@ -240,7 +241,7 @@ namespace DeudorApp.Views
             clickLogout.Tapped += async (s, e) =>
             {
                 await sM.vaciarDatos();
-                Application.Current.MainPage = new NavigationPage(new MainPage())
+                Application.Current.MainPage = new NavigationPage(new Login())
                 {
                     BarBackgroundColor = App.bgColor,
                     BarTextColor = App.textColor

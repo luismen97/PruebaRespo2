@@ -122,6 +122,7 @@ namespace DeudorApp.Views
             {
                 base.OnAppearing();
                 Libreta.LoadMovimientoCommand.Execute(null);
+             
             }
            
         }

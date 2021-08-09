@@ -320,4 +320,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\usuariocredito.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\flechaseleccion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sinr.png" />
+  </ItemGroup>
 </Project>

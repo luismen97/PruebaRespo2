@@ -20,8 +20,7 @@
                     VerticalOptions="FillAndExpand"
                     HorizontalOptions="FillAndExpand"
                     ItemsSource="{Binding Creditos}"
-                    RefreshCommand="{Binding LoadCreditosCommand}"
-                    IsPullToRefreshEnabled="True" 
+                    RefreshCommand="{Binding LoadCreditosCommand}" 
                     RefreshControlColor="#428655"
                     IsRefreshing="{Binding IsBusy}"
                     CachingStrategy="RecycleElement">
@@ -45,7 +44,7 @@
                                                 <Label Text="CREDITO" TextColor="#fff" FontSize="10" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" VerticalTextAlignment="Center"/>
                                             </Frame>
                                             <Label Grid.Column="1" Text="{Binding CURP}" TextColor="#494949" FontSize="15" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="CenterAndExpand"/>
-                                            <Image Grid.Column="2"  Source="puntos.png"  IsVisible="true" HeightRequest="20" HorizontalOptions="End" VerticalOptions="CenterAndExpand">
+                                            <Image Grid.Column="2"  Source="flechaseleccion.png"  IsVisible="true" HeightRequest="20" HorizontalOptions="End" VerticalOptions="CenterAndExpand">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding Path=BindingContext.SeleccionarCommand, Source={x:Reference Busqueda}}" CommandParameter="{Binding .}"/>
                                                 </Image.GestureRecognizers>

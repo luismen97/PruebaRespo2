@@ -4,7 +4,7 @@
               xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     
 
-x:Class="DeudorApp.Views.DeudorPlusTabs" BackgroundColor="#000" NavigationPage.HasNavigationBar="false" x:Name="MiLibreta">
+x:Class="DeudorApp.Views.DeudorPlusTabs" BackgroundColor="#fff" NavigationPage.HasNavigationBar="false" x:Name="MiLibreta">
     <ContentPage.Content>
         <StackLayout Margin="0" Padding="0">
             
@@ -17,22 +17,24 @@ x:Class="DeudorApp.Views.DeudorPlusTabs" BackgroundColor="#000" NavigationPage.H
                     </Grid.RowDefinitions>
                     <ScrollView Grid.Row="0">
 
-                        <StackLayout Margin="0,0,0,0">
-                            
+                        <StackLayout Margin="0,0,0,0" >
+                            <StackLayout x:Name="sinResultados" IsVisible="{Binding sinResultados}" BackgroundColor="#fff" Margin="0,30,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                <Image   Source="sinr.png"  Aspect="AspectFill" WidthRequest="100" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="No hay Resultados" FontAttributes="Bold" FontSize="20" TextColor="#BF2323" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
                             <ListView
-                    x:Name="listview"
-                    HasUnevenRows="true"
-                    SeparatorVisibility="None"
-                    SelectionMode="None"
-                    BackgroundColor="#fff"
-                    VerticalOptions="FillAndExpand"
-                    HorizontalOptions="FillAndExpand"
-                    ItemsSource="{Binding Movimientos}"
-                    RefreshCommand="{Binding LoadMovimientoCommand}"
-                    
-                    RefreshControlColor="#428655"
-                    IsRefreshing="{Binding IsBusy}"
-                    CachingStrategy="RecycleElement">
+                                x:Name="listview"
+                                HasUnevenRows="true"
+                                SeparatorVisibility="None"
+                                SelectionMode="None"
+                                BackgroundColor="#fff"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand"
+                                ItemsSource="{Binding Movimientos}"
+                                RefreshCommand="{Binding LoadMovimientoCommand}"
+                                IsPullToRefreshEnabled="True"
+                                RefreshControlColor="#BF2323"
+                                IsRefreshing="{Binding IsBusy}" CachingStrategy="RecycleElement">
 
                                 <!-- <ListView.Header>
 

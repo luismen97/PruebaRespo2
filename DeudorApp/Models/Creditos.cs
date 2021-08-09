@@ -10,5 +10,13 @@ namespace DeudorApp.Models
         public string NombreCredito { get; set; }
 
         public string CURP { get; set; }
+
+        public string FormatoCred
+        {
+            get
+            {
+                return NombreCredito+"-"+CURP;
+            }
+        }
     }
 }

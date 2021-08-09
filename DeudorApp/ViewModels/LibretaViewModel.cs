@@ -28,6 +28,7 @@ namespace DeudorApp.ViewModels
 
         /*public string SaldoFinal { get; set; }*/
         private string _SaldoFinal;
+
         public string SaldoFinal
         {
             get
@@ -39,6 +40,38 @@ namespace DeudorApp.ViewModels
                 if (_SaldoFinal != value)
                 {
                     _SaldoFinal = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private bool _IsBusy;
+        public bool IsBusy
+        {
+            get
+            {
+                return _IsBusy;
+            }
+            set
+            {
+                if (_IsBusy != value)
+                {
+                    _IsBusy = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private bool _sinResultados;
+        public bool sinResultados
+        {
+            get
+            {
+                return _sinResultados;
+            }
+            set
+            {
+                if (_sinResultados != value)
+                {
+                    _sinResultados = value;
                     OnPropertyChanged();
                 }
             }
@@ -67,7 +100,7 @@ namespace DeudorApp.ViewModels
             }
         }
 
-        public bool IsBusy { get; set; }
+        
 
         public LibretaViewModel(INavigation navigation)
         {
@@ -84,9 +117,9 @@ namespace DeudorApp.ViewModels
         {
 
             if (IsBusy)
-                return;
-
             IsBusy = true;
+            
+
             try
             {
                 Movimientos.Clear();
@@ -122,6 +155,7 @@ namespace DeudorApp.ViewModels
             finally
             {
                 IsBusy = false;
+                
             }
         }
         
@@ -139,10 +173,12 @@ namespace DeudorApp.ViewModels
                 if (json != "")
                 {
                     json_ob = JsonConvert.DeserializeObject<json_object>(json);
+                    sinResultados = false;
                 }
                 else
                 {
                     return json_ob.movimiento = null;
+                    sinResultados = true;
                 }
             }
             catch (Exception ex)

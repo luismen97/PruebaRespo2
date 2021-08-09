@@ -64,7 +64,7 @@
                             <ColumnDefinition Width="70*"/>
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0" Text="Tipo:" TextColor="#000" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="End"/>
-                        <Picker Grid.Column="1" x:Name="pickerIngreso" BackgroundColor="Transparent"
+                        <Picker Grid.Column="1" x:Name="pickerIngreso" BackgroundColor="Transparent" SelectedIndexChanged="pickerIngreso_SelectedIndexChanged"
                         Title="Tipo de Ingreso" ItemsSource="{Binding TiposMovimiento}" ItemDisplayBinding="{Binding Tipo}"
                         TitleColor="#000" TextColor="#000" VerticalTextAlignment="End"/>
                     </Grid>
@@ -72,11 +72,14 @@
                     <BoxView HeightRequest="3" BackgroundColor="#E7E7E7" HorizontalOptions="FillAndExpand"/>
                     <Grid Margin="0,10,0,0">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="30*"/>
-                            <ColumnDefinition Width="70*"/>
+                            <ColumnDefinition Width="40*"/>
+                            <ColumnDefinition Width="60*"/>
+                            <ColumnDefinition Width="30"/>
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0" Text="Referencia:" TextColor="#000" FontSize="20" VerticalTextAlignment="End" HorizontalTextAlignment="End"/>
-                        <local:Entry_R x:Name="txtCodigo" Grid.Column="1" Placeholder="Ej. 1000" Keyboard="Numeric" PlaceholderColor="#545454" TextColor="#000" FontSize="15" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand"/>
+                        <local:Entry_R x:Name="txtRef" Text="" Grid.Column="1" Placeholder="Ej. 1000" PlaceholderColor="#545454" TextColor="#000" FontSize="15" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand"/>
+                        <Image x:Name="buscarCredito" IsVisible="false" Source="buscar.png" Grid.Column="2" Aspect="AspectFit" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" HeightRequest="20"/>
+
                     </Grid>
                     <BoxView HeightRequest="3" BackgroundColor="#E7E7E7" HorizontalOptions="FillAndExpand"/>
                     

@@ -17,6 +17,8 @@ namespace DeudorApp.Views
         SM sM = new SM();
         TipoViewModel TipoViewM;
         DeudorPlusTabs dpt;
+        public string Ref = "";
+        public string idCredito = "";
         public ViewMovimiento(int TipoMovimiento, DeudorPlusTabs deudorPlusTabs)
         {
             InitializeComponent();
@@ -43,11 +45,26 @@ namespace DeudorApp.Views
             };
             btnCerrar.GestureRecognizers.Add(clickClose);
 
+
+            var clickBuscar = new TapGestureRecognizer();
+            clickBuscar.Tapped += async (s, e) =>
+            {
+                await buscarCredito.ScaleTo(0.8, length: 50, Easing.Linear);
+                await Task.Delay(10);
+                await buscarCredito.ScaleTo(1, length: 50, Easing.Linear);
+
+                await Navigation.PushModalAsync(new ViewBuscar(this));
+            };
+            buscarCredito.GestureRecognizers.Add(clickBuscar);
             
+
+
+
         }
 
         protected override void OnAppearing()
         {
+            txtRef.Text = Ref;
             base.OnAppearing();
             if (TipoViewM.TiposMovimiento.Count == 0)
             {
@@ -68,8 +85,17 @@ namespace DeudorApp.Views
                 {
                     TipoMovimiento selectitem = (TipoMovimiento)pickerIngreso.SelectedItem;
                     string idtipo = Convert.ToString(selectitem.idTipoMovimiento);
-                   
-                    string codigo = txtCodigo.Text;
+                    string codigo = "";
+
+                    if (idtipo == "3")
+                    {
+                        codigo = idCredito;
+                    }
+                    else
+                    {
+                        codigo = txtRef.Text;
+                    }
+                    
                     decimal cantidad = Convert.ToDecimal(txtMontoIng.Text);
                     string Nota = NotaIng.Text;
 
@@ -79,6 +105,9 @@ namespace DeudorApp.Views
                         await DisplayAlert("Información!",
                     "Insertado",
                     "OK");
+
+                        dpt.isrefresh = true;
+                        await this.Navigation.PopModalAsync();
                     }
                     else
                     {
@@ -86,6 +115,8 @@ namespace DeudorApp.Views
                     "No insertado",
                     "OK");
                     }
+
+
 
                 }
                 catch (Exception ex)
@@ -100,11 +131,10 @@ namespace DeudorApp.Views
             else
             {
                 await DisplayAlert("Información!",
-                "Debe seleccionar un defecto",
+                "Debe seleccionar un tipo",
                 "OK");
             }
-            dpt.isrefresh = true;
-            await this.Navigation.PopModalAsync();
+            
         }
 
         private async void btnRegistroGasto_Clicked(object sender, EventArgs e)
@@ -131,6 +161,9 @@ namespace DeudorApp.Views
                         await DisplayAlert("Información!",
                     "Insertado",
                     "OK");
+
+                    dpt.isrefresh = true;
+                    await this.Navigation.PopModalAsync();
                     }
                     else
                     {
@@ -152,14 +185,29 @@ namespace DeudorApp.Views
             else
             {
                 await DisplayAlert("Información!",
-                "Debe seleccionar un defecto",
+                "Debe seleccionar un tipo",
                 "OK");
             }
 
-            dpt.isrefresh = true;
-            await this.Navigation.PopModalAsync();
+           
 
 
+        }
+
+        private void pickerIngreso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TipoMovimiento selectitem = (TipoMovimiento)pickerIngreso.SelectedItem;
+            string idtipo = Convert.ToString(selectitem.idTipoMovimiento);
+
+            if (selectitem.Tipo == "Crédito")
+            {
+
+                buscarCredito.IsVisible = true;
+            }
+            else
+            {
+                buscarCredito.IsVisible = false;
+            }
         }
     }
 }

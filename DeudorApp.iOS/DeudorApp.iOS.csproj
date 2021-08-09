@@ -314,4 +314,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\Dlogo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\usuariocredito.png" />
+  </ItemGroup>
 </Project>

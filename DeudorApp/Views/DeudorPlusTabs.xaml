@@ -19,7 +19,7 @@ x:Class="DeudorApp.Views.DeudorPlusTabs" BackgroundColor="#fff" NavigationPage.H
 
                         <StackLayout Margin="0,0,0,0" >
                             <StackLayout x:Name="sinResultados" IsVisible="{Binding sinResultados}" BackgroundColor="#fff" Margin="0,30,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                <Image   Source="sinr.png"  Aspect="AspectFill" WidthRequest="100" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                                <Image   Source="triste.png"  Aspect="AspectFill" WidthRequest="100" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
                                 <Label Text="No hay Resultados" FontAttributes="Bold" FontSize="20" TextColor="#BF2323" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                             </StackLayout>
                             <ListView

@@ -170,15 +170,17 @@ namespace DeudorApp.ViewModels
                 System.Diagnostics.Debug.WriteLine("Tipos: " + json);
 
 
-                if (json != "")
+                if (json != "{\"EntidadMovimiento\":[]}")
                 {
                     json_ob = JsonConvert.DeserializeObject<json_object>(json);
                     sinResultados = false;
                 }
                 else
                 {
-                    return json_ob.movimiento = null;
                     sinResultados = true;
+                    SaldoFinal = "0";
+                    return json_ob.movimiento = null;
+                    
                 }
             }
             catch (Exception ex)

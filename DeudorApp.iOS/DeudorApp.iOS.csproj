@@ -326,4 +326,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\sinr.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\triste.png" />
+  </ItemGroup>
 </Project>

@@ -7,8 +7,8 @@ namespace DeudorApp.Models
 {
     public class Movimiento
     {
+        /*NOTA: ES CONSULTA RELACIONAL, NO SOLO TIENE LOS CAMPOS DE MOVIMIENTO, TAMBIÉN LOS DE CREDITO QUE ESTÉN RELACIONADOS A ALGÚN CRÉDITO*/
         public string _colorNuevo;
-
         public string IdMovimiento { get; set; }
         public string Fecha { get; set; }
         public string FechaFormato { get; set; }
@@ -40,6 +40,12 @@ namespace DeudorApp.Models
                 
             } 
         }
+
+        /*CREDITOS*/
+        public string idcredito { get; set; }
+        public string NombreCredito { get; set; }
+
+        public string CURP { get; set; }
 
     }
 }

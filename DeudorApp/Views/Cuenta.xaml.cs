@@ -201,7 +201,7 @@ namespace DeudorApp.Views
             var clickAcabar = new TapGestureRecognizer();
             clickAcabar.Tapped += async (s, e) =>
             {
-                await Launcher.OpenAsync("https://deudorapp.com/app/registrar_acreedor.php?IdCuenta="+Application.Current.Properties["IdCuenta"].ToString());
+                await Navigation.PushAsync(new RegistroAcreedor());
 
             };
             btnAcabar.GestureRecognizers.Add(clickAcabar);

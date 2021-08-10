@@ -56,10 +56,6 @@ namespace DeudorApp.Views
                 await Navigation.PushModalAsync(new ViewBuscar(this));
             };
             buscarCredito.GestureRecognizers.Add(clickBuscar);
-            
-
-
-
         }
 
         protected override void OnAppearing()
@@ -70,7 +66,6 @@ namespace DeudorApp.Views
             {
                 TipoViewM.LoadTipoCommand.Execute(null);
             }
-
         }
 
         private async void btnRegistrIng_Clicked(object sender, EventArgs e)
@@ -87,9 +82,17 @@ namespace DeudorApp.Views
                     string idtipo = Convert.ToString(selectitem.idTipoMovimiento);
                     string codigo = "";
 
-                    if (idtipo == "3")
+                    if (selectitem.Tipo == "Crédito")
                     {
-                        codigo = idCredito;
+                        if (idCredito != "")
+                        {
+                            codigo = idCredito;
+                        }
+                        else
+                        {
+                            await DisplayAlert("Alerta", "No ha seleccionado una referencia de crédito valida", "OK");
+                            return;
+                        }
                     }
                     else
                     {
@@ -102,18 +105,14 @@ namespace DeudorApp.Views
                     var resp = await sM.GuardarIngreso(idtipo, codigo, cantidad, Nota);
                     if (resp == "1")
                     {
-                        await DisplayAlert("Información!",
-                    "Insertado",
-                    "OK");
+                        await DisplayAlert("Información!","Insertado","OK");
 
                         dpt.isrefresh = true;
                         await this.Navigation.PopModalAsync();
                     }
                     else
                     {
-                        await DisplayAlert("Error!",
-                    "No insertado",
-                    "OK");
+                        await DisplayAlert("Error!","No insertado","OK");
                     }
 
 
@@ -121,18 +120,13 @@ namespace DeudorApp.Views
                 }
                 catch (Exception ex)
                 {
-
-                    await DisplayAlert("Error ex!",
-                  "No insertado",
-                  "OK");
+                    await DisplayAlert("Error ex!","No insertado","OK");
                 }
 
             }
             else
             {
-                await DisplayAlert("Información!",
-                "Debe seleccionar un tipo",
-                "OK");
+                await DisplayAlert("Información!","Debe seleccionar un tipo","OK");
             }
             
         }
@@ -150,62 +144,53 @@ namespace DeudorApp.Views
                 {
                     TipoMovimiento selectitem = (TipoMovimiento)picker.SelectedItem;
                     string idtipo = Convert.ToString(selectitem.idTipoMovimiento);
-
-                   
                     decimal cantidad = Convert.ToDecimal(txtMonto.Text);
                     string Nota = NotaGasto.Text;
 
                     var resp = await sM.GuardarGasto(idtipo, cantidad, Nota);
                     if (resp == "1")
                     {
-                        await DisplayAlert("Información!",
-                    "Insertado",
-                    "OK");
+                        await DisplayAlert("Información!","Insertado","OK");
 
-                    dpt.isrefresh = true;
-                    await this.Navigation.PopModalAsync();
+                        dpt.isrefresh = true;
+                        await this.Navigation.PopModalAsync();
                     }
                     else
                     {
-                        await DisplayAlert("Error!",
-                    "No insertado",
-                    "OK");
+                        await DisplayAlert("Error!","No insertado","OK");
                     }
 
                 }
                 catch (Exception ex)
                 {
 
-                    await DisplayAlert("Error ex!",
-                  "No insertado",
-                  "OK");
+                    await DisplayAlert("Error ex!","No insertado","OK");
                 }
 
             }
             else
             {
-                await DisplayAlert("Información!",
-                "Debe seleccionar un tipo",
-                "OK");
+                await DisplayAlert("Información!","Debe seleccionar un tipo","OK");
             }
-
-           
-
 
         }
 
         private void pickerIngreso_SelectedIndexChanged(object sender, EventArgs e)
         {
             TipoMovimiento selectitem = (TipoMovimiento)pickerIngreso.SelectedItem;
-            string idtipo = Convert.ToString(selectitem.idTipoMovimiento);
 
             if (selectitem.Tipo == "Crédito")
             {
-
+                txtRef.IsReadOnly = true;
                 buscarCredito.IsVisible = true;
+                idCredito = "";
+                txtRef.Text = "";
             }
             else
             {
+                txtRef.IsReadOnly = false;
+                idCredito = "";
+                txtRef.Text = "";
                 buscarCredito.IsVisible = false;
             }
         }

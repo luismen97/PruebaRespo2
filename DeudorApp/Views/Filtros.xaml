@@ -8,7 +8,7 @@
         <StackLayout HorizontalOptions="FillAndExpand" >
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="80"/>
                     <ColumnDefinition Width="80*"/>
                 </Grid.ColumnDefinitions>
                 <Label Grid.Column="1" Margin="20,0,0,0" Text="Filtro" HorizontalOptions="Start" VerticalOptions="Center" FontSize="18" TextColor="#545454" FontAttributes="Bold"/>

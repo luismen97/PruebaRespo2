@@ -206,12 +206,12 @@ namespace DeudorApp.Views
             };
             btnAcabar.GestureRecognizers.Add(clickAcabar);
 
-            var clickPlus = new TapGestureRecognizer();
+            /*var clickPlus = new TapGestureRecognizer();
             clickPlus.Tapped += async (s, e) =>
             {
                 await Navigation.PushAsync(new DeudorPlusTabs());
             };
-            btnPlus.GestureRecognizers.Add(clickPlus);
+            btnPlus.GestureRecognizers.Add(clickPlus);*/
 
             var clickAyuda = new TapGestureRecognizer();
             clickAyuda.Tapped += async (s, e) =>
@@ -263,7 +263,7 @@ namespace DeudorApp.Views
                     btnAcabar.IsVisible = true;
                     btnRegistarCliente.IsVisible = false;
                     btnReportar.IsVisible = false;
-                    btnPlus.IsVisible = false;
+                    //btnPlus.IsVisible = false;
                 }
 
 

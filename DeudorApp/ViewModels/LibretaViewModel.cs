@@ -145,7 +145,7 @@ namespace DeudorApp.ViewModels
                     Movimientos.Add(item);
                     MovimientosRef.Add(item);
                 }
-                SaldoFinal = Movimientos.Last().TotalNuevo;
+                SaldoFinal = Movimientos.First().TotalNuevo;
 
             }
             catch (Exception ex)

@@ -74,7 +74,7 @@ namespace DeudorApp.Views
             await Task.Delay(10);
             await btnRegistrIng.ScaleTo(1, length: 50, Easing.Linear);
 
-            if (txtMontoIng.Text != "" || txtRef.Text != "")
+            if (txtMontoIng.Text != null && txtRef.Text != "")
             {
                 if (pickerIngreso.SelectedIndex >= 0)
                 {
@@ -145,7 +145,7 @@ namespace DeudorApp.Views
             await Task.Delay(10);
             await btnRegistroGasto.ScaleTo(1, length: 50, Easing.Linear);
 
-            if (txtMonto.Text != "")
+            if (txtMonto.Text != null)
             {
                 if (picker.SelectedIndex >= 0)
                 {

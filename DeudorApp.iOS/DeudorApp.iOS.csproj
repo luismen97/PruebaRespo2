@@ -130,9 +130,6 @@
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2824%29.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2819%29.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2823%29.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -145,6 +142,7 @@
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\iphoneXSMAX.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\iphoneX.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

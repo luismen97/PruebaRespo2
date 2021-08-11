@@ -13,14 +13,14 @@ namespace DeudorApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ViewDetalleMovimiento : ContentPage
     {
-        double Saldo;
-        double Anterior;
-        double Cantidad;
+        decimal Saldo;
+        decimal Anterior;
+        decimal Cantidad;
         public ViewDetalleMovimiento(Movimiento model)
         {
             InitializeComponent();
-            Saldo = Convert.ToDouble(model.Saldo);
-            Cantidad = Convert.ToDouble(model.Cantidad);
+            Saldo = Convert.ToDecimal(model.Saldo);
+            Cantidad = Convert.ToDecimal(model.Cantidad);
             Anterior = Saldo + Cantidad;
             lblCantidad.Text = "$"+model.Cantidad;
             lblFecha.Text = model.FechaFormato;
@@ -34,6 +34,7 @@ namespace DeudorApp.Views
                 lblAnterior.Text = "$"+Anterior.ToString();
                 lblSaldo.Text = "$"+Saldo.ToString();
                 lblCredito.Text = model.NombreCredito;
+                lblMontoC.Text = "$"+model.MontoCredito;
             }
             else
             {

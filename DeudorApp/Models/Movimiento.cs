@@ -42,10 +42,12 @@ namespace DeudorApp.Models
         }
 
         /*CREDITOS*/
-        public string idcredito { get; set; }
-        public string NombreCredito { get; set; }
+        public string MontoCredito { get; set; }
+        public string Nombre { get; set; }
 
-        public string CURP { get; set; }
+        public string Saldo { get; set; }
+
+        public string NombreCredito { get; set; }
 
     }
 }

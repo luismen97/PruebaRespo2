@@ -34,55 +34,105 @@
                     </yummy:GradientStopCollection>
                 </yummy:PancakeView.BackgroundGradientStops>
 
-                <!--vista-->
-                <StackLayout>
-                    <StackLayout Margin="15,30,15,0">
-                        <StackLayout HorizontalOptions="FillAndExpand" Padding="10">
-                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
-                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
-                                    <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Vertical">
-                                        <Label  Text="Tipo:"  HorizontalOptions="Start" TextColor="#ECF0F1" FontAttributes="Bold" FontSize="20" VerticalOptions="Center"/>
-                                        <Label   x:Name="lblTipo" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" TextColor="#ECF0F1" FontSize="18" VerticalOptions="Center"/>
-                                        <BoxView HeightRequest=".5" BackgroundColor="#ECF0F1" HorizontalOptions="FillAndExpand"/>
+                <ScrollView>
+                    <!--vista-->
+                    <StackLayout>
+                        <StackLayout Margin="15,30,15,0">
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="10">
+                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                                    <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                        <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Vertical">
+                                            <Label  Text="Tipo:"  HorizontalOptions="Start" TextColor="#ECF0F1" FontAttributes="Bold" FontSize="20" VerticalOptions="Center"/>
+                                            <Label   x:Name="lblTipo" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" TextColor="#ECF0F1" FontSize="18" VerticalOptions="Center"/>
+                                            <BoxView HeightRequest=".5" BackgroundColor="#ECF0F1" HorizontalOptions="FillAndExpand"/>
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                        </StackLayout>
 
-                        <StackLayout HorizontalOptions="FillAndExpand"  Padding="10" Margin="0,20,0,0">
-                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
-                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
-                                    <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Vertical">
-                                        <Label Text="Fecha:"  HorizontalOptions="Start" TextColor="#ECF0F1" FontAttributes="Bold" FontSize="20" VerticalOptions="Center"/>
-                                        <Label  x:Name="lblFecha" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" TextColor="#ECF0F1" FontSize="18" VerticalOptions="Center"/>
-                                        <BoxView HeightRequest=".5" BackgroundColor="#ECF0F1" HorizontalOptions="FillAndExpand"/>
+                            <StackLayout HorizontalOptions="FillAndExpand"  Padding="10" Margin="0,20,0,0">
+                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                                    <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                        <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Vertical">
+                                            <Label Text="Fecha:"  HorizontalOptions="Start" TextColor="#ECF0F1" FontAttributes="Bold" FontSize="20" VerticalOptions="Center"/>
+                                            <Label  x:Name="lblFecha" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" TextColor="#ECF0F1" FontSize="18" VerticalOptions="Center"/>
+                                            <BoxView HeightRequest=".5" BackgroundColor="#ECF0F1" HorizontalOptions="FillAndExpand"/>
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                        <StackLayout HorizontalOptions="FillAndExpand" Padding="10" Margin="0,20,0,0">
-                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
-                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
-                                    <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Vertical">
-                                        <Label  Text="Cantidad:"  HorizontalOptions="Start" FontSize="20" FontAttributes="Bold" TextColor="#ECF0F1" VerticalOptions="Center"/>
-                                        <Label   x:Name="lblCantidad" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#ECF0F1" VerticalOptions="Center"/>
-                                        <BoxView HeightRequest=".5" BackgroundColor="#ECF0F1" HorizontalOptions="FillAndExpand"/>
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="10" Margin="0,20,0,0">
+                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                                    <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                        <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Vertical">
+                                            <Label  Text="Cantidad:"  HorizontalOptions="Start" FontSize="20" FontAttributes="Bold" TextColor="#ECF0F1" VerticalOptions="Center"/>
+                                            <Label   x:Name="lblCantidad" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#ECF0F1" VerticalOptions="Center"/>
+                                            <BoxView HeightRequest=".5" BackgroundColor="#ECF0F1" HorizontalOptions="FillAndExpand"/>
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                        <StackLayout HorizontalOptions="FillAndExpand" Padding="10" Margin="0,20,0,0">
-                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical" Spacing="20">
-                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
-                                    <StackLayout HorizontalOptions="FillAndExpand">
-                                        <Label Text="Nota:" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold" TextColor="#ECF0F1" VerticalOptions="Center"/>
-                                        <Label  x:Name="lblNota" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#ECF0F1" VerticalOptions="Center"/>
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="10" Margin="0,20,0,0">
+                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical" Spacing="20">
+                                    <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                        <StackLayout HorizontalOptions="FillAndExpand">
+                                            <Label Text="Nota:" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold" TextColor="#ECF0F1" VerticalOptions="Center"/>
+                                            <Label  x:Name="lblNota" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#ECF0F1" VerticalOptions="Center"/>
+                                            <BoxView HeightRequest=".5" BackgroundColor="#ECF0F1" HorizontalOptions="FillAndExpand"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+
+                            <StackLayout x:Name="vistaCredito" IsVisible="false">
+                                <StackLayout HorizontalOptions="FillAndExpand" Padding="10" Margin="0,20,0,0">
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical" Spacing="20">
+                                        <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                            <StackLayout HorizontalOptions="FillAndExpand">
+                                                <Label Text="Nombre Crédito:" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold" TextColor="#ECF0F1" VerticalOptions="Center"/>
+                                                <Label  x:Name="lblCredito" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#ECF0F1" VerticalOptions="Center"/>
+                                                <BoxView HeightRequest=".5" BackgroundColor="#ECF0F1" HorizontalOptions="FillAndExpand"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout HorizontalOptions="FillAndExpand" Padding="10" Margin="0,20,0,0">
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical" Spacing="20">
+                                        <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                            <StackLayout HorizontalOptions="FillAndExpand">
+                                                <Label Text="Cliente:" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold" TextColor="#ECF0F1" VerticalOptions="Center"/>
+                                                <Label  x:Name="lblCliente" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#ECF0F1" VerticalOptions="Center"/>
+                                                <BoxView HeightRequest=".5" BackgroundColor="#ECF0F1" HorizontalOptions="FillAndExpand"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout HorizontalOptions="FillAndExpand" Padding="10" Margin="0,20,0,0">
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical" Spacing="20">
+                                        <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                            <StackLayout HorizontalOptions="FillAndExpand">
+                                                <Label Text="Saldo anterior:" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold" TextColor="#ECF0F1" VerticalOptions="Center"/>
+                                                <Label  x:Name="lblAnterior" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#ECF0F1" VerticalOptions="Center"/>
+                                                <BoxView HeightRequest=".5" BackgroundColor="#ECF0F1" HorizontalOptions="FillAndExpand"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout HorizontalOptions="FillAndExpand" Padding="10" Margin="0,20,0,30">
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical" Spacing="20">
+                                        <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                            <StackLayout HorizontalOptions="FillAndExpand">
+                                                <Label Text="Saldo nuevo:" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold" TextColor="#ECF0F1" VerticalOptions="Center"/>
+                                                <Label  x:Name="lblSaldo" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#ECF0F1" VerticalOptions="Center"/>
+                                                <BoxView HeightRequest=".5" BackgroundColor="#ECF0F1" HorizontalOptions="FillAndExpand"/>
+                                            </StackLayout>
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>
                     </StackLayout>
-                </StackLayout>
+                </ScrollView>
             </yummy:PancakeView>
         </StackLayout>
     </ContentPage.Content>

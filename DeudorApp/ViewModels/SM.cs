@@ -241,13 +241,13 @@ namespace DeudorApp.ViewModels
             return respuesta;
         }
 
-        public async Task<string> GuardarIngreso(string idtipo, string codigo, decimal cantidad, string Nota)
+        public async Task<string> GuardarIngreso(string idtipo, string codigo, decimal cantidad, string Nota, string idcredito)
         {
             string resp = "nada";
             try
             {
                 var cliente = new HttpClient();
-                StringContent str = new StringContent("op=GuardarIngreso&idtipo="+ idtipo + "&codigo="+ codigo + "&cantidad="+ cantidad + "&Nota="+ Nota + "&Tipo2=INGRESO&IdCuenta=" + Application.Current.Properties["IdCuenta"].ToString(), Encoding.UTF8, "application/x-www-form-urlencoded");
+                StringContent str = new StringContent("op=GuardarIngreso&idtipo="+ idtipo + "&codigo="+ codigo + "&cantidad="+ cantidad + "&Nota="+ Nota + "&idcredito="+idcredito+"&Tipo2=INGRESO&IdCuenta=" + Application.Current.Properties["IdCuenta"].ToString(), Encoding.UTF8, "application/x-www-form-urlencoded");
                 var envia = cliente.PostAsync(new Uri(Constantes.url + "Usuario/App.php"), str);
                 var respuesta = await envia.Result.Content.ReadAsStringAsync();
 

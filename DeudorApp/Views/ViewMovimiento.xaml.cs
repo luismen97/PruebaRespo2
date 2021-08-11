@@ -18,7 +18,7 @@ namespace DeudorApp.Views
         TipoViewModel TipoViewM;
         DeudorPlusTabs dpt;
         public string Ref = "";
-        public string idCredito = "";
+        public string idCredito = "0";
         public ViewMovimiento(int TipoMovimiento, DeudorPlusTabs deudorPlusTabs)
         {
             InitializeComponent();
@@ -84,9 +84,9 @@ namespace DeudorApp.Views
 
                     if (selectitem.Tipo == "Crédito")
                     {
-                        if (idCredito != "")
+                        if (idCredito != "0")
                         {
-                            codigo = idCredito;
+                            codigo = "";
                         }
                         else
                         {
@@ -102,7 +102,7 @@ namespace DeudorApp.Views
                     decimal cantidad = Convert.ToDecimal(txtMontoIng.Text);
                     string Nota = NotaIng.Text;
 
-                    var resp = await sM.GuardarIngreso(idtipo, codigo, cantidad, Nota);
+                    var resp = await sM.GuardarIngreso(idtipo, codigo, cantidad, Nota, idCredito);
                     if (resp == "1")
                     {
                         await DisplayAlert("Información!","Insertado","OK");
@@ -183,13 +183,13 @@ namespace DeudorApp.Views
             {
                 txtRef.IsReadOnly = true;
                 buscarCredito.IsVisible = true;
-                idCredito = "";
+                idCredito = "0";
                 txtRef.Text = "";
             }
             else
             {
                 txtRef.IsReadOnly = false;
-                idCredito = "";
+                idCredito = "0";
                 txtRef.Text = "";
                 buscarCredito.IsVisible = false;
             }

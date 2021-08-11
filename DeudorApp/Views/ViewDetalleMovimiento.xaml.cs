@@ -13,13 +13,34 @@ namespace DeudorApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ViewDetalleMovimiento : ContentPage
     {
+        double Saldo;
+        double Anterior;
+        double Cantidad;
         public ViewDetalleMovimiento(Movimiento model)
         {
             InitializeComponent();
-            lblCantidad.Text = model.Cantidad;
+            Saldo = Convert.ToDouble(model.Saldo);
+            Cantidad = Convert.ToDouble(model.Cantidad);
+            Anterior = Saldo + Cantidad;
+            lblCantidad.Text = "$"+model.Cantidad;
             lblFecha.Text = model.FechaFormato;
             lblTipo.Text = model.Tipo2;
             lblNota.Text = model.Nota;
+
+            if (model.Tipo == "4")
+            {
+                vistaCredito.IsVisible = true;
+                lblCliente.Text = model.Nombre;
+                lblAnterior.Text = "$"+Anterior.ToString();
+                lblSaldo.Text = "$"+Saldo.ToString();
+                lblCredito.Text = model.NombreCredito;
+            }
+            else
+            {
+                vistaCredito.IsVisible = false;
+            }
+
+
 
             var clickClose = new TapGestureRecognizer();
             clickClose.Tapped += async (s, e) =>

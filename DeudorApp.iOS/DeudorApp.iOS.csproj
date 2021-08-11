@@ -115,16 +115,36 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2821%29.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\.DS_Store" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2820%29.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2824%29.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2819%29.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2823%29.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2822%29.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2818%29.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\iphoneXSMAX.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2821%29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\.DS_Store">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2820%29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2824%29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2819%29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2823%29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2822%29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Diseño sin título %2818%29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\iphoneXSMAX.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -49,5 +49,8 @@ namespace DeudorApp.Models
 
         public string NombreCredito { get; set; }
 
+        public string formatoCredito { get; set; }
+        public string idcredito { get; set; }
+
     }
 }

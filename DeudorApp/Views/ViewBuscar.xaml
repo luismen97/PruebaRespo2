@@ -35,16 +35,23 @@
                                         </yummy:PancakeView.Shadow>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="60"/>
-                                                <ColumnDefinition Width="90*"/>
+                                                <ColumnDefinition Width="70*"/>
+                                                <ColumnDefinition Width="80"/>
                                                 <ColumnDefinition Width="40"/>
                                             </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="25"/>
+                                                <RowDefinition Height="25"/>
 
-                                            <Frame Grid.Column="0" BackgroundColor="#545454" HeightRequest="10" CornerRadius="0" Padding="1">
-                                                <Label Text="CREDITO" TextColor="#fff" FontSize="10" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" VerticalTextAlignment="Center"/>
-                                            </Frame>
-                                            <Label Grid.Column="1" Text="{Binding CURP}" TextColor="#494949" FontSize="15" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="CenterAndExpand"/>
-                                            <Image Grid.Column="2"  Source="flechaseleccion.png"  IsVisible="true" HeightRequest="20" HorizontalOptions="End" VerticalOptions="CenterAndExpand">
+                                            </Grid.RowDefinitions>
+                                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding idcredito, StringFormat='Folio: {0:F2}'}" TextColor="#545454" FontSize="15"  HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+
+                                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding tipoCredito}" TextColor="#494949" FontSize="15" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding MontoCredito, StringFormat='${0:F2}'}" TextColor="#428655" FontSize="15" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+
+                                            <Label Grid.Row="2" Grid.Column="0" Text="{Binding Nombre}" TextColor="#494949" FontSize="18"  HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
+                                            <Image Grid.Row="1" Grid.Column="2"  Source="flechaseleccion.png"  IsVisible="true" HeightRequest="30" HorizontalOptions="End" VerticalOptions="CenterAndExpand">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding Path=BindingContext.SeleccionarCommand, Source={x:Reference Busqueda}}" CommandParameter="{Binding .}"/>
                                                 </Image.GestureRecognizers>

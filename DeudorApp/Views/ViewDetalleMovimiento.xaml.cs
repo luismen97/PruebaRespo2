@@ -26,6 +26,16 @@ namespace DeudorApp.Views
             lblFecha.Text = model.FechaFormato;
             lblTipo.Text = model.Tipo2;
             lblNota.Text = model.Nota;
+            if (model.Tipo2 != "GASTO")
+            {
+                vistaRef.IsVisible = true;
+                lblReferencia.Text = model.Referencia;
+            }
+            else
+            {
+                vistaRef.IsVisible = false;
+            }
+            
 
             if (model.Tipo == "4")
             {
@@ -33,8 +43,9 @@ namespace DeudorApp.Views
                 lblCliente.Text = model.Nombre;
                 lblAnterior.Text = "$"+Anterior.ToString();
                 lblSaldo.Text = "$"+Saldo.ToString();
-                lblCredito.Text = model.NombreCredito;
+                lblCredito.Text = model.formatoCredito;
                 lblMontoC.Text = "$"+model.MontoCredito;
+                lblFolio.Text = model.idcredito;
             }
             else
             {

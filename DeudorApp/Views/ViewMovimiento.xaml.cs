@@ -88,7 +88,7 @@ namespace DeudorApp.Views
                         {
                             if (idCredito != "0")
                             {
-                                codigo = "";
+                                codigo = txtRef.Text;
                             }
                             else
                             {

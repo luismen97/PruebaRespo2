@@ -50,7 +50,7 @@ namespace DeudorApp.ViewModels
                 {
                     try
                     {
-                        vm.Ref = model.CURP;
+                        vm.Ref = "Folio: "+model.idcredito;
                         vm.idCredito = model.idcredito.ToString();
                         vb.Navigation.PopModalAsync();
                     }

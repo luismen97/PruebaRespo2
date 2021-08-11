@@ -74,59 +74,66 @@ namespace DeudorApp.Views
             await Task.Delay(10);
             await btnRegistrIng.ScaleTo(1, length: 50, Easing.Linear);
 
-            if (pickerIngreso.SelectedIndex >= 0)
+            if (txtMontoIng.Text != "" || txtRef.Text != "")
             {
-                try
+                if (pickerIngreso.SelectedIndex >= 0)
                 {
-                    TipoMovimiento selectitem = (TipoMovimiento)pickerIngreso.SelectedItem;
-                    string idtipo = Convert.ToString(selectitem.idTipoMovimiento);
-                    string codigo = "";
-
-                    if (selectitem.Tipo == "Crédito")
+                    try
                     {
-                        if (idCredito != "0")
+                        TipoMovimiento selectitem = (TipoMovimiento)pickerIngreso.SelectedItem;
+                        string idtipo = Convert.ToString(selectitem.idTipoMovimiento);
+                        string codigo = "";
+
+                        if (selectitem.Tipo == "Crédito")
                         {
-                            codigo = "";
+                            if (idCredito != "0")
+                            {
+                                codigo = "";
+                            }
+                            else
+                            {
+                                await DisplayAlert("Alerta", "No ha seleccionado una referencia de crédito valida", "OK");
+                                return;
+                            }
                         }
                         else
                         {
-                            await DisplayAlert("Alerta", "No ha seleccionado una referencia de crédito valida", "OK");
-                            return;
+                            codigo = txtRef.Text;
                         }
+
+                        decimal cantidad = Convert.ToDecimal(txtMontoIng.Text);
+                        string Nota = NotaIng.Text;
+
+                        var resp = await sM.GuardarIngreso(idtipo, codigo, cantidad, Nota, idCredito);
+                        if (resp == "1")
+                        {
+                            await DisplayAlert("Información!", "Insertado", "OK");
+
+                            dpt.isrefresh = true;
+                            await this.Navigation.PopModalAsync();
+                        }
+                        else
+                        {
+                            await DisplayAlert("Error!", "No insertado", "OK");
+                        }
+
+
+
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        codigo = txtRef.Text;
+                        await DisplayAlert("Error ex!", "No insertado", "OK");
                     }
-                    
-                    decimal cantidad = Convert.ToDecimal(txtMontoIng.Text);
-                    string Nota = NotaIng.Text;
-
-                    var resp = await sM.GuardarIngreso(idtipo, codigo, cantidad, Nota, idCredito);
-                    if (resp == "1")
-                    {
-                        await DisplayAlert("Información!","Insertado","OK");
-
-                        dpt.isrefresh = true;
-                        await this.Navigation.PopModalAsync();
-                    }
-                    else
-                    {
-                        await DisplayAlert("Error!","No insertado","OK");
-                    }
-
-
 
                 }
-                catch (Exception ex)
+                else
                 {
-                    await DisplayAlert("Error ex!","No insertado","OK");
+                    await DisplayAlert("Información!", "Debe seleccionar un tipo", "OK");
                 }
-
             }
             else
             {
-                await DisplayAlert("Información!","Debe seleccionar un tipo","OK");
+                await DisplayAlert("Información!", "Llene los campos correctamente", "OK");
             }
             
         }
@@ -138,39 +145,46 @@ namespace DeudorApp.Views
             await Task.Delay(10);
             await btnRegistroGasto.ScaleTo(1, length: 50, Easing.Linear);
 
-            if (picker.SelectedIndex >= 0)
+            if (txtMonto.Text != "")
             {
-                try
+                if (picker.SelectedIndex >= 0)
                 {
-                    TipoMovimiento selectitem = (TipoMovimiento)picker.SelectedItem;
-                    string idtipo = Convert.ToString(selectitem.idTipoMovimiento);
-                    decimal cantidad = Convert.ToDecimal(txtMonto.Text);
-                    string Nota = NotaGasto.Text;
-
-                    var resp = await sM.GuardarGasto(idtipo, cantidad, Nota);
-                    if (resp == "1")
+                    try
                     {
-                        await DisplayAlert("Información!","Insertado","OK");
+                        TipoMovimiento selectitem = (TipoMovimiento)picker.SelectedItem;
+                        string idtipo = Convert.ToString(selectitem.idTipoMovimiento);
+                        decimal cantidad = Convert.ToDecimal(txtMonto.Text);
+                        string Nota = NotaGasto.Text;
 
-                        dpt.isrefresh = true;
-                        await this.Navigation.PopModalAsync();
+                        var resp = await sM.GuardarGasto(idtipo, cantidad, Nota);
+                        if (resp == "1")
+                        {
+                            await DisplayAlert("Información!", "Insertado", "OK");
+
+                            dpt.isrefresh = true;
+                            await this.Navigation.PopModalAsync();
+                        }
+                        else
+                        {
+                            await DisplayAlert("Error!", "No insertado", "OK");
+                        }
+
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        await DisplayAlert("Error!","No insertado","OK");
+
+                        await DisplayAlert("Error ex!", "No insertado", "OK");
                     }
 
                 }
-                catch (Exception ex)
+                else
                 {
-
-                    await DisplayAlert("Error ex!","No insertado","OK");
+                    await DisplayAlert("Información!", "Debe seleccionar un tipo", "OK");
                 }
-
             }
             else
             {
-                await DisplayAlert("Información!","Debe seleccionar un tipo","OK");
+                await DisplayAlert("Información!", "Debe llenar los campos correctamente", "OK");
             }
 
         }

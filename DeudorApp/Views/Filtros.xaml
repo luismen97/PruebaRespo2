@@ -33,7 +33,7 @@
                                     <StackLayout>
                                         <Label Text="Inicio" TextColor="#545454"  HorizontalTextAlignment="Center"/>
                                         <Frame  BackgroundColor="#BF2323" Padding="1">
-                                            <DatePicker x:Name="FIni" IsEnabled="false" TextColor="#fff" AnchorX="10"
+                                            <DatePicker x:Name="FIni" IsEnabled="false" TextColor="#fff" AnchorX="10" BackgroundColor="#BF2323"
                                             Format="dd-MM-yyyy"
                                             FontSize="13"
                                             Date="{x:Static system:DateTime.Today}"/>
@@ -43,7 +43,7 @@
                                     <StackLayout>
                                         <Label Text="Fin" TextColor="#545454" HorizontalTextAlignment="Center"/>
                                         <Frame  BackgroundColor="#BF2323" Padding="1">
-                                            <DatePicker x:Name="FFin"  IsEnabled="false" TextColor="#fff" 
+                                            <DatePicker x:Name="FFin"  IsEnabled="false" TextColor="#fff" BackgroundColor="#BF2323"
                                             Format="dd-MM-yyyy"   
                                             MaximumDate="12/31/2040"
                                             FontSize="13"

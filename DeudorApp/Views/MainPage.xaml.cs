@@ -13,8 +13,6 @@ namespace DeudorApp.Views
         public MainPage()
         {
             InitializeComponent();
-            _ = Autorizado();
-            
 
             var clickCuenta = new TapGestureRecognizer();
             clickCuenta.Tapped += (s, e) =>
@@ -45,12 +43,24 @@ namespace DeudorApp.Views
             {
                 vPlanes.IsEnabled = false;
                 vBusqueda.IsEnabled = false;
+               
+                bool r = await DisplayAlert("Información", "Termina tu registro de acreedor en el menú, para poder habilitar las opciones", "Acabar Registro", "OK");
+                if (r)
+                {
+                    await Navigation.PushAsync(new RegistroAcreedor());
+                }
             }
             else
             {
                 vPlanes.IsEnabled = true;
                 vBusqueda.IsEnabled = true;
             }
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            _ = Autorizado();
         }
     }
 }

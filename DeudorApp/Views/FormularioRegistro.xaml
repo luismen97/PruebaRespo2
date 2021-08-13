@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeudorApp.Views.FormularioRegistro">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Archivos" Clicked="Button_Clicked" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Text="Archivo nombre: " x:Name="lblNombre"/>
+            <Image x:Name="image"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

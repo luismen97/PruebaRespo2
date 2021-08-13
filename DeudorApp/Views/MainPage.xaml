@@ -5,7 +5,7 @@
             x:Class="DeudorApp.Views.MainPage" NavigationPage.HasNavigationBar="True" 
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
-            SelectedTabColor="#BF2323" BarBackgroundColor="#292929" UnselectedTabColor="#ccc">
+            SelectedTabColor="#BF2323" BarBackgroundColor="#292929" UnselectedTabColor="#ccc" android:TabbedPage.IsSwipePagingEnabled="False">
     <NavigationPage.TitleView>
 
         <StackLayout>
@@ -33,22 +33,22 @@
     </NavigationPage.TitleView>
     
     <TabbedPage.Children>
-        <NavigationPage Title="Inicio" Icon="inicio.png">
+        <NavigationPage x:Name="vInicio" Title="Inicio" Icon="inicio.png">
             <x:Arguments>
                 <views:Inicio />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Planes" Icon="pago.png">
+        <NavigationPage x:Name="vPlanes" Title="Planes" Icon="pago.png">
             <x:Arguments>
                 <views:Planes/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Busqueda" Icon="busqueda.png">
+        <NavigationPage x:Name="vBusqueda" Title="Busqueda" Icon="busqueda.png">
             <x:Arguments>
                 <views:Busqueda />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Plus" Icon="deudorLogo.png">
+        <NavigationPage x:Name="vPlus" Title="Plus" Icon="deudorLogo.png">
             <x:Arguments>
                 <views:DeudorPlusTabs />
             </x:Arguments>

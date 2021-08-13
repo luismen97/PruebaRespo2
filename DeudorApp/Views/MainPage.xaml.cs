@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DeudorApp.ViewModels;
+using System;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,9 +9,12 @@ namespace DeudorApp.Views
 {
     public partial class MainPage : TabbedPage
     {
+        SM sM = new SM();
         public MainPage()
         {
             InitializeComponent();
+            _ = Autorizado();
+            
 
             var clickCuenta = new TapGestureRecognizer();
             clickCuenta.Tapped += (s, e) =>
@@ -31,6 +36,21 @@ namespace DeudorApp.Views
                 Navigation.PushAsync(page);
             };
             calcu.GestureRecognizers.Add(clickCalcu);
+        }
+
+        public async Task Autorizado()
+        {
+            string aut = await sM.GetAutorizado();
+            if (aut != "1")
+            {
+                vPlanes.IsEnabled = false;
+                vBusqueda.IsEnabled = false;
+            }
+            else
+            {
+                vPlanes.IsEnabled = true;
+                vBusqueda.IsEnabled = true;
+            }
         }
     }
 }

@@ -32,23 +32,23 @@
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                                     <StackLayout>
                                         <Label Text="Inicio" TextColor="#545454"  HorizontalTextAlignment="Center"/>
-                                        <yummy:PancakeView  BackgroundColor="#BF2323">
+                                        <Frame  BackgroundColor="#BF2323" Padding="1">
                                             <DatePicker x:Name="FIni" IsEnabled="false" TextColor="#fff" AnchorX="10"
                                             Format="dd-MM-yyyy"
                                             FontSize="13"
                                             Date="{x:Static system:DateTime.Today}"/>
-                                        </yummy:PancakeView>
+                                        </Frame>
                                     </StackLayout>
                                     <BoxView Margin="10,0,10,0" WidthRequest=".5" BackgroundColor="#555555" VerticalOptions="FillAndExpand"/>
                                     <StackLayout>
                                         <Label Text="Fin" TextColor="#545454" HorizontalTextAlignment="Center"/>
-                                        <yummy:PancakeView  BackgroundColor="#BF2323">
+                                        <Frame  BackgroundColor="#BF2323" Padding="1">
                                             <DatePicker x:Name="FFin"  IsEnabled="false" TextColor="#fff" 
                                             Format="dd-MM-yyyy"   
                                             MaximumDate="12/31/2040"
                                             FontSize="13"
                                             Date="{x:Static system:DateTime.Today}"/>
-                                        </yummy:PancakeView>
+                                        </Frame>
                                     </StackLayout>
                                 </StackLayout>
 

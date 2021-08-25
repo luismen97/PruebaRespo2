@@ -297,6 +297,34 @@ namespace DeudorApp.ViewModels
             return resp;
         }
 
+        public async Task<string> ActualizaClave(string vieja, string nueva, string repetida)
+        {
+            string resp = "nada";
+            try
+            {
+                var cliente = new HttpClient();
+                StringContent str = new StringContent("op=ActualizaContra&vieja=" + vieja + "&nueva="+nueva+ "&IdCuenta=" + Application.Current.Properties["IdCuenta"].ToString(), Encoding.UTF8, "application/x-www-form-urlencoded");
+                var envia = cliente.PostAsync(new Uri(Constantes.url + "Usuario/App.php"), str);
+                var respuesta = await envia.Result.Content.ReadAsStringAsync();
+
+                if (respuesta == "")
+                {
+                    resp = "nada";
+                }
+                else
+                {
+                    resp = respuesta;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                await Application.Current.MainPage.DisplayAlert("Error", ex.ToString(), "Ok");
+            }
+            return resp;
+        }
+
 
         public class Datos
         {

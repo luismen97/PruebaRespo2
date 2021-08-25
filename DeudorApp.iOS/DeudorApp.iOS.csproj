@@ -377,4 +377,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\buscar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\identificacion.png" />
+  </ItemGroup>
 </Project>

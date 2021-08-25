@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:DeudorApp.Renderers"
+             x:Class="DeudorApp.Views.ActualizaContraseña" NavigationPage.HasNavigationBar="False" BackgroundColor="#ffff">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="loader" IsVisible="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <ActivityIndicator HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsRunning="true" />
+
+            </StackLayout>
+            <StackLayout x:Name="Contenido" Padding="0,10,0,10" Spacing="0">
+                <StackLayout>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="80*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" Text="Actualizar Contraseña" HorizontalOptions="Start" VerticalOptions="Center" FontSize="18" TextColor="#545454" FontAttributes="Bold"/>
+                        <Image x:Name="btnCerrar" Grid.Column="0" Source="cancel.png" HeightRequest="30" Margin="0,10,0,10"/>
+                    </Grid>
+                </StackLayout>
+                <BoxView HeightRequest="5" BackgroundColor="#E7E7E7" HorizontalOptions="FillAndExpand"/>
+                <StackLayout>
+                    <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" CornerRadius="7" Margin="10,15,10,3" >
+                        <local:Entry_R x:Name="ClaveVieja" HeightRequest="45" Opacity=".7" Placeholder="Contraseña anterior" IsPassword="true" TextColor="#000000" PlaceholderColor="#525252" BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" FontSize="15" />
+                    </Frame>
+                    <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" CornerRadius="7" Margin="10,3,10,3" >
+                        <local:Entry_R x:Name="ClaveNueva" HeightRequest="45" Opacity=".7" Placeholder="Contraseña nueva" IsPassword="true" TextColor="#000000" PlaceholderColor="#525252" BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" FontSize="15" />
+                    </Frame>
+                    <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" CornerRadius="7" Margin="10,3,10,3" >
+                        <local:Entry_R x:Name="ClaveRepetidaNueva" HeightRequest="45" Opacity=".7" Placeholder="Repetir Contraseña nueva" IsPassword="true" TextColor="#000000" PlaceholderColor="#525252" BackgroundColor="#ffffff" HorizontalOptions="FillAndExpand" FontSize="15" />
+                    </Frame>
+                    <Button Clicked="Button_Clicked" BackgroundColor="#428655"  CornerRadius="6"  Margin="10" Text="Actualizar" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="#fff" />
+                </StackLayout>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

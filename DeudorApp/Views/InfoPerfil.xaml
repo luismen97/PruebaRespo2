@@ -113,28 +113,7 @@
                             <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand"/>
 
                         </StackLayout>
-                        <!--contraseña-->
-                        <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
 
-                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
-
-
-
-                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
-
-                                    <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal">
-
-                                        <Label Text="Contraseña" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand"  />
-                                        <local:Entry_R x:Name="txtContra" Text=""  Keyboard="Text" IsPassword="true" PlaceholderColor="#ccc" TextColor="#333" FontSize="15" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
-                                    </StackLayout>
-
-                                </StackLayout>
-
-                            </StackLayout>
-
-                            <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand"/>
-
-                        </StackLayout>
                         <!--Telefono-->
                         <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,0">
                             <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
@@ -147,20 +126,37 @@
                             </StackLayout>
                             <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand"/>
                         </StackLayout>
-
-                        <StackLayout Padding="10,0,20,0" HorizontalOptions="FillAndExpand">
-                            <Label Text="" TextColor="#000000" FontSize="18"/>
-                        </StackLayout>
-                        <StackLayout x:Name="btnActualizar" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,10">
-                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                        <!--contraseña-->
+                        <StackLayout x:Name="btnActualizarContra" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,10">
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="22">
                                 <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
                                     <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal" VerticalOptions="Center">
-                                        <Label Text="Actualizar Perfil" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+                                        <Label Text="Actualizar Contraseña" FontSize="15" TextColor="#4A4A4A" VerticalOptions="EndAndExpand" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
                                         <Image Source="right.png" HorizontalOptions="EndAndExpand" HeightRequest="20" VerticalOptions="EndAndExpand"/>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
+                            
                         </StackLayout>
+                        <BoxView HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand"/>
+
+                        <StackLayout Padding="10,0,20,0" HorizontalOptions="FillAndExpand">
+                            <Label Text="" TextColor="#000000" FontSize="18"/>
+                        </StackLayout>
+                        <StackLayout x:Name="btnActualizar" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="10,10,10,10" Margin="10,0,10,0">
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="20">
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30">
+                                    <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="30" Orientation="Horizontal" VerticalOptions="Center">
+                                        <Label Text="Actualizar Perfil" FontSize="18" TextColor="#4A4A4A" VerticalOptions="EndAndExpand" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Padding="10,0,20,0" HorizontalOptions="FillAndExpand">
+                            <Label Text="" TextColor="#000000" FontSize="18"/>
+                        </StackLayout>
+                       
+                        
                         <StackLayout Padding="10,10,20,10" HorizontalOptions="FillAndExpand">
                             <Label Text="Estado de créditos" TextColor="#000000" FontSize="18" FontAttributes="Bold"/>
                         </StackLayout>

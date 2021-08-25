@@ -260,10 +260,13 @@ namespace DeudorApp.Views
                 string aut = await sM.GetAutorizado();
                 if (aut != "1")
                 {
-                    btnAcabar.IsVisible = true;
-                    btnRegistarCliente.IsVisible = false;
-                    btnReportar.IsVisible = false;
-                    //btnPlus.IsVisible = false;
+                    if (Application.Current.Properties["TipoCuenta"].ToString() ==  "2")
+                    {
+                        btnAcabar.IsVisible = true;
+                        btnRegistarCliente.IsVisible = false;
+                        btnReportar.IsVisible = false;
+                        //btnPlus.IsVisible = false;
+                    }
                 }
 
 

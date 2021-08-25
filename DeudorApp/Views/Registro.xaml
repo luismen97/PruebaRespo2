@@ -31,9 +31,20 @@
                             </Frame>
                         </StackLayout>
 
-                        <StackLayout x:Name="contApellidos">
+                        <StackLayout>
                             <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" CornerRadius="5" Margin="3,3,3,3" >
-                                <local:Entry_R x:Name="apellidos" Placeholder="Apellidos" PlaceholderColor="#666" HeightRequest="50" Text="" HorizontalOptions="FillAndExpand" TextColor="#333" FontSize="15" BackgroundColor="White" Opacity=".7" />
+                                <local:Entry_R x:Name="apellidoP" Placeholder="Apellido Paterno" PlaceholderColor="#666" HeightRequest="50" Text="" HorizontalOptions="FillAndExpand" TextColor="#333" FontSize="15" BackgroundColor="White" Opacity=".7" />
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout >
+                            <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" CornerRadius="5" Margin="3,3,3,3" >
+                                <local:Entry_R x:Name="apellidoM" Placeholder="Apellido Materno" PlaceholderColor="#666" HeightRequest="50" Text="" HorizontalOptions="FillAndExpand" TextColor="#333" FontSize="15" BackgroundColor="White" Opacity=".7" />
+                            </Frame>
+                        </StackLayout>
+
+                        <StackLayout x:Name="contCURP">
+                            <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" CornerRadius="5" Margin="3,3,3,3" >
+                                <local:Entry_R x:Name="curp" Placeholder="CURP" PlaceholderColor="#666" HeightRequest="50" Text="" HorizontalOptions="FillAndExpand" TextColor="#333" FontSize="15" BackgroundColor="White" Opacity=".7" />
                             </Frame>
                         </StackLayout>
 
@@ -62,6 +73,21 @@
                             </Frame>
 
                         </StackLayout>
+                        <Label Text="Adjuntar Foto de INE" TextColor="#fff" Margin="3,0,0,0"/>
+                        <Frame Margin="3,3,3,3" Padding="10,1,10,1" x:Name="INE">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="90*"/>
+                                </Grid.ColumnDefinitions>
+                                <!--<Button Grid.Column="0" ImageSource="identificacion.png" HeightRequest="20" Clicked="Button_Clicked" TextColor="#212121" BackgroundColor="#DCDCDC" Margin="3,3,3,3" />-->
+
+                                <Image Grid.Column="0" Source="identificacion.png" WidthRequest="60"/>
+                                
+                                <Label x:Name="txtFoto" Grid.Column="1" Text="Elegir Foto" HorizontalOptions="End" VerticalOptions="Center"/>
+                            </Grid>
+                        </Frame>
+                        
                         <!--
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10" Orientation="Horizontal">                            
                         <Label Text="Aceptas Publicidad" TextColor="#666" FontSize="15" VerticalOptions="CenterAndExpand" />                            
@@ -81,7 +107,7 @@
                         <Label Margin="10" x:Name="tos" Text="Leer más sobre los términos y condiciones" TextColor="WhiteSmoke" FontSize="12" />
 
                         <StackLayout x:Name="btnRegistrarse" HorizontalOptions="FillAndExpand" Padding="20,30,20,20">
-                            <Frame Padding="0" VerticalOptions="CenterAndExpand" BorderColor="#d82425" BackgroundColor="#d82425" HasShadow="false" CornerRadius="5" HeightRequest="40" WidthRequest="150">
+                            <Frame Padding="0" VerticalOptions="CenterAndExpand" BorderColor="#BF2323" BackgroundColor="#BF2323" HasShadow="false" CornerRadius="5" HeightRequest="40" WidthRequest="150">
                                 <Label Text="Registrarse" TextColor="WhiteSmoke" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
                             </Frame>
                         </StackLayout>

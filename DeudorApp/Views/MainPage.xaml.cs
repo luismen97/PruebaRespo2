@@ -38,16 +38,24 @@ namespace DeudorApp.Views
 
         public async Task Autorizado()
         {
+            
             string aut = await sM.GetAutorizado();
             if (aut != "1")
             {
                 vPlanes.IsEnabled = false;
                 vBusqueda.IsEnabled = false;
-               
-                bool r = await DisplayAlert("Información", "Termina tu registro de acreedor en el menú, para poder habilitar las opciones", "Acabar Registro", "OK");
-                if (r)
+
+                if (Application.Current.Properties["TipoCuenta"].ToString() == "2")
                 {
-                    await Navigation.PushAsync(new RegistroAcreedor());
+                    bool r = await DisplayAlert("Información", "Termina tu registro de acreedor en el menú, para poder habilitar las opciones", "Acabar Registro", "OK");
+                    if (r)
+                    {
+                        await Navigation.PushAsync(new RegistroAcreedor());
+                    }
+                }
+                else if(Application.Current.Properties["TipoCuenta"].ToString() == "1")
+                {
+                    await DisplayAlert("Información", "Tu cuenta está en proceso de verificación, algunas funciones estarán desactivadas", "OK");
                 }
             }
             else

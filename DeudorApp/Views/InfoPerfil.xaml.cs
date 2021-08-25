@@ -16,11 +16,18 @@ namespace DeudorApp.Views
     public partial class InfoPerfil : ContentPage
     {
         SM sM = new SM();
+        string claveOficial = "";
         public InfoPerfil()
         {
             InitializeComponent();
             Title = "Mi Perfil";
-            
+
+            var actualizaContra = new TapGestureRecognizer();
+            actualizaContra.Tapped += async (s, e) =>
+            {
+                await Navigation.PushModalAsync(new ActualizaContraseña());
+            };
+            btnActualizarContra.GestureRecognizers.Add(actualizaContra);
 
 
             ICommand refreshCommand = new Command(() =>
@@ -53,7 +60,6 @@ namespace DeudorApp.Views
                         p.IdCuenta = Application.Current.Properties["IdCuenta"].ToString();
                         p.Nombre = txtNombre.Text;
                         p.Apellidos = txtApellidos.Text;
-                        p.Clave = txtContra.Text;
                         p.NIT = txtTelefono.Text;
 
                         string cons = await sM.ActualizaPerfilAsync(p);
@@ -86,9 +92,9 @@ namespace DeudorApp.Views
                 }
                 else
                 {
+                    string clave = Application.Current.Properties["Clave"].ToString();
                     txtNombre.Text = Application.Current.Properties["Nombre"].ToString();
                     txtApellidos.Text = Application.Current.Properties["Apellidos"].ToString();
-                    txtContra.Text = Application.Current.Properties["Clave"].ToString();
                     txtTelefono.Text = Application.Current.Properties["NIT"].ToString();
                 }
             };
@@ -131,11 +137,13 @@ namespace DeudorApp.Views
                 else
                 {
                     JArray obj = JArray.Parse(resp);
-                  
+
+                    string contra = obj[0]["Clave"].ToString();
+                    claveOficial = obj[0]["Clave"].ToString();
+
                     txtCurp.Text = obj[0]["CURP"].ToString();
                     txtNombre.Text = obj[0]["Nombre"].ToString();
                     txtApellidos.Text = obj[0]["Apellidos"].ToString();
-                    txtContra.Text = obj[0]["Clave"].ToString();
                     txtTelefono.Text = obj[0]["telefono"].ToString();
                     txtCorreo.Text = obj[0]["Correo"].ToString();
 
@@ -160,7 +168,6 @@ namespace DeudorApp.Views
             txtCurp.Text = Application.Current.Properties["CURP"].ToString();
             txtNombre.Text = Application.Current.Properties["Nombre"].ToString();
             txtApellidos.Text = Application.Current.Properties["Apellidos"].ToString();
-            txtContra.Text = Application.Current.Properties["Clave"].ToString();
             txtTelefono.Text = Application.Current.Properties["NIT"].ToString();
         }
     }

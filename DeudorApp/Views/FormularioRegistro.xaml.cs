@@ -22,18 +22,11 @@ namespace DeudorApp.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            var file = await FilePicker.PickMultipleAsync();
+            var file = await FilePicker.PickAsync();
+            
 
-            if (file != null)
-            {
 
-                
-                foreach (var item in file)
-                {
-                    var stream = await item.OpenReadAsync();
-                }
-                
-            }
+
         }
     }
 }

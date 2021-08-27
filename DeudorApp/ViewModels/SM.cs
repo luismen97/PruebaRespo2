@@ -46,6 +46,8 @@ namespace DeudorApp.ViewModels
             }
         }
 
+        
+
         public async Task guardarDatos(Perfil perfil)
         {
             Application.Current.Properties["sesion"] = "activa";
@@ -99,6 +101,19 @@ namespace DeudorApp.ViewModels
             var cliente = new HttpClient();
             StringContent str = new StringContent("op=registro&perfil=" + json, Encoding.UTF8, "application/x-www-form-urlencoded");
             var envia = cliente.PostAsync(new Uri(Constantes.url + "Sesion/App.php"), str);
+            var respuesta = await envia.Result.Content.ReadAsStringAsync();
+            System.Diagnostics.Debug.WriteLine("respuesta: " + respuesta);
+
+            return respuesta;
+        }
+
+        public async Task<string> ActualizarAcreedor(DatosAcreedor d)
+        {
+            var json = JsonConvert.SerializeObject(d);
+            System.Diagnostics.Debug.WriteLine("PERFIL->" + json);
+            var cliente = new HttpClient();
+            StringContent str = new StringContent("op=RegistrarAcreedor&json=" + json, Encoding.UTF8, "application/x-www-form-urlencoded");
+            var envia = cliente.PostAsync(new Uri(Constantes.url + "Usuario/App.php"), str);
             var respuesta = await envia.Result.Content.ReadAsStringAsync();
             System.Diagnostics.Debug.WriteLine("respuesta: " + respuesta);
 

@@ -18,15 +18,17 @@ namespace DeudorApp.Views
         public FormularioRegistro()
         {
             InitializeComponent();
+            Title = "Completa Registro";
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void btnLlenarDatos_Clicked(object sender, EventArgs e)
         {
-            var file = await FilePicker.PickAsync();
-            
+            await Navigation.PushAsync(new FormularioAcreedor());
+        }
 
-
-
+        private async void btnDocumentos_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new DocumentosAcreedor());
         }
     }
 }

@@ -201,7 +201,7 @@ namespace DeudorApp.Views
             var clickAcabar = new TapGestureRecognizer();
             clickAcabar.Tapped += async (s, e) =>
             {
-                await Navigation.PushAsync(new RegistroAcreedor());
+                await Navigation.PushAsync(new FormularioRegistro());
 
             };
             btnAcabar.GestureRecognizers.Add(clickAcabar);

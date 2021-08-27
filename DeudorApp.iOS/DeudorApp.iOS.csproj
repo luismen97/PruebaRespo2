@@ -380,4 +380,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\identificacion.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\imagefiles.png" />
+  </ItemGroup>
 </Project>

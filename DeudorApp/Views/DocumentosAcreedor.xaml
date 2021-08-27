@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="DeudorApp.Views.DocumentosAcreedor" BackgroundColor="#fff">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10" Spacing="5">
+                <StackLayout x:Name="loader" IsVisible="false" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                    <ActivityIndicator IsRunning="true" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Adjuntar Foto de INE" TextColor="#212121" Margin="3,0,0,0"/>
+                    <yummy:PancakeView Margin="3,3,3,3" Padding="10,5,10,5" CornerRadius="5,5,5,5" x:Name="Comprobante" Border="{yummy:BorderMarkup Color=#555555, Thickness='1'}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="90*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="imagefiles.png" HeightRequest="30"/>
+
+                            <Label x:Name="txtFoto" Grid.Column="1" Text="Elegir Foto" HorizontalOptions="End" VerticalOptions="Center"/>
+                        </Grid>
+                    </yummy:PancakeView>
+                    <StackLayout x:Name="btnRegistrarse" HorizontalOptions="FillAndExpand" Padding="20,30,20,20">
+                        <Frame Padding="0" VerticalOptions="CenterAndExpand" BorderColor="#BF2323" BackgroundColor="#BF2323" HasShadow="false" CornerRadius="5" HeightRequest="40" WidthRequest="150">
+                            <Label Text="Registrar" TextColor="WhiteSmoke" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

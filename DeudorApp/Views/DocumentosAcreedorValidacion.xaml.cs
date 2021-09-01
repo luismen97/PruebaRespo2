@@ -14,14 +14,14 @@ using Xamarin.Forms.Xaml;
 namespace DeudorApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DocumentosAcreedor : ContentPage
+    public partial class DocumentosAcreedorValidacion : ContentPage
     {
         Stream mfile;
         string fileName = "";
-        public DocumentosAcreedor()
+        public DocumentosAcreedorValidacion()
         {
             InitializeComponent();
-            Title = "Documentos Identidad";
+            Title = "Documentos Acreedor";
 
             var clickINE = new TapGestureRecognizer();
             clickINE.Tapped += async (s, e) =>
@@ -39,6 +39,7 @@ namespace DeudorApp.Views
 
                 if (file == null)
                     return;
+
 
                 fileName = Path.GetFileName(file.Path);
 
@@ -58,7 +59,7 @@ namespace DeudorApp.Views
                 }
                 else
                 {
-                    var url = "uploadImage.php?op=registroDocIdentidad&IdCuenta=" + Application.Current.Properties["IdCuenta"].ToString();
+                    var url = "uploadImage.php?op=registroDocAcreedor&IdCuenta=" + Application.Current.Properties["IdCuenta"].ToString();
 
 
                     var cliente = new HttpClient();
@@ -85,7 +86,7 @@ namespace DeudorApp.Views
                         await DisplayAlert("Alerta", "Imagen Subida Correctamente", "OK");
                         await Navigation.PopAsync();
                     }
-                   
+
                 }
                 await Task.Delay(2000);
                 loader.IsVisible = false;
@@ -93,6 +94,7 @@ namespace DeudorApp.Views
 
             };
             btnRegistrar.GestureRecognizers.Add(clickRegistrarDoc);
+
         }
     }
 }

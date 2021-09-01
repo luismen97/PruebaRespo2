@@ -50,7 +50,7 @@ namespace DeudorApp.Views
                     bool r = await DisplayAlert("Información", "Termina tu registro de acreedor en el menú, para poder habilitar las opciones", "Acabar Registro", "OK");
                     if (r)
                     {
-                        await Navigation.PushAsync(new RegistroAcreedor());
+                        await Navigation.PushAsync(new FormularioRegistro());
                     }
                 }
                 else if(Application.Current.Properties["TipoCuenta"].ToString() == "1")

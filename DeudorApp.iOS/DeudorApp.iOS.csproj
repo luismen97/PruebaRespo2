@@ -389,4 +389,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\imagefiles.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\alert.png" />
+  </ItemGroup>
 </Project>

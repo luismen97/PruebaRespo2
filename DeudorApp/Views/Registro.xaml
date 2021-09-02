@@ -44,7 +44,7 @@
 
                         <StackLayout x:Name="contCURP">
                             <Frame BorderColor="#a6a6a6" Padding="3" HasShadow="True" CornerRadius="5" Margin="3,3,3,3" >
-                                <local:Entry_R x:Name="curp" Placeholder="CURP" PlaceholderColor="#666" HeightRequest="50" Text="" HorizontalOptions="FillAndExpand" TextColor="#333" FontSize="15" BackgroundColor="White" Opacity=".7" />
+                                <local:Entry_R x:Name="curp" Placeholder="CURP" TextTransform="Uppercase" PlaceholderColor="#666" HeightRequest="50" Text="" HorizontalOptions="FillAndExpand" TextColor="#333" FontSize="15" BackgroundColor="White" Opacity=".7" />
                             </Frame>
                         </StackLayout>
 

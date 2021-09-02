@@ -151,7 +151,6 @@ namespace DeudorApp.ViewModels
             string resp = "nada";
             try
             {
-                
                 var client = new HttpClient();
                 StringContent str = new StringContent("op=RecuperaCuenta&TextID="+TextRecupera, Encoding.UTF8,"application/x-www-form-urlencoded");
                 var consulta = await client.PostAsync(Constantes.url+"Usuario/App.php",str);

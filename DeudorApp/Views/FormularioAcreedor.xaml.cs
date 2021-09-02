@@ -28,7 +28,7 @@ namespace DeudorApp.Views
             var clickRegistrar = new TapGestureRecognizer();
             clickRegistrar.Tapped += async (s, e) =>
             {
-                if (calle.Text.Equals("")  || NoExt.Text.Equals("") || localidad.Text.Equals("") || colonia.Text.Equals("") || referencia.Text.Equals("") || idCiudad == "" || idEstado == "" || cp.Text.Equals("") || idTipoAcreedor == "" || codigo.Text.Equals(""))
+                if (calle.Text.Equals("") || NoExt.Text.Equals("") || localidad.Text.Equals("") || colonia.Text.Equals("") || referencia.Text.Equals("") || idCiudad == "" || idEstado == "" || cp.Text.Equals("") || idTipoAcreedor == "")
                 {
                     await DisplayAlert("Ups!", "Te faltan algunos campos por llenar", "OK");
 

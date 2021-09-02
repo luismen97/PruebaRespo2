@@ -161,20 +161,20 @@ namespace DeudorApp.ViewModels
                 System.Diagnostics.Debug.WriteLine("Tipos: " + json);
 
 
-                if (json != "")
+                if (json != "[]")
                 {
                     JArray obj = JArray.Parse(json);
                     idFormAcreedor = obj[0]["idFormAcreedor"].ToString();
                     identidad = obj[0]["identidad"].ToString();
                     acreedor = obj[0]["acreedor"].ToString();
                     int cont = 0;
-                    if (idFormAcreedor != null || idFormAcreedor != "0") { CheckidFormAcreedor = "checked.png"; cont++; }  
+                    if (idFormAcreedor != null && idFormAcreedor != "0") { CheckidFormAcreedor = "checked.png"; cont++; }  
                     else CheckidFormAcreedor = "alert.png";
 
                     if (identidad != null && identidad != "0") { Checkidentidad = "checked.png"; cont++; } 
                     else Checkidentidad = "alert.png";
 
-                    if (acreedor != null || acreedor != "0") { Checkacreedor = "checked.png"; cont++; } 
+                    if (acreedor != null && acreedor != "0") { Checkacreedor = "checked.png"; cont++; } 
                     else Checkacreedor = "alert.png";
 
                     if (cont == 3) CheckButton = "true";
@@ -193,7 +193,6 @@ namespace DeudorApp.ViewModels
             {
                 System.Diagnostics.Debug.WriteLine(ex.Message);
             }
-           
         }
         async Task ExecuteFlujoCommand()
         {

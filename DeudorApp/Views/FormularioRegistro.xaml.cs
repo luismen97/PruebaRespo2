@@ -35,6 +35,7 @@ namespace DeudorApp.Views
         {
             contenido.IsVisible = false;
             loader.IsVisible = true;
+            await Task.Delay(1500);
             Vmodel.LoadFormulariosCommand.Execute(null);
             Vmodel.FlujoCommand.Execute(null);
             await Task.Delay(1500);

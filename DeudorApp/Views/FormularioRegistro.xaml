@@ -7,15 +7,12 @@
         <ScrollView>
             <StackLayout>
                 <StackLayout x:Name="loader" IsVisible="false" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-
                     <ActivityIndicator IsRunning="true" Color="#000" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
-
                 </StackLayout>
-                
                 <StackLayout  x:Name="contenido" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
-                    <StackLayout IsVisible="{Binding Flujo}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                        <Image Source="checked.png" WidthRequest="70" HorizontalOptions="Center" VerticalOptions="Center"/>
-                        <Label Text="{Binding TextoFlujo}" FontSize="20" HorizontalTextAlignment="Center" Margin="10,20,10,0" TextColor="#212121"/>
+                    <StackLayout IsVisible="{Binding Flujo}" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                        <Image Source="checked.png" WidthRequest="70" HorizontalOptions="Center" VerticalOptions="Center" Margin="10"/>
+                        <Label Text="{Binding TextoFlujo}" HorizontalTextAlignment="Center" FontSize="20"  Margin="10,20,10,0" TextColor="#212121"/>
                     </StackLayout>
                     <StackLayout IsVisible="{Binding Formulario}">
                         <StackLayout>
@@ -25,7 +22,6 @@
                                         <RowDefinition Height="50" />
                                         <RowDefinition Height="*" />
                                         <RowDefinition Height="40" />
-
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="100*" />
@@ -41,10 +37,9 @@
                             <yummy:PancakeView BackgroundColor="#ffffff" CornerRadius="5" Padding="5"  Margin="10,5,10,5" Border="{yummy:BorderMarkup Color=#555555, Thickness='2'}">
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="50" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="40" />
-
+                                        <RowDefinition Height="50"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="40"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="100*" />
@@ -60,10 +55,9 @@
                             <yummy:PancakeView BackgroundColor="#ffffff" CornerRadius="5" Padding="5"  Margin="10,5,10,5" Border="{yummy:BorderMarkup Color=#555555, Thickness='2'}">
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="50" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="40" />
-
+                                        <RowDefinition Height="50"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="40"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="100*" />

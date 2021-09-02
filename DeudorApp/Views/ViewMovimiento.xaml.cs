@@ -16,7 +16,7 @@ namespace DeudorApp.Views
     {
         SM sM = new SM();
         TipoViewModel TipoViewM;
-        DeudorPlusTabs dpt;
+        DeudorPlusTabs dpt = new DeudorPlusTabs();
         public string Ref = "";
         public string idCredito = "0";
         public ViewMovimiento(int TipoMovimiento, DeudorPlusTabs deudorPlusTabs)
@@ -60,8 +60,9 @@ namespace DeudorApp.Views
 
         protected override void OnAppearing()
         {
-            txtRef.Text = Ref;
+           
             base.OnAppearing();
+            txtRef.Text = Ref;
             if (TipoViewM.TiposMovimiento.Count == 0)
             {
                 TipoViewM.LoadTipoCommand.Execute(null);
@@ -110,6 +111,7 @@ namespace DeudorApp.Views
                             await DisplayAlert("Información!", "Insertado", "OK");
 
                             dpt.isrefresh = true;
+                            await Task.Delay(1000);
                             await this.Navigation.PopModalAsync();
                         }
                         else
@@ -162,6 +164,7 @@ namespace DeudorApp.Views
                             await DisplayAlert("Información!", "Insertado", "OK");
 
                             dpt.isrefresh = true;
+                            await Task.Delay(1000);
                             await this.Navigation.PopModalAsync();
                         }
                         else

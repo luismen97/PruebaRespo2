@@ -15,7 +15,7 @@ namespace DeudorApp.Views
     public partial class Filtros : ContentPage
     {
         LibretaViewModel lbv;
-        DeudorPlusTabs plus;
+        DeudorPlusTabs plus = new DeudorPlusTabs();
         public Filtros(LibretaViewModel LibretaViewModel, DeudorPlusTabs deudorPlusTabs)
         {
             InitializeComponent();
@@ -75,7 +75,7 @@ namespace DeudorApp.Views
                 }
                 lbv.Filtrar(Tipo, Dincio, Dfin, CF);
                 plus.isrefresh = false;
-
+                Task.Delay(1000);
                 Navigation.PopModalAsync();
             }
 
@@ -96,11 +96,11 @@ namespace DeudorApp.Views
             }
         }
 
-        private void Button_Clicked_1(object sender, EventArgs e)
+        private async void Button_Clicked_1(object sender, EventArgs e)
         {
             plus.isrefresh = true;
-
-            Navigation.PopModalAsync();
+            await Task.Delay(1000);
+            await Navigation.PopModalAsync();
         }
     }
 }

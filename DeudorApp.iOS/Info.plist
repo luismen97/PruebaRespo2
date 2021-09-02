@@ -36,5 +36,7 @@
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Uso de la Galeria para Fotos</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Uso de la Cámara para aplicación</string>
 </dict>
 </plist>

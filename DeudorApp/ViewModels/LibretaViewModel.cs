@@ -212,7 +212,7 @@ namespace DeudorApp.ViewModels
                 }
                 
                 match = lista;
-                if (TipoM == "1")
+                if (TipoM == "1" || TipoM == "4")
                 {
                     
                     string filtro = "GASTO";

@@ -38,7 +38,6 @@ namespace DeudorApp.Views
 
         public async Task Autorizado()
         {
-            
             string aut = await sM.GetAutorizado();
             if (aut != "1")
             {

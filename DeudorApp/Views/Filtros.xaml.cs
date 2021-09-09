@@ -73,8 +73,13 @@ namespace DeudorApp.Views
                     /* 3 INGRESOS*/
                     Tipo = "3";
                 }
+                else if (chI == false && chG == false)
+                {
+                    Tipo = "4";
+                }
                 lbv.Filtrar(Tipo, Dincio, Dfin, CF);
                 plus.isrefresh = false;
+                plus.Refrescar();
                 Task.Delay(1000);
                 Navigation.PopModalAsync();
             }
@@ -99,6 +104,7 @@ namespace DeudorApp.Views
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
             plus.isrefresh = true;
+            plus.Refrescar();
             await Task.Delay(1000);
             await Navigation.PopModalAsync();
         }

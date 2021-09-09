@@ -116,15 +116,16 @@ namespace DeudorApp.Views
         {
             await Navigation.PushModalAsync(new PlusPersonal());
         }
-        protected override void OnAppearing()
+        public void Refrescar()
         {
             if (isrefresh)
             {
-                base.OnAppearing();
                 Libreta.LoadMovimientoCommand.Execute(null);
-             
             }
-           
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
         }
 
     }

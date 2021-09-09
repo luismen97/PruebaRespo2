@@ -71,6 +71,7 @@ namespace DeudorApp.Views
 
         private async void btnRegistrIng_Clicked(object sender, EventArgs e)
         {
+            this.IsEnabled = false;
             await btnRegistrIng.ScaleTo(0.8, length: 50, Easing.Linear);
             await Task.Delay(10);
             await btnRegistrIng.ScaleTo(1, length: 50, Easing.Linear);
@@ -94,6 +95,7 @@ namespace DeudorApp.Views
                             else
                             {
                                 await DisplayAlert("Alerta", "No ha seleccionado una referencia de crédito valida", "OK");
+                                this.IsEnabled = true;
                                 return;
                             }
                         }
@@ -111,6 +113,7 @@ namespace DeudorApp.Views
                             await DisplayAlert("Información!", "Insertado", "OK");
 
                             dpt.isrefresh = true;
+                            dpt.Refrescar();
                             await Task.Delay(1000);
                             await this.Navigation.PopModalAsync();
                         }
@@ -137,7 +140,8 @@ namespace DeudorApp.Views
             {
                 await DisplayAlert("Información!", "Llene los campos correctamente", "OK");
             }
-            
+            this.IsEnabled = true;
+
         }
 
         private async void btnRegistroGasto_Clicked(object sender, EventArgs e)
@@ -164,6 +168,7 @@ namespace DeudorApp.Views
                             await DisplayAlert("Información!", "Insertado", "OK");
 
                             dpt.isrefresh = true;
+                            dpt.Refrescar();
                             await Task.Delay(1000);
                             await this.Navigation.PopModalAsync();
                         }

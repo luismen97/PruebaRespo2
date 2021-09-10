@@ -13,6 +13,7 @@ namespace DeudorApp.Views
         public MainPage()
         {
             InitializeComponent();
+            _ = Autorizado();
 
             var clickCuenta = new TapGestureRecognizer();
             clickCuenta.Tapped += (s, e) =>

@@ -395,4 +395,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\alert.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fondonuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fondodp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fondo1.png" />
+  </ItemGroup>
 </Project>

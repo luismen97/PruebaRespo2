@@ -20,6 +20,7 @@ namespace DeudorApp.Views
             InitializeComponent();
             this.BindingContext = Libreta = new LibretaViewModel(Navigation);
             int cerrado = 1;
+            Refrescar();
             var clickOpciones = new TapGestureRecognizer();
             clickOpciones.Tapped += async (s, e) =>
             {

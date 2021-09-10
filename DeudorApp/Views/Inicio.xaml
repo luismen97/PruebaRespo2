@@ -23,7 +23,6 @@
                     <Grid x:Name="datos" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
                         <Grid.RowDefinitions>
-
                             <RowDefinition Height="100*" />
                         </Grid.RowDefinitions>
                         <yummy:PancakeView Grid.Row="0" Opacity="0.9" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="5" BackgroundColor="#f7f7f7" Margin="7,0,7,0" CornerRadius="20,1,1,20">

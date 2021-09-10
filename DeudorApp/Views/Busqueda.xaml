@@ -5,12 +5,19 @@
              x:Class="DeudorApp.Views.Busqueda"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-         <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-            <controls:HybridWebView
+        <StackLayout>
+            <StackLayout x:Name="contenido"  HorizontalOptions="FillAndExpand" Spacing="0">
+                <controls:HybridWebView
                 x:Name="webViewElement"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand" />
+            </StackLayout>
+            <StackLayout x:Name="NoDis" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label FontSize="20" Text="Tu cuenta aún no ha sido autorizada" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            </StackLayout>
         </StackLayout>
+      
+         
         
         <!--<Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             

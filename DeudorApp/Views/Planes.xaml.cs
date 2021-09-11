@@ -14,13 +14,14 @@ namespace DeudorApp.Views
         {
             InitializeComponent();
             Aut();
+
             if (Application.Current.Properties.ContainsKey("IdCuenta"))
             {
-                vCuenta = Convert.ToString(Application.Current.Properties["IdCuenta"]);
+              vCuenta = Convert.ToString(Application.Current.Properties["IdCuenta"]);
             }
             else
             {
-                vCuenta = "";
+              vCuenta = "";
             }
         }
 

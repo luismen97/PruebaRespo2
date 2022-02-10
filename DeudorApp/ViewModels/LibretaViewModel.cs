@@ -44,6 +44,40 @@ namespace DeudorApp.ViewModels
                 }
             }
         }
+        private string _Ingreso;
+
+        public string Ingreso
+        {
+            get
+            {
+                return _Ingreso;
+            }
+            set
+            {
+                if (_Ingreso != value)
+                {
+                    _Ingreso = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private string _Gasto;
+
+        public string Gasto
+        {
+            get
+            {
+                return _Gasto;
+            }
+            set
+            {
+                if (_Gasto != value)
+                {
+                    _Gasto = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
         private bool _IsBusy;
         public bool IsBusy
         {
@@ -145,7 +179,15 @@ namespace DeudorApp.ViewModels
                     Movimientos.Add(item);
                     MovimientosRef.Add(item);
                 }
-                SaldoFinal = Movimientos.First().TotalNuevo;
+                string filtro = "GASTO";
+                string filtro2 = "INGRESO";
+
+                decimal g = movimiento.Where(x => x.Tipo2.ToLower().Replace('á', 'a').Replace('é', 'e').Replace('í', 'i').Replace('ó', 'o').Replace('ú', 'u').Contains(filtro.ToLower())).Sum(x => x.CantidadSum);
+                decimal ing = movimiento.Where(x => x.Tipo2.ToLower().Replace('á', 'a').Replace('é', 'e').Replace('í', 'i').Replace('ó', 'o').Replace('ú', 'u').Contains(filtro2.ToLower())).Sum(x => x.CantidadSum);
+                decimal s = ing - g;
+                Ingreso = ing.ToString();
+                Gasto = g.ToString();
+                SaldoFinal = s.ToString();
 
             }
             catch (Exception ex)
@@ -277,7 +319,7 @@ namespace DeudorApp.ViewModels
                 {
                     Movimientos.Add(match.ElementAt(i));
                 }
-                SaldoFinal = Movimientos.Last().TotalNuevo;
+               // SaldoFinal = Movimientos.Sum(x=>x.CantidadSum).ToString();
 
 
             }

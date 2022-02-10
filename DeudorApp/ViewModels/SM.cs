@@ -283,13 +283,31 @@ namespace DeudorApp.ViewModels
             return respuesta;
         }
 
-        public async Task<string> GuardarIngreso(string idtipo, string codigo, decimal cantidad, string Nota, string idcredito)
+        public async Task<string> GetAutorizadoPlus()
+        {
+            string respuesta = "";
+            try
+            {
+                var cliente = new HttpClient();
+                StringContent str = new StringContent("op=GetAutorizadoPlus&IdCliente=" + Application.Current.Properties["IdCuenta"].ToString(), Encoding.UTF8, "application/x-www-form-urlencoded");
+                var envia = cliente.PostAsync(new Uri(Constantes.url + "Usuario/App.php"), str);
+                respuesta = await envia.Result.Content.ReadAsStringAsync();
+
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", ex.ToString(), "Ok");
+            }
+            return respuesta;
+        }
+
+        public async Task<string> GuardarIngreso(string idtipo, string codigo, decimal cantidad, string Nota, string idcredito,string Fecha)
         {
             string resp = "nada";
             try
             {
                 var cliente = new HttpClient();
-                StringContent str = new StringContent("op=GuardarIngreso&idtipo="+ idtipo + "&codigo="+ codigo + "&cantidad="+ cantidad + "&Nota="+ Nota + "&idcredito="+idcredito+"&Tipo2=INGRESO&IdCuenta=" + Application.Current.Properties["IdCuenta"].ToString(), Encoding.UTF8, "application/x-www-form-urlencoded");
+                StringContent str = new StringContent("op=GuardarIngreso&idtipo="+ idtipo + "&codigo="+ codigo + "&cantidad="+ cantidad + "&Nota="+ Nota + "&idcredito="+idcredito+"&Fecha="+Fecha+"&Tipo2=INGRESO&IdCuenta=" + Application.Current.Properties["IdCuenta"].ToString(), Encoding.UTF8, "application/x-www-form-urlencoded");
                 var envia = cliente.PostAsync(new Uri(Constantes.url + "Usuario/App.php"), str);
                 var respuesta = await envia.Result.Content.ReadAsStringAsync();
 
@@ -311,13 +329,13 @@ namespace DeudorApp.ViewModels
             return resp;
         }
 
-        public async Task<string> GuardarGasto(string idtipo, decimal cantidad, string Nota)
+        public async Task<string> GuardarGasto(string idtipo, decimal cantidad, string Nota,string Fecha)
         {
             string resp = "nada";
             try
             {
                 var cliente = new HttpClient();
-                StringContent str = new StringContent("op=GuardarGasto&idtipo=" + idtipo + "&cantidad=" + cantidad + "&Nota=" + Nota + "&Tipo2=GASTO&IdCuenta=" + Application.Current.Properties["IdCuenta"].ToString(), Encoding.UTF8, "application/x-www-form-urlencoded");
+                StringContent str = new StringContent("op=GuardarGasto&idtipo=" + idtipo + "&cantidad=" + cantidad + "&Nota=" + Nota + "&Fecha="+ Fecha + "&Tipo2=GASTO&IdCuenta=" + Application.Current.Properties["IdCuenta"].ToString(), Encoding.UTF8, "application/x-www-form-urlencoded");
                 var envia = cliente.PostAsync(new Uri(Constantes.url + "Usuario/App.php"), str);
                 var respuesta = await envia.Result.Content.ReadAsStringAsync();
 

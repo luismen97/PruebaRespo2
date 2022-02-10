@@ -25,17 +25,17 @@ namespace DeudorApp.Views
             }
         }
 
-        public async void Aut()
+        private async void Aut()
         {
             string aut = await sM.GetAutorizado();
             if (aut != "1")
             {
-                contenido.IsVisible = false;
+                webViewElement.IsVisible = false;
                 NoDis.IsVisible = true;
             }
             else
             {
-                contenido.IsVisible = true;
+                webViewElement.IsVisible = true;
                 NoDis.IsVisible = false;
             }
         }

@@ -1,28 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    
-
-x:Class="DeudorApp.Views.DeudorPlusTabs" BackgroundColor="#fff" NavigationPage.HasNavigationBar="false" x:Name="MiLibreta">
+              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" x:Class="DeudorApp.Views.DeudorPlusTabs" 
+             BackgroundColor="#383838" NavigationPage.HasNavigationBar="false" x:Name="MiLibreta">
     <ContentPage.Content>
         <StackLayout Margin="0" Padding="0">
-            
-            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                
-                <Grid Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-
+            <StackLayout x:Name="NoDis" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label FontSize="20" Text="Disfruta de los veneficios de Deudor App Plus" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                <Button Text="CONSEGUIR AQUI" BackgroundColor="#5A2E6D" TextColor="#FFF" Margin="10,2,10,0" CornerRadius="7"/>
+            </StackLayout>
+            <StackLayout x:Name="contenido" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="100*" />
+                        <RowDefinition Height="100*"/> 
                     </Grid.RowDefinitions>
-                    <ScrollView Grid.Row="0">
+                    <Grid RowSpacing="0" Margin="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
-                        <StackLayout Margin="0,0,0,0" >
-                            <StackLayout x:Name="sinResultados" IsVisible="{Binding sinResultados}" BackgroundColor="#fff" Margin="0,30,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                <Image   Source="triste.png"  Aspect="AspectFill" WidthRequest="100" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
-                                <Label Text="No hay Resultados" FontAttributes="Bold" FontSize="20" TextColor="#BF2323" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                            </StackLayout>
-                            <ListView
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="130" />
+                            <RowDefinition Height="100*" />
+                        </Grid.RowDefinitions>
+                        <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                            <yummy:PancakeView Grid.Row="0" BackgroundColor="#383838" Margin="0,0,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0">
+                                <!--<yummy:PancakeView.BackgroundGradientStops>
+                                    <yummy:GradientStopCollection>
+                                        <yummy:GradientStop Color="#FBFBFB" Offset="0.2"/>
+                                        <yummy:GradientStop Color="#FBFBFB" Offset="0.3" />
+                                        <yummy:GradientStop Color="#FBFBFB" Offset="0.85" />
+                                        <yummy:GradientStop Color="#FBFBFB" Offset="0.95" />
+                                    </yummy:GradientStopCollection>
+                                </yummy:PancakeView.BackgroundGradientStops>-->
+                                <Grid Padding="5" ColumnSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height=".5"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30*"/>
+                                        <ColumnDefinition Width="100*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="0" Text="Ingresos:" TextColor="#5BC37A" FontSize="16" VerticalTextAlignment="End" HorizontalTextAlignment="Start" FontAttributes="Bold" Margin="5,5,0,0"/>
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Ingreso,StringFormat='${0:F2}'}" TextColor="#5BC37A" FontSize="16" VerticalTextAlignment="End" HorizontalTextAlignment="End" FontAttributes="Bold" Margin="0,5,5,0"/>
+
+                                    <Label Grid.Row="1" Grid.Column="0" Text="Gastos:" TextColor="#BC5C5C" FontSize="16" VerticalTextAlignment="End" HorizontalTextAlignment="Start" FontAttributes="Bold" Margin="5,0,0,0"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding Gasto,StringFormat='${0:F2}'}" TextColor="#BC5C5C" FontSize="16" VerticalTextAlignment="End" HorizontalTextAlignment="End" FontAttributes="Bold" Margin="0,5,5,0"/>
+                                    <BoxView Grid.Row="2" Grid.Column="0" HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand"/>
+                                    <BoxView Grid.Row="2" Grid.Column="1" HeightRequest=".5" BackgroundColor="#ccc" HorizontalOptions="FillAndExpand"/>
+
+                                    <Label Grid.Row="3" Grid.Column="0" Text="Saldo:" TextColor="#fbfbfb" HorizontalTextAlignment="Start" FontSize="16" VerticalTextAlignment="End" FontAttributes="Bold" Margin="5,0,0,0"/>
+                                    <Label Grid.Row="3" Grid.Column="1" Text="{Binding SaldoFinal,StringFormat='${0:F2}'}" TextColor="#fbfbfb" FontSize="16" VerticalTextAlignment="End" HorizontalTextAlignment="End" FontAttributes="Bold" Margin="0,5,5,0"/>
+
+                                </Grid>
+                            </yummy:PancakeView>
+                        </StackLayout>
+                        <ScrollView Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                            <StackLayout Margin="0,0,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <StackLayout x:Name="sinResultados" IsVisible="{Binding sinResultados}" BackgroundColor="#fff" Margin="0,30,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Image   Source="triste.png"  Aspect="AspectFill" WidthRequest="100" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                                    <Label Text="No hay Resultados" FontAttributes="Bold" FontSize="20" TextColor="#BF2323" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                </StackLayout>
+                                <ListView
                                 x:Name="listview"
                                 HasUnevenRows="true"
                                 SeparatorVisibility="None"
@@ -36,110 +76,94 @@ x:Class="DeudorApp.Views.DeudorPlusTabs" BackgroundColor="#fff" NavigationPage.H
                                 RefreshControlColor="#BF2323"
                                 IsRefreshing="{Binding IsBusy}" CachingStrategy="RecycleElement">
 
-                                <ListView.ItemTemplate>
+                                    <ListView.ItemTemplate>
 
-                                    <DataTemplate>
+                                        <DataTemplate>
 
-                                        <ViewCell >
+                                            <ViewCell >
 
-                                            <StackLayout>
-                                                <yummy:PancakeView HorizontalOptions="FillAndExpand"  BackgroundColor="#fff" Border="{yummy:BorderMarkup Color=#555555, Thickness='1'}" Padding="10,20,10,20" Margin="2" CornerRadius="5">
-                                                    <yummy:PancakeView.Shadow>
-                                                        <yummy:DropShadow Color="#000" Offset="10,10" BlurRadius="10"/>
-                                                    </yummy:PancakeView.Shadow>
-                                                    <Grid>
-                                                        <Grid.ColumnDefinitions>
-                                                            <ColumnDefinition Width="80"/>
-                                                            <ColumnDefinition Width="100"/>
-                                                            <ColumnDefinition Width="80*"/>
-                                                            <ColumnDefinition Width="30"/>
+                                                <StackLayout>
+                                                    <yummy:PancakeView HorizontalOptions="FillAndExpand"  BackgroundColor="#fff" Border="{yummy:BorderMarkup Color=#555555, Thickness='1'}" Padding="10,20,10,20" Margin="2" CornerRadius="5">
+                                                        <yummy:PancakeView.Shadow>
+                                                            <yummy:DropShadow Color="#000" Offset="10,10" BlurRadius="10"/>
+                                                        </yummy:PancakeView.Shadow>
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="80"/>
+                                                                <ColumnDefinition Width="100"/>
+                                                                <ColumnDefinition Width="80*"/>
+                                                                <ColumnDefinition Width="30"/>
 
-                                                        </Grid.ColumnDefinitions>
-                                                        <Label Grid.Column="1" Text="{Binding FechaFormato}" TextColor="#545454" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
-                                                        <Frame Grid.Column="0" BackgroundColor="{Binding colorNuevo}" HeightRequest="10" CornerRadius="0" Padding="1">
-                                                            <Label Text="{Binding Tipo2}" TextColor="#fff" FontSize="10" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Label Grid.Column="1" Text="{Binding FechaFormato}" TextColor="#545454" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
+                                                            <Frame Grid.Column="0" BackgroundColor="{Binding colorNuevo}" HeightRequest="10" CornerRadius="0" Padding="1">
+                                                                <Label Text="{Binding Tipo2}" TextColor="#fff" FontSize="10" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
 
-                                                        </Frame>
+                                                            </Frame>
 
-                                                        <Label Grid.Column="2" Text="{Binding Cantidad, StringFormat='${0:F2}'}" TextColor="#494949" FontSize="18" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="CenterAndExpand"/>
-
-
-
-                                                        <Image Grid.Column="3"  Source="puntos.png"  IsVisible="true" HeightRequest="20" HorizontalOptions="End" VerticalOptions="CenterAndExpand">
-                                                            <Image.GestureRecognizers>
-                                                                <TapGestureRecognizer Command="{Binding Path=BindingContext.DetalleCommand, Source={x:Reference MiLibreta}}" CommandParameter="{Binding .}"/>
-                                                            </Image.GestureRecognizers>
-                                                        </Image>
+                                                            <Label Grid.Column="2" Text="{Binding Cantidad, StringFormat='${0:F2}'}" TextColor="#494949" FontSize="18" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="CenterAndExpand"/>
 
 
 
-                                                    </Grid>
-
-                                                </yummy:PancakeView>
-
-                                            </StackLayout>
-
-                                        </ViewCell>
-
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                                <ListView.Footer>
-
-                                    <StackLayout  HorizontalOptions="FillAndExpand" Padding="10">
+                                                            <Image Grid.Column="3"  Source="puntos.png"  IsVisible="true" HeightRequest="20" HorizontalOptions="End" VerticalOptions="CenterAndExpand">
+                                                                <Image.GestureRecognizers>
+                                                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.DetalleCommand, Source={x:Reference MiLibreta}}" CommandParameter="{Binding .}"/>
+                                                                </Image.GestureRecognizers>
+                                                            </Image>
 
 
-                                        <Label Text=" " FontSize="18" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="#ccc" Margin="0,10,0,0" />
 
-                                    </StackLayout>
+                                                        </Grid>
 
-                                </ListView.Footer>
-                            </ListView>
+                                                    </yummy:PancakeView>
+
+                                                </StackLayout>
+
+                                            </ViewCell>
+
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                    <!--<ListView.Footer>
+                                        <StackLayout  HorizontalOptions="FillAndExpand" Padding="10">
+                                            <Label Text=" " FontSize="18" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="#ccc" Margin="0,130,0,0" />
+                                        </StackLayout>
+
+                                    </ListView.Footer>-->
+                                </ListView>
+                            </StackLayout>
+                        </ScrollView>
+
+                        <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="End">
+
+                            <yummy:PancakeView  Margin="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0">
+                                
+                                <Grid>
+                                    <yummy:PancakeView x:Name="btnFiltro" HorizontalOptions="Start" BackgroundColor="#383838" Border="{yummy:BorderMarkup Color=#555555, Thickness='2'}" CornerRadius="30" Padding="10"  Margin="20">
+                                        <yummy:PancakeView.Shadow>
+                                            <yummy:DropShadow Color="#000" BlurRadius="20"/>
+                                        </yummy:PancakeView.Shadow>
+                                        <Image  Source="filtrar.png" HeightRequest="20"/>
+                                    </yummy:PancakeView>
+                                    <yummy:PancakeView  x:Name="btnOpciones" HorizontalOptions="End" BackgroundColor="#383838" Border="{yummy:BorderMarkup Color=#555555, Thickness='2'}" CornerRadius="30" Padding="10"  Margin="20" >
+                                        <yummy:PancakeView.Shadow>
+                                            <yummy:DropShadow Color="#000"  BlurRadius="30"/>
+                                        </yummy:PancakeView.Shadow>
+                                        <Image  Source="mas.png" HeightRequest="20"/>
+                                    </yummy:PancakeView>
+                                </Grid>
+                            </yummy:PancakeView>
                         </StackLayout>
-                    </ScrollView>
 
-                    <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="End">
-                        <yummy:PancakeView x:Name="btnIngresos" HorizontalOptions="End" IsVisible="false" BackgroundColor="#428655" Padding="10" CornerRadius="30" Margin="5,0,20,0" >
-                            <Image  Source="mas.png" WidthRequest="20"/>
-                        </yummy:PancakeView>
-                        <yummy:PancakeView x:Name="btnGastos" IsVisible="false" HorizontalOptions="End"   BackgroundColor="#9A1C1C" Padding="10" CornerRadius="30"  Margin="5,0,20,0" >
-                            <Image  Source="minus.png" HeightRequest="20"/>
-                        </yummy:PancakeView>
-
-                        <yummy:PancakeView  HorizontalOptions="FillAndExpand" VerticalOptions="End" BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0">
-                            <yummy:PancakeView.BackgroundGradientStops>
-                                <yummy:GradientStopCollection>
-                                    <yummy:GradientStop Color="#fff" Offset="0"/>
-                                    <yummy:GradientStop Color="#fff" Offset="0.4" />
-                                    <yummy:GradientStop Color="#FBFBFB" Offset="0.6 " />
-                                    <yummy:GradientStop Color="Transparent" Offset="1.5" />
-                                </yummy:GradientStopCollection>
-                            </yummy:PancakeView.BackgroundGradientStops>
-                            <Grid>
-                                <yummy:PancakeView x:Name="btnFiltro" HorizontalOptions="Start" BackgroundColor="#383838" Border="{yummy:BorderMarkup Color=#555555, Thickness='2'}" CornerRadius="30" Padding="10"  Margin="20">
-                                    <yummy:PancakeView.Shadow>
-                                        <yummy:DropShadow Color="#000" BlurRadius="20"/>
-                                    </yummy:PancakeView.Shadow>
-                                    <Image  Source="filtrar.png" HeightRequest="20"/>
-                                </yummy:PancakeView>
-                                <yummy:PancakeView  x:Name="btnOpciones" HorizontalOptions="End" BackgroundColor="#383838" Border="{yummy:BorderMarkup Color=#555555, Thickness='2'}" CornerRadius="30" Padding="10"  Margin="20" >
-                                    <yummy:PancakeView.Shadow>
-                                        <yummy:DropShadow Color="#000"  BlurRadius="30"/>
-                                    </yummy:PancakeView.Shadow>
-                                    <Image  Source="mas.png" HeightRequest="20"/>
-                                </yummy:PancakeView>
-
-                                <yummy:PancakeView BackgroundColor="#FBFBFB" Margin="80,15,80,15" Border="{yummy:BorderMarkup Color=#E0E0E0, Thickness='2'}"  CornerRadius="9,9,9,9">
-                                    <yummy:PancakeView.Shadow>
-                                        <yummy:DropShadow Color="#000000" BlurRadius="15" />
-                                    </yummy:PancakeView.Shadow>
-                                    <StackLayout VerticalOptions="Center" Margin="7,0,0,0">
-                                        <Label Text="{Binding SaldoFinal,StringFormat='Saldo: ${0:F2}'}" TextColor="#545454" FontAttributes="Bold" FontSize="16" VerticalTextAlignment="Center" />
-                                    </StackLayout>
-                                </yummy:PancakeView>
-                            </Grid>
-                        </yummy:PancakeView>
-                    </StackLayout>
+                    </Grid>
+                    <yummy:PancakeView Grid.Row="0" x:Name="btnIngresos" HorizontalOptions="End" IsVisible="false" VerticalOptions="End" BackgroundColor="#428655" Padding="10" CornerRadius="30" Margin="5,0,20,115" >
+                        <Image  Source="mas.png" WidthRequest="20"/>
+                    </yummy:PancakeView>
+                    <yummy:PancakeView Grid.Row="0" x:Name="btnGastos" IsVisible="false" HorizontalOptions="End" VerticalOptions="End" BackgroundColor="#9A1C1C" Padding="10" CornerRadius="30"  Margin="5,0,20,70" >
+                        <Image  Source="minus.png" HeightRequest="20"/>
+                    </yummy:PancakeView>
                 </Grid>
+                
+                
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

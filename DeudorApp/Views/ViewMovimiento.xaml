@@ -30,6 +30,19 @@
                     </Grid>
                     
                     <BoxView HeightRequest="3" BackgroundColor="#E7E7E7" HorizontalOptions="FillAndExpand"/>
+                    
+                    <Grid Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="70*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="Fecha:" TextColor="#000" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="End"/>
+                        <Frame Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Padding="1">
+                            <DatePicker x:Name="FechaGasto" TextColor="#212121" AnchorX="10" Format="dd-MM-yyyy" FontSize="13"/>
+                        </Frame>
+                    </Grid>
+                    <BoxView HeightRequest="3" BackgroundColor="#E7E7E7" HorizontalOptions="FillAndExpand"/>
+
                     <Grid Margin="0,10,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="30*"/>
@@ -68,7 +81,18 @@
                         Title="Tipo de Ingreso" ItemsSource="{Binding TiposMovimiento}" ItemDisplayBinding="{Binding Tipo}"
                         TitleColor="#D72525" TextColor="#000" VerticalTextAlignment="End"/>
                     </Grid>
-
+                    <BoxView HeightRequest="3" BackgroundColor="#E7E7E7" HorizontalOptions="FillAndExpand"/>
+                    <Grid Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="70*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="Referencia:" TextColor="#000" FontSize="20" VerticalTextAlignment="End" HorizontalTextAlignment="End"/>
+                        <Frame Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Padding="1">
+                            <DatePicker x:Name="FechaIngreso" TextColor="#212121" AnchorX="10" Format="dd-MM-yyyy" FontSize="13"/>
+                        </Frame>
+                    </Grid>
+                                    
                     <BoxView HeightRequest="3" BackgroundColor="#E7E7E7" HorizontalOptions="FillAndExpand"/>
                     <Grid Margin="0,10,0,0">
                         <Grid.ColumnDefinitions>

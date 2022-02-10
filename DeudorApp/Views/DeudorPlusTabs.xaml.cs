@@ -13,6 +13,7 @@ namespace DeudorApp.Views
     public partial class DeudorPlusTabs : ContentPage
     {
         LibretaViewModel Libreta;
+        SM sM = new SM();
         public bool isrefresh = true;
         public DeudorPlusTabs()
         {
@@ -21,6 +22,7 @@ namespace DeudorApp.Views
             this.BindingContext = Libreta = new LibretaViewModel(Navigation);
             int cerrado = 1;
             Refrescar();
+            Aut();
             var clickOpciones = new TapGestureRecognizer();
             clickOpciones.Tapped += async (s, e) =>
             {
@@ -112,7 +114,20 @@ namespace DeudorApp.Views
            
 
         }
-
+        private async void Aut()
+        {
+            string aut = await sM.GetAutorizadoPlus();
+            if (aut != "1")
+            {
+                contenido.IsVisible = false;
+                NoDis.IsVisible = true;
+            }
+            else
+            {
+                contenido.IsVisible = true;
+                NoDis.IsVisible = false;
+            }
+        }
         public async Task Tap_tAsync()
         {
             await Navigation.PushModalAsync(new PlusPersonal());

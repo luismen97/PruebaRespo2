@@ -17,6 +17,7 @@ namespace DeudorApp.Models
         public string Tipo2 { get; set; }
         public string Nota { get; set; }
         public string Cantidad { get; set; }
+        
         public string TotalViejo { get; set; }
         public string TotalNuevo { get; set; }
         public string Referencia { get; set; }
@@ -51,6 +52,13 @@ namespace DeudorApp.Models
 
         public string formatoCredito { get; set; }
         public string idcredito { get; set; }
+        public decimal CantidadSum
+        {
+            get
+            {
+                return Convert.ToDecimal(Cantidad);
+            }
+        }
 
     }
 }

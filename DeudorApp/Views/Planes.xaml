@@ -3,20 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:DeudorApp.Renderers"
              x:Class="DeudorApp.Views.Planes"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False" BackgroundColor="#fff">
     <ContentPage.Content>
+        
         <StackLayout>
-            <StackLayout x:Name="contenido" HorizontalOptions="FillAndExpand" Spacing="0">
-                <controls:HybridWebView
+            <controls:HybridWebView
                 x:Name="webViewElement"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand" />
-            </StackLayout>
-            <StackLayout x:Name="NoDis" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <Label FontSize="20" Text="Tu cuenta aún no ha sido autorizada" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            <StackLayout x:Name="NoDis" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="#fff">
+                <Image Source="alert.png" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" WidthRequest="50"/>
+                <Label FontSize="20" Text="Tu cuenta aún no ha sido autorizada" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
             </StackLayout>
         </StackLayout>
-        
-        
+
+
     </ContentPage.Content>
 </ContentPage>

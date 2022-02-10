@@ -2,6 +2,7 @@
 using DeudorApp.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -106,8 +107,9 @@ namespace DeudorApp.Views
 
                         decimal cantidad = Convert.ToDecimal(txtMontoIng.Text);
                         string Nota = NotaIng.Text;
+                        string Fecha = FechaIngreso.Date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
 
-                        var resp = await sM.GuardarIngreso(idtipo, codigo, cantidad, Nota, idCredito);
+                        var resp = await sM.GuardarIngreso(idtipo, codigo, cantidad, Nota, idCredito, Fecha);
                         if (resp == "1")
                         {
                             await DisplayAlert("Información!", "Insertado", "OK");
@@ -161,8 +163,9 @@ namespace DeudorApp.Views
                         string idtipo = Convert.ToString(selectitem.idTipoMovimiento);
                         decimal cantidad = Convert.ToDecimal(txtMonto.Text);
                         string Nota = NotaGasto.Text;
+                        string Fecha = FechaGasto.Date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
 
-                        var resp = await sM.GuardarGasto(idtipo, cantidad, Nota);
+                        var resp = await sM.GuardarGasto(idtipo, cantidad, Nota, Fecha);
                         if (resp == "1")
                         {
                             await DisplayAlert("Información!", "Insertado", "OK");
